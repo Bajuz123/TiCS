@@ -3,7 +3,7 @@
     {
       "templateId": "ui5template.basicSAPUI5ApplicationComponent",
       "templateVersion": "1.4.0",
-      "dateTimeStamp": "Wed, 21 Nov 2018 11:18:58 GMT"
+      "dateTimeStamp": "Wed, 21 Nov 2018 14:04:41 GMT"
     },
     {
       "templateId": "servicecatalog.connectivityComponent",
@@ -13,9 +13,16 @@
   ],
   "mockpreview": {
     "mockUri": "",
-    "metadataFilePath": "",
+    "metadataFilePath": "localService/metadata.xml",
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "",
+    "defaultLanguage": "",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
   }
 }

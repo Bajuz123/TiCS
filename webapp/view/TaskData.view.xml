@@ -16,7 +16,6 @@
 				            <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
 				            <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
 				            <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
-				            <Button text="Detail" width="100px" id="__buttonDetail" icon="sap-icon://detail-view"/>
 				        </items>
 				    </HBox>
 				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0">
