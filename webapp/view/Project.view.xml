@@ -4,7 +4,6 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-				Hello World
 				</content>
 			</Page>
 		</pages>
