@@ -1,9 +1,44 @@
-<mvc:View controllerName="TiCS.controller.Project" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-	xmlns="sap.m">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TiCS.controller.Project" displayBlock="true">
 	<App>
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
+				<VBox width="100%" direction="Column" id="__vbox0">
+				    <items>
+				        <HBox width="100%" id="__hbox0" height="60px">
+				            <items>
+				                <Button width="40px" height="30px" id="__buttonAdd" activeIcon="sap-icon://add" icon="sap-icon://add"/>
+				                <Button width="40px" height="30px" id="__buttonDelete" icon="sap-icon://delete"/>
+				                <Button width="40px" height="30px" id="__buttonEdit" icon="sap-icon://edit" activeIcon="sap-icon://add"/>
+				            </items>
+				        </HBox>
+				        <Table noDataText="Drop column list items here and columns in the area above" id="__tableProjects" headerText="Projects" growing="true">
+				            <items>
+				                <ColumnListItem id="__item0">
+				                    <cells>
+				                        <Text text="Row 1 Cell 1" id="__text5"/>
+				                        <Text text="Row 1 Cell 2" id="__text6"/>
+				                        <Text text="Row 1 Cell 3" id="__text7"/></cells>
+				                </ColumnListItem>
+				                <ColumnListItem id="__item1">
+				                    <cells>
+				                        <Text text="Row 2 Cell 1" id="__text8"/>
+				                        <Text text="Row 2 Cell 2" id="__text9"/>
+				                        <Text text="Row 2 Cell 3" id="__text10"/></cells>
+				                </ColumnListItem></items>
+				            <columns>
+				                <Column id="__columnProjID">
+				                    <header>
+				                        <Label text="Header 1" id="__label0"/>
+				                    </header>
+				                </Column>
+				                <Column id="__columnName">
+				                    <header>
+				                        <Label text="Header 2" id="__label1"/>
+				                    </header>
+				                </Column></columns></Table>
+				    </items>
+				</VBox>
 				</content>
 			</Page>
 		</pages>
