@@ -5,9 +5,9 @@
 				<content>
 				    <List noDataText="Drop list items here" id="__list0">
 				        <items>
-				            <StandardListItem type="Navigation" title="Projects" description="Project Manager" icon="sap-icon://picture" id="__itemMenu1"/>
-				            <StandardListItem type="Navigation" title="TiCS" description="TiCS records" icon="sap-icon://picture" id="__itemMenu2"/>
-				            <StandardListItem type="Navigation" title="Users" description="User Manager" icon="sap-icon://picture" id="__itemMenu3"/></items>
+				            <StandardListItem type="Navigation" title="Projects" description="Project Manager" icon="sap-icon://capital-projects" id="__itemMenu1"/>
+				            <StandardListItem type="Navigation" title="TiCS" description="TiCS records" icon="sap-icon://trip-report" id="__itemMenu2"/>
+				            <StandardListItem type="Navigation" title="Users" description="User Manager" icon="sap-icon://user-settings" id="__itemMenu3"/></items>
 				    </List>
 				</content>
 			</Page>
