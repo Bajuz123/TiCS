@@ -3,12 +3,13 @@
 		<pages>
 			<Page title="">
 				<content>
-				    <List noDataText="Drop list items here" id="__list0">
+				    <SelectList selectedItem="Element sap.ui.core.ListItem#__item4" selectedKey="item1" selectedItemId="__item4" id="__list1">
 				        <items>
-				            <StandardListItem type="Navigation" title="Projects" description="Project Manager" icon="sap-icon://capital-projects" id="__itemMenu1"/>
-				            <StandardListItem type="Navigation" title="TiCS" description="TiCS records" icon="sap-icon://trip-report" id="__itemMenu2"/>
-				            <StandardListItem type="Navigation" title="Users" description="User Manager" icon="sap-icon://user-settings" id="__itemMenu3"/></items>
-				    </List>
+				            <core:ListItem text="Projects" key="item1" id="__item1"/>
+				            <core:ListItem text="TiCS" key="item2" id="__item2"/>
+				            <core:ListItem text="Users" key="item3" id="__item3"/>
+				            <core:ListItem text="Logout" key="item4" id="__item4"/></items>
+				    </SelectList>
 				</content>
 			</Page>
 		</pages>
