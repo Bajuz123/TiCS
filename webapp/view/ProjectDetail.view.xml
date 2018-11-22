@@ -9,34 +9,27 @@
 				            <Button text="Detail" width="100px" id="__buttonDetail" icon="sap-icon://detail-view"/>
 				        </items>
 				    </HBox>
-				    <Table noDataText="Drop column list items here and columns in the area above" id="__table3">
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table3ProjectDetail" headerText="Project Detail">
 				        <items>
 				            <ColumnListItem id="__item5">
 				                <cells>
 				                    <Text text="Row 1 Cell 1" id="__text13"/>
-				                    <Text text="Row 1 Cell 2" id="__text14"/>
-				                    <Text text="Row 1 Cell 3" id="__text15"/></cells>
+				                    <Text text="Row 1 Cell 2" id="__text14"/></cells>
 				            </ColumnListItem>
 				            <ColumnListItem id="__item6">
 				                <cells>
 				                    <Text text="Row 2 Cell 1" id="__text16"/>
-				                    <Text text="Row 2 Cell 2" id="__text17"/>
-				                    <Text text="Row 2 Cell 3" id="__text18"/></cells>
+				                    <Text text="Row 2 Cell 2" id="__text17"/></cells>
 				            </ColumnListItem></items>
 				        <columns>
-				            <Column id="__column5">
+				            <Column id="__columnProjectID">
 				                <header>
-				                    <Label text="Header 1" id="__label5"/>
+				                    <Label text="Project Number" id="__labelProjectNumber"/>
 				                </header>
 				            </Column>
-				            <Column id="__column6">
+				            <Column id="__columnProjectDescription">
 				                <header>
 				                    <Label text="Header 2" id="__label6"/>
-				                </header>
-				            </Column>
-				            <Column id="__column7">
-				                <header>
-				                    <Label text="Header 3" id="__label7"/>
 				                </header>
 				            </Column></columns></Table>
 				</content>
