@@ -9,28 +9,34 @@
 				            <Button text="Detail" width="100px" id="__buttonDetail" icon="sap-icon://detail-view"/>
 				        </items>
 				    </HBox>
-				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0">
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table3">
 				        <items>
-				            <ColumnListItem id="__item0">
+				            <ColumnListItem id="__item5">
 				                <cells>
-				                    <Text text="Row 1 Cell 1" id="__text0"/>
-				                    <Text text="Row 1 Cell 2" id="__text1"/>
-				                    <Text text="Row 1 Cell 3" id="__text2"/></cells>
-				            </ColumnListItem><ColumnListItem id="__item1">
+				                    <Text text="Row 1 Cell 1" id="__text13"/>
+				                    <Text text="Row 1 Cell 2" id="__text14"/>
+				                    <Text text="Row 1 Cell 3" id="__text15"/></cells>
+				            </ColumnListItem>
+				            <ColumnListItem id="__item6">
 				                <cells>
-				                    <Text text="Row 2 Cell 1" id="__text3"/>
-				                    <Text text="Row 2 Cell 2" id="__text4"/>
-				                    <Text text="Row 2 Cell 3" id="__text5"/></cells>
+				                    <Text text="Row 2 Cell 1" id="__text16"/>
+				                    <Text text="Row 2 Cell 2" id="__text17"/>
+				                    <Text text="Row 2 Cell 3" id="__text18"/></cells>
 				            </ColumnListItem></items>
 				        <columns>
-				            <Column id="__column0">
+				            <Column id="__column5">
 				                <header>
-				                <Label text="Header 1" id="__label0"/>
+				                    <Label text="Header 1" id="__label5"/>
 				                </header>
 				            </Column>
-				            <Column id="__column1">
+				            <Column id="__column6">
 				                <header>
-				                    <Label text="Header 2" id="__label1"/>
+				                    <Label text="Header 2" id="__label6"/>
+				                </header>
+				            </Column>
+				            <Column id="__column7">
+				                <header>
+				                    <Label text="Header 3" id="__label7"/>
 				                </header>
 				            </Column></columns></Table>
 				</content>
