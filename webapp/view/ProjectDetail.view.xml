@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.ProjectDetail">
 	<App>
-		<pages><Page title="Title">
+		<pages><Page title="Project Detail">
 				<content>
 				    <HBox width="100%" id="__hbox0">
 				        <items>
