@@ -29,7 +29,7 @@
 				            </Column>
 				            <Column id="__columnProjectDescription">
 				                <header>
-				                    <Label text="Header 2" id="__label6"/>
+				                    <Label text="Project Description" id="__label6"/>
 				                </header>
 				            </Column></columns></Table>
 				</content>

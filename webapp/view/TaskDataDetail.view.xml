@@ -24,12 +24,12 @@
 				        <columns>
 				            <Column id="__columnTask">
 				                <header>
-				                    <Label text="Header 1" id="__label3"/>
+				                    <Label text="Task" id="__label3"/>
 				                </header>
 				            </Column>
 				            <Column id="__columnTaskDetail">
 				                <header>
-				                    <Label text="Header 2" id="__label4"/>
+				                    <Label text="Task Detail" id="__label4"/>
 				                </header>
 				            </Column></columns></Table>
 				</content>
