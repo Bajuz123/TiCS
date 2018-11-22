@@ -43,7 +43,7 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "TiCS.view.Login",
+			"viewName": "TiCS.view.Main",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -58,6 +58,31 @@
 				"sap.uxap": {}
 			}
 		},
+		
+		"routing": {
+			"config": {
+				"viewType": "XML",
+				"viewPath": "TiCS.view",
+				"targetAggregation": "detailPages",
+				"clearTarget": false
+			},
+			"routes": [
+				{ "pattern"	: "",
+				  "name"	: "Menu",
+				  "view"	: "Menu",
+				  "targetAggregation"	: "masterPages" ,
+				  "targetControl"		: "splitapp",
+				  "subroutes" : [
+					{ "pattern" : "",
+					  "name" : "Project",
+					  "view" : "Project",
+					  "targetAggregation" : "detailPages"
+					}
+				  ]
+				}
+			]
+		},
+		
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
