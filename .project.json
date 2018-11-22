@@ -20,8 +20,8 @@
   },
   "translation": {
     "translationDomain": "",
-    "supportedLanguages": "",
-    "defaultLanguage": "",
+    "supportedLanguages": "de,en,sk",
+    "defaultLanguage": "sk",
     "defaultI18NPropertyFile": "",
     "resourceModelName": ""
   }

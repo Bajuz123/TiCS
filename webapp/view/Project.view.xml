@@ -3,6 +3,13 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
+					<HBox width="100%" id="__hbox0">
+					    <items>
+					        <Button width="40px" id="__buttonAdd" icon="sap-icon://add"/>
+					        <Button width="40px" id="__buttonDelete" icon="sap-icon://delete"/>
+					        <Button width="40px" id="__buttonEdit" icon="sap-icon://edit"/>
+					    </items>
+					</HBox>
 					<VBox width="100%" direction="Column" id="__vbox0">
 						<items>
 							<Table id="__tableProjects" headerText="Projects" growing="true" items="{/PROJECT_SET}">
