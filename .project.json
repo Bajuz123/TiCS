@@ -12,7 +12,7 @@
     }
   ],
   "mockpreview": {
-    "mockUri": "",
+    "mockUri": "/json/mockup_project.json",
     "metadataFilePath": "localService/metadata.xml",
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,

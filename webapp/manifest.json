@@ -12,16 +12,6 @@
 		"sourceTemplate": {
 			"id": "servicecatalog.connectivityComponent",
 			"version": "0.0.0"
-		},
-		"dataSources": {
-			"Z_WEB_TICS_SRV": {
-				"uri": "http://ibssaphd1.ibs.local:8050",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
-				}
-			}
 		}
 	},
 	"sap.ui": {
@@ -41,6 +31,7 @@
 		},
 		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
+	
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "TiCS.view.Main",
@@ -87,6 +78,7 @@
 			"compact": true,
 			"cozy": true
 		},
+		
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
@@ -95,6 +87,7 @@
 				}
 			}
 		},
+		
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"
