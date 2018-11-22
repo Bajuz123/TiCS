@@ -1,8 +1,38 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.TaskDataDetail">
 	<App>
-		<pages>
-			<Page title="Task Detail">
-				<content/>
+		<pages><Page title="Task Detail">
+				<content>
+				    <HBox width="100%" id="__hbox0">
+				        <items>
+				            <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
+				            <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
+				        </items>
+				    </HBox><Table noDataText="Drop column list items here and columns in the area above" id="__table1" fixedLayout="false">
+				        <items>
+				            <ColumnListItem id="__item2">
+				                <cells>
+				                    <Text text="Row 1 Cell 1" id="__text6"/>
+				                    <Text text="Row 1 Cell 2" id="__text7"/>
+				                    <Text text="Row 1 Cell 3" id="__text8"/></cells>
+				            </ColumnListItem>
+				            <ColumnListItem id="__item3">
+				                <cells>
+				                    <Text text="Row 2 Cell 1" id="__text9"/>
+				                    <Text text="Row 2 Cell 2" id="__text10"/>
+				                    <Text text="Row 2 Cell 3" id="__text11"/></cells>
+				            </ColumnListItem></items>
+				        <columns>
+				            <Column id="__columnTask">
+				                <header>
+				                    <Label text="Task" id="__label3"/>
+				                </header>
+				            </Column>
+				            <Column id="__columnTaskDetail">
+				                <header>
+				                    <Label text="Task Detail" id="__label4"/>
+				                </header>
+				            </Column></columns></Table>
+				</content>
 			</Page>
 		</pages>
 	</App>
