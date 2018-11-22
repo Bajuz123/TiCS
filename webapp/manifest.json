@@ -15,7 +15,7 @@
 		},
 		"dataSources": {
 			"Z_WEB_TICS_SRV": {
-				"uri": "",
+				"uri": "http://ibssaphd1.ibs.local:8050",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",

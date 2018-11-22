@@ -1,9 +1,27 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TiCS.controller.Login"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.Login">
 	<App>
 		<pages>
 			<Page title="Login">
-				<content></content>
+				<content>
+				    <HBox width="100%" id="__hboxHeader" alignItems="End">
+				        <items><Label text="{i18n>appVersion}" width="100%" id="__labelVersion" textAlign="Right"/>
+				        </items>
+				    </HBox>
+				    <Panel id="__panelLogin" backgroundDesign="Transparent">
+				        <content>
+				            <VBox width="100%" direction="Column" id="__vboxLogin" alignContent="Center" alignItems="Center" justifyContent="Center" fitContainer="true">
+				        <items>
+				            <Label text="{i18n>LoginLabel}" width="100%" id="__labelCredentials"/>
+				            <Input width="100%" id="__inputUserName"/>
+				            <Input width="100%" id="__inputUserPassword"/>
+				            <Button text="{i18n>Login}" width="100px" id="__buttonLogin"/>
+				        </items>
+				    </VBox>
+				        </content>
+				    </Panel>
+				</content>
+			<headerContent>
+			</headerContent>
 			</Page>
 		</pages>
 	</App>
