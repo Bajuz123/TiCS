@@ -1,9 +1,14 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TiCS.controller.Logout"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.Logout">
 	<App>
 		<pages>
-			<Page title="Title">
-				<content></content>
+			<Page title="Logout">
+				<content>
+				    <VBox width="100%" direction="Column" id="__vbox0" alignContent="Center" alignItems="Inherit" fitContainer="true">
+				        <items>
+				            <Label text="Bye,bye" width="100%" id="__labelBye" textAlign="Center"/>
+				        </items>
+				    </VBox>
+				</content>
 			</Page>
 		</pages>
 	</App>

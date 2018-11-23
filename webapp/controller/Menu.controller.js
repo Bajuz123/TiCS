@@ -10,6 +10,33 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.Menu
 		 */
+		onMenuClick: function() {
+			var menu = this.getView().byId("__menuList");
+			var rowItem = menu.getSelectedItem();
+			var id = rowItem.getId();
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			
+			if (id.includes("__item1")) {
+				oRouter.navTo("Project");
+				return;
+			}	
+
+			if (id.includes("__item2")) {
+				oRouter.navTo("TaskList");
+				return;
+			}	
+
+			if (id.includes("__item3")) {
+				oRouter.navTo("UserManager");
+				return;
+			}	
+
+			if (id.includes("__item4")) {
+				oRouter.navTo("Logout");
+				return;
+			}	
+		}
+
 		//	onInit: function() {
 		//
 		//	},

@@ -3,7 +3,7 @@
 		<pages>
 			<Page title="">
 				<content>
-				    <SelectList selectedItem="Element sap.ui.core.ListItem#__item4" selectedKey="item1" selectedItemId="__item4" id="__list1">
+				    <SelectList selectedItem="item1" selectedKey="item1" id="__menuList" itemPress="onMenuClick">
 				        <items>
 				            <core:ListItem text="Projects" key="item1" id="__item1"/>
 				            <core:ListItem text="TiCS" key="item2" id="__item2"/>
