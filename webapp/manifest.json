@@ -31,7 +31,7 @@
 		},
 		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-	
+
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "TiCS.view.Main",
@@ -49,7 +49,7 @@
 				"sap.uxap": {}
 			}
 		},
-		
+
 		"routing": {
 			"config": {
 				"viewType": "XML",
@@ -58,27 +58,53 @@
 				"clearTarget": false
 			},
 			"routes": [
-				{ "pattern"	: "",
-				  "name"	: "Menu",
-				  "view"	: "Menu",
-				  "targetAggregation"	: "masterPages" ,
-				  "targetControl"		: "splitapp",
-				  "subroutes" : [
-					{ "pattern" : "",
-					  "name" : "Project",
-					  "view" : "Project",
-					  "targetAggregation" : "detailPages"
-					}
-				  ]
-				}
+				{
+					"pattern": "Logout",
+					"name": "Logout",
+					"view": "Logout",
+					"targetAggregation": "pages"
+				}, {
+					"pattern": "Login",
+					"name": "Login",
+					"view": "Login",
+					"targetAggregation": "pages"
+				},				
+				{
+					"pattern": "",
+					"name": "Menu",
+					"view": "Menu",
+					"targetAggregation": "masterPages",
+					"targetControl": "splitapp",
+					"subroutes": [ {
+						"pattern": "",
+						"name": "Project",
+						"view": "Project",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "Project",
+						"name": "Project",
+						"view": "Project",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "TaskList",
+						"name": "TaskList",
+						"view": "TaskData",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "UserManager",
+						"name": "User Manager",
+						"view": "UserManager",
+						"targetAggregation": "detailPages"
+					}]
+				} 
 			]
 		},
-		
+
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
 		},
-		
+
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
@@ -87,7 +113,7 @@
 				}
 			}
 		},
-		
+
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"
