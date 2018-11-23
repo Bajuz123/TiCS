@@ -32,14 +32,40 @@ sap.ui.define([
 		onInit: function() {
 //			var oModel = new sap.ui.model.odata.v2.ODataModel("https://services.odata.org/V2/Northwind/Northwind.svc/");
 //			var oModel = new sap.ui.model.odata.v2.ODataModel(this.getUrl("/sap/opu/odata/sap/Z_WEB_TICS_SRV/PROJECT_SET/")); //, {
-//			var oModel = new sap.ui.model.odata.v2.ODataModel("http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/"); //, {
+
+		    var xmlHttp = new XMLHttpRequest();
+    		xmlHttp.open("GET", "http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", false, "stoma", "palipali89"); // false for synchronous request
+    		xmlHttp.send( null );
+    		if ( xmlHttp.status == 200 ){ 
+    			return true;
+    		} else {
+    			return false;
+    		}
+
+			var headers = {
+				"X-CSRF-Token" : "fetch",
+				"set-cookie" : "MYSAPSSO2"
+			};
+
+
+	var oModel = new sap.ui.model.odata.ODataModel(
+			"http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", true, headers, true);
+
+	oModel.refreshSecurityToken();
+
+	var oModel = new sap.ui.model.odata.ODataModel(
+			"http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", true );
+
+
+//	var oModel = new sap.ui.model.odata.ODataModel(
+//			var oModel = new sap.ui.model.odata.v2.ODataModel("http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", true, headers, true); //, {
 			/*							var oModel = new sap.ui.model.odata.v2.ODataModel(getUrl("/sap/opu/odata/sap/Z_WEB_TICS_SRV/PROJECT_SET/"), {
 											user: "...",
 											password: "..."
 										});
 			*/
-//			this.getView().setModel(oModel);
-//			sap.m.MessageToast.show("Working with Real Data");
+			this.getView().setModel(oModel);
+			sap.m.MessageToast.show("Working with Real Data");
 
 			/*				var oData = this.getView().getModel("TICS");
 							oData.read("/Employees", {
@@ -51,11 +77,11 @@ sap.ui.define([
 							  }
 							});
 			*/
-						var oModel = new sap.ui.model.json.JSONModel();
+/*						var oModel = new sap.ui.model.json.JSONModel();
 						oModel.loadData("json/mockup_project.json");
 						this.getView().setModel(oModel);
 						sap.m.MessageToast.show("Working with Mockup");
-			
+*/			
 		}
 
 		/**

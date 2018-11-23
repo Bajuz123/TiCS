@@ -76,23 +76,18 @@
 					"targetAggregation": "masterPages",
 					"targetControl": "splitapp",
 					"subroutes": [ {
-						"pattern": "",
-						"name": "Project",
-						"view": "Project",
-						"targetAggregation": "detailPages"
-					}, {
 						"pattern": "Project",
 						"name": "Project",
 						"view": "Project",
 						"targetAggregation": "detailPages"
 					}, {
-						"pattern": "TaskList",
-						"name": "TaskList",
+						"pattern": "TaskData",
+						"name": "TaskData",
 						"view": "TaskData",
 						"targetAggregation": "detailPages"
 					}, {
-						"pattern": "UserManager",
-						"name": "User Manager",
+						"pattern": "Users",
+						"name": "Users",
 						"view": "UserManager",
 						"targetAggregation": "detailPages"
 					}]

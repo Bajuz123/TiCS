@@ -22,12 +22,12 @@ sap.ui.define([
 			}	
 
 			if (id.includes("__item2")) {
-				oRouter.navTo("TaskList");
+				oRouter.navTo("TaskData");
 				return;
 			}	
 
 			if (id.includes("__item3")) {
-				oRouter.navTo("UserManager");
+				oRouter.navTo("Users");
 				return;
 			}	
 
@@ -35,12 +35,12 @@ sap.ui.define([
 				oRouter.navTo("Logout");
 				return;
 			}	
-		}
+		},
 
-		//	onInit: function() {
-		//
-		//	},
-
+		onInit: function() {
+/*			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("Project");
+*/		}
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).
