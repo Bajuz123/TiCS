@@ -4,7 +4,12 @@
 			<content>
 			    <VBox width="100%" direction="Column" id="__vbox0">
 			        <items>
-			            <Input width="100%" id="__inputProjNum" description="{i18n>ProjectNumber}"/>
+			            <ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__item0" id="__boxProjNum" required="true">
+			                <items>
+			                    <core:ListItem text="List Item 1" key="item1" id="__item0"/>
+			                    <core:ListItem text="List Item 2" key="item2" id="__item1"/>
+			                    <core:ListItem text="List Item 3" key="item3" id="__item2"/></items>
+			            </ComboBox>
 			            <Input width="100%" id="__inputBK" description="{i18n>BillingKey}"/>
 			            <Input width="100%" id="__inputPK" description="{i18n>ProjectKey}"/>
 			            <Input width="100%" id="__inputTask" description="{i18n>Task}"/>
