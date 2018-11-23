@@ -7,33 +7,34 @@
 				            <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
 				            <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
 				        </items>
-				    </HBox><Table noDataText="Drop column list items here and columns in the area above" id="__table1" fixedLayout="false">
-				        <items>
-				            <ColumnListItem id="__item2">
-				                <cells>
-				                    <Text text="Row 1 Cell 1" id="__text6"/>
-				                    <Text text="Row 1 Cell 2" id="__text7"/>
-				                    <Text text="Row 1 Cell 3" id="__text8"/></cells>
-				            </ColumnListItem>
-				            <ColumnListItem id="__item3">
-				                <cells>
-				                    <Text text="Row 2 Cell 1" id="__text9"/>
-				                    <Text text="Row 2 Cell 2" id="__text10"/>
-				                    <Text text="Row 2 Cell 3" id="__text11"/></cells>
-				            </ColumnListItem></items>
-				        <columns>
-				            <Column id="__columnTask">
-				                <header>
-				                    <Label text="Task" id="__label3"/>
-				                </header>
-				            </Column>
-				            <Column id="__columnTaskDetail">
-				                <header>
-				                    <Label text="Task Detail" id="__label4"/>
-				                </header>
-				            </Column></columns></Table>
+				    </HBox>
+					<VBox width="100%" direction="Column" id="__vbox0">
+						<items>
+							<Table id="__tableTaskDataDetail" headerText="Task Detail" growing="true" items="{/TASK_SET}">
+								<items>
+									<ColumnListItem>
+										<Text text="{Task}"/>
+										<Text text="{Task Detail}"/>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="__columnTaskName">
+										<header>
+											<Label text="Task Name" id="__label0"/>
+										</header>
+									</Column>
+									<Column id="__columnTaskDescription">
+										<header>
+											<Label text="Description" id="__label1"/>
+										</header>
+									</Column>
+								</columns>
+							</Table>
+						</items>
+					</VBox>
 				</content>
 			</Page>
 		</pages>
 	</App>
+
 </mvc:View>
