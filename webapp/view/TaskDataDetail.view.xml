@@ -1,38 +1,24 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.TaskDataDetail">
 	<App>
-		<pages><Page title="{i18n>TaskDetail}">
-				<content>
-				    <HBox width="100%" id="__hbox0">
-				        <items>
-				            <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
-				            <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
-				        </items>
-				    </HBox>
-					<VBox width="100%" direction="Column" id="__vbox0">
-						<items>
-							<Table id="__tableTaskDataDetail" headerText="Task Detail" growing="true" items="{/TASK_SET}">
-								<items>
-									<ColumnListItem>
-										<Text text="{Task}"/>
-										<Text text="{TDetail}"/>
-									</ColumnListItem>
-								</items>
-								<columns>
-									<Column id="__columnTaskName">
-										<header>
-											<Label text="Task Name" id="__label0"/>
-										</header>
-									</Column>
-									<Column id="__columnTaskDescription">
-										<header>
-											<Label text="Description" id="__label1"/>
-										</header>
-									</Column>
-								</columns>
-							</Table>
-						</items>
-					</VBox>
-				</content>
+		<pages><Page title="{i18n>TaskDetailTitle}">
+			<content>
+			    <VBox width="100%" direction="Column" id="__vbox0">
+			        <items>
+			            <Input width="100%" id="__inputProjNum" description="{i18n>ProjectNumber}"/>
+			            <Input width="100%" id="__inputBK" description="{i18n>BillingKey}"/>
+			            <Input width="100%" id="__inputPK" description="{i18n>ProjectKey}"/>
+			            <Input width="100%" id="__inputTask" description="{i18n>Task}"/>
+			            <Input width="100%" id="__inputTaskDesc" description="{i18n>TaskDescription}"/>
+			            <Input width="100%" id="__inputComment" description="{i18n>Comment}"/>
+			        </items>
+			    </VBox>
+			    <HBox width="100%" id="__hbox0">
+			        <items>
+			            <Button text="OK" width="100px" id="__buttonOK" icon="sap-icon://add"/>
+			            <Button text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
+			        </items>
+			    </HBox>
+			</content>
 			</Page>
 		</pages>
 	</App>

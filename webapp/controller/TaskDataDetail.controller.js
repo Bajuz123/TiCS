@@ -10,14 +10,14 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.view.TaskDataDetail
 		 */
-			onInit: function() {
+		/*	onInit: function() {
 				var oModel = new sap.ui.model.json.JSONModel();
 						oModel.loadData("json/mockup_TaskDataDetail.json");
 						this.getView().setModel(oModel);
 						sap.m.MessageToast.show("Working with Mockup");
 		
 			}
-
+		*/
  
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
