@@ -85,7 +85,12 @@
 						"name": "Project",
 						"view": "Project",
 						"targetAggregation": "detailPages"
-					}, {
+					},{
+						"pattern": "ProjectDetail",
+						"name": "ProjectDetail",
+						"view": "ProjectDetail",
+						"targetAggregation": "detailPages"
+					},{
 						"pattern": "TaskList",
 						"name": "TaskList",
 						"view": "TaskData",
@@ -94,6 +99,11 @@
 						"pattern": "UserManager",
 						"name": "User Manager",
 						"view": "UserManager",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "TaskDetail",
+						"name": "TaskDataDetail",
+						"view": "TaskDataDetail",
 						"targetAggregation": "detailPages"
 					}]
 				} 

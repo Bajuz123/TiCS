@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.TaskDataDetail">
 	<App>
-		<pages><Page title="Task Detail">
+		<pages><Page title="{i18n>TaskDetail}">
 				<content>
 				    <HBox width="100%" id="__hbox0">
 				        <items>
@@ -14,7 +14,7 @@
 								<items>
 									<ColumnListItem>
 										<Text text="{Task}"/>
-										<Text text="{Task Detail}"/>
+										<Text text="{TDetail}"/>
 									</ColumnListItem>
 								</items>
 								<columns>

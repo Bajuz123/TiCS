@@ -1,17 +1,15 @@
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TiCS.controller.Project" displayBlock="true">
 	<App>
-		<pages>
-			<Page title="{i18n>ProjectTitle}">
-				<content>
-					<HBox width="100%" id="__hbox0">
+		<pages><Page title="{i18n>ProjectTitle}">
+				<content><VBox width="100%" direction="Column" id="__vbox0">
+						<items>
+							<HBox width="100%" id="__hbox0">
 					    <items>
 					        <Button width="40px" id="__buttonAdd" icon="sap-icon://add"/>
 					        <Button width="40px" id="__buttonDelete" icon="sap-icon://delete"/>
 					        <Button width="40px" id="__buttonEdit" icon="sap-icon://edit"/>
 					    </items>
 					</HBox>
-					<VBox width="100%" direction="Column" id="__vbox0">
-						<items>
 							<Table id="__tableProjects" growing="true" items="{/PROJECT_SET}">
 								<items>
 									<ColumnListItem>
@@ -35,6 +33,8 @@
 						</items>
 					</VBox>
 				</content>
+			<headerContent>
+			</headerContent>
 			</Page>
 		</pages>
 	</App>
