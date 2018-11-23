@@ -12,7 +12,7 @@ sap.ui.define([
 		 */
 			onInit: function() {
 				var oModel = new sap.ui.model.json.JSONModel();
-						oModel.loadData("json/mockup_TaskDataDetails.json");
+						oModel.loadData("json/mockup_TaskDataDetail.json");
 						this.getView().setModel(oModel);
 						sap.m.MessageToast.show("Working with Mockup");
 		
