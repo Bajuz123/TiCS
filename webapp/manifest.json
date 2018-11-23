@@ -80,7 +80,7 @@
 						"name": "Project",
 						"view": "Project",
 						"targetAggregation": "detailPages"
-					}, {
+					},{
 						"pattern": "ProjectDetail",
 						"name": "ProjectDetail",
 						"view": "ProjectDetail",
