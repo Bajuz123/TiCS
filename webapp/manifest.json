@@ -96,7 +96,7 @@
 						"view": "UserManager",
 						"targetAggregation": "detailPages"
 					}, {
-						"pattern": "TaskDetail",
+						"pattern": "TaskDataDetail",
 						"name": "TaskDataDetail",
 						"view": "TaskDataDetail",
 						"targetAggregation": "detailPages"

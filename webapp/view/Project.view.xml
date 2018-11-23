@@ -5,7 +5,7 @@
 						<items>
 							<HBox width="100%" id="__hbox0">
 					    <items>
-					        <Button width="40px" id="__buttonAdd" icon="sap-icon://add"/>
+					        <Button width="40px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
 					        <Button width="40px" id="__buttonDelete" icon="sap-icon://delete"/>
 					        <Button width="40px" id="__buttonEdit" icon="sap-icon://edit"/>
 					    </items>

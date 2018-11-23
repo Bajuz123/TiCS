@@ -10,30 +10,16 @@ sap.ui.define([
 		 * @memberOf TiCS.view.ProjectDetail
 		 */
 
-		getUrl: function(sUrl) {
-			var logoffService = "/sap/public/bc/icf/logoff";
-			if (sUrl == "") {
-				return sUrl;
-			}
-			if ((/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/.test(window.location.hostname) == true) && (sUrl == logoffService)) {
-				return "http://" + window.location.hostname + "/logoff";
-			}
-			if (/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/.test(window.location.hostname) == true) {
-				return "http://" + window.location.hostname + "/hd1";
-			}
-			switch (window.location.hostname) {
-				case "localhost":
-					return "proxy" + sUrl;
-				default:
-					return sUrl;
-			}
+		onAddClick: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("TaskDataDetail");
+			
 		},
-
 		onInit: function() {
 //			var oModel = new sap.ui.model.odata.v2.ODataModel("https://services.odata.org/V2/Northwind/Northwind.svc/");
 //			var oModel = new sap.ui.model.odata.v2.ODataModel(this.getUrl("/sap/opu/odata/sap/Z_WEB_TICS_SRV/PROJECT_SET/")); //, {
 
-		    var xmlHttp = new XMLHttpRequest();
+/*		    var xmlHttp = new XMLHttpRequest();
     		xmlHttp.open("GET", "http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", false, "stoma", "palipali89"); // false for synchronous request
     		xmlHttp.send( null );
     		if ( xmlHttp.status == 200 ){ 
@@ -55,7 +41,7 @@ sap.ui.define([
 
 	var oModel = new sap.ui.model.odata.ODataModel(
 			"http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", true );
-
+*/
 
 //	var oModel = new sap.ui.model.odata.ODataModel(
 //			var oModel = new sap.ui.model.odata.v2.ODataModel("http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/", true, headers, true); //, {
@@ -64,8 +50,8 @@ sap.ui.define([
 											password: "..."
 										});
 			*/
-			this.getView().setModel(oModel);
-			sap.m.MessageToast.show("Working with Real Data");
+//			this.getView().setModel(oModel);
+//			sap.m.MessageToast.show("Working with Real Data");
 
 			/*				var oData = this.getView().getModel("TICS");
 							oData.read("/Employees", {
@@ -77,11 +63,11 @@ sap.ui.define([
 							  }
 							});
 			*/
-/*						var oModel = new sap.ui.model.json.JSONModel();
+						var oModel = new sap.ui.model.json.JSONModel();
 						oModel.loadData("json/mockup_project.json");
 						this.getView().setModel(oModel);
 						sap.m.MessageToast.show("Working with Mockup");
-*/			
+			
 		}
 
 		/**
