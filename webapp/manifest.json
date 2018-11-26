@@ -64,7 +64,8 @@
 				"viewType": "XML",
 				"viewPath": "TiCS.view",
 				"targetAggregation": "detailPages",
-				"clearTarget": false
+				"clearTarget": false,
+				"routerClass": "sap.m.routing.Router"
 			},
 			"routes": [{
 				"pattern": "Logout",

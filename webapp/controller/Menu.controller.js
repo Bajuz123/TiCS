@@ -10,9 +10,8 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.Menu
 		 */
-		onMenuClick: function() {
-			var menu = this.getView().byId("__menuList");
-			var rowItem = menu.getSelectedItem();
+		onMenuClick: function(oControlEvent) {
+			var rowItem = oControlEvent.getParameters().item;
 			var id = rowItem.getId();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			
