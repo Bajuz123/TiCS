@@ -1,49 +1,17 @@
 [{
-	"id": "644727b8-cb49-436f-96a2-e220353a4c31",
+	"aufgabe": "aufgabe 1",
+	"projektnummer": "projektnummer 1",
+	"id": "1be08375-1c2d-411b-9a8f-600bda1fecfe",
 	"__metadata": {
-		"uri": "TASK_SET(guid'644727b8-cb49-436f-96a2-e220353a4c31')",
+		"uri": "TASK_SET(aufgabe='aufgabe%201',projektnummer='projektnummer%201',id=guid'1be08375-1c2d-411b-9a8f-600bda1fecfe')",
 		"type": "Z_WEB_TICS_SRV.TASK"
-	},
-	"aufgabe": "E01",
-	"projektnummer": "123"
+	}
 }, {
-	"id": "8027f7fd-c9b2-4d84-9a80-9ec3c63984c5",
+	"aufgabe": "aufgabe 2",
+	"projektnummer": "projektnummer 2",
+	"id": "1be08375-1c2d-411b-9a8f-600bda1fecfc",
 	"__metadata": {
-		"uri": "TASK_SET(guid'8027f7fd-c9b2-4d84-9a80-9ec3c63984c5')",
+		"uri": "TASK_SET(aufgabe='aufgabe%201',projektnummer='projektnummer%201',id=guid'1be08375-1c2d-411b-9a8f-600bda1fecfe')",
 		"type": "Z_WEB_TICS_SRV.TASK"
-	},
-	"aufgabe": "E02",
-	"projektnummer": "456"
-}, {
-	"id": "19609276-f757-4699-aa2c-45ad2435cff5",
-	"__metadata": {
-		"uri": "TASK_SET(guid'19609276-f757-4699-aa2c-45ad2435cff5')",
-		"type": "Z_WEB_TICS_SRV.TASK"
-	},
-	"aufgabe": "E01",
-	"projektnummer": "789"
-}, {
-	"id": "e682b3d0-7d3a-4b45-b648-be0c252fbc58",
-	"__metadata": {
-		"uri": "TASK_SET(guid'e682b3d0-7d3a-4b45-b648-be0c252fbc58')",
-		"type": "Z_WEB_TICS_SRV.TASK"
-	},
-	"aufgabe": "E02",
-	"projektnummer": "101"
-}, {
-	"id": "fb078b2c-9bab-470b-abd3-0ae741b8eac7",
-	"__metadata": {
-		"uri": "TASK_SET(guid'fb078b2c-9bab-470b-abd3-0ae741b8eac7')",
-		"type": "Z_WEB_TICS_SRV.TASK"
-	},
-	"aufgabe": "E01",
-	"projektnummer": "102"
-}, {
-	"id": "f5689c17-db21-4ec1-b3ff-1660cd7f5904",
-	"__metadata": {
-		"uri": "TASK_SET(guid'f5689c17-db21-4ec1-b3ff-1660cd7f5904')",
-		"type": "Z_WEB_TICS_SRV.TASK"
-	},
-	"aufgabe": "E03",
-	"projektnummer": "102"
+	}
 }]

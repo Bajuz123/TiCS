@@ -1,41 +1,11 @@
 [{
-	"id": "65279a30-5bb3-43ae-a4b9-1f0ffcfe45b2",
+	"projektnummer": "projektnummer 1",
+	"beschreibung": "beschreibung 1",
 	"__metadata": {
-		"uri": "PROJECT_SET(guid'65279a30-5bb3-43ae-a4b9-1f0ffcfe45b2')",
+		"uri": "PROJECT_SET('projektnummer%201')",
 		"type": "Z_WEB_TICS_SRV.PROJECT"
-	},
-	"beschreibung": "test_mockup1",
-	"projektnummer": "123"
+	}
 }, {
-	"id": "ab1aa28a-3e67-4989-8ea1-35005121ddd4",
-	"__metadata": {
-		"uri": "PROJECT_SET(guid'ab1aa28a-3e67-4989-8ea1-35005121ddd4')",
-		"type": "Z_WEB_TICS_SRV.PROJECT"
-	},
-	"beschreibung": "test_mockup2",
-	"projektnummer": "456"
-}, {
-	"id": "330ecf32-357d-4461-8b68-155a44655791",
-	"__metadata": {
-		"uri": "PROJECT_SET(guid'330ecf32-357d-4461-8b68-155a44655791')",
-		"type": "Z_WEB_TICS_SRV.PROJECT"
-	},
-	"beschreibung": "test_mockup3",
-	"projektnummer": "789"
-}, {
-	"id": "c8d163ff-bd3f-4f05-91ae-bbcec0e5488c",
-	"__metadata": {
-		"uri": "PROJECT_SET(guid'c8d163ff-bd3f-4f05-91ae-bbcec0e5488c')",
-		"type": "Z_WEB_TICS_SRV.PROJECT"
-	},
-	"beschreibung": "test_mockup4",
-	"projektnummer": "101"
-}, {
-	"id": "e5a4c6fb-1ca3-459c-bd2f-3e68445125d4",
-	"__metadata": {
-		"uri": "PROJECT_SET(guid'e5a4c6fb-1ca3-459c-bd2f-3e68445125d4')",
-		"type": "Z_WEB_TICS_SRV.PROJECT"
-	},
-	"beschreibung": "test_mockup5",
-	"projektnummer": "102"
+	"projektnummer": "project mockup 2",
+	"beschreibung": "aaa"
 }]
