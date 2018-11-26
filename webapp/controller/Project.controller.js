@@ -57,11 +57,11 @@ sap.ui.define([
 							  }
 							});
 			*/
-									var oModel = new sap.ui.model.json.JSONModel();
+/*									var oModel = new sap.ui.model.json.JSONModel();
 									oModel.loadData("json/mockup_project.json");
 									this.getView().setModel(oModel);
 									sap.m.MessageToast.show("Working with Mockup");
-			
+*/			
 /*			var headers = {
 				"X-CSRF-Token": "fetch",
 				"set-cookie": "MYSAPSSO2"

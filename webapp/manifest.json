@@ -126,6 +126,9 @@
 				"settings": {
 					"bundleName": "TiCS.i18n.i18n"
 				}
+			},
+			"tics": {
+				"dataSource": "TICS"
 			}
 		},
 

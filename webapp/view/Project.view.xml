@@ -10,11 +10,11 @@
 					        <Button width="40px" id="__buttonEdit" icon="sap-icon://edit"/>
 					    </items>
 					</HBox>
-							<Table id="__tableProjects" growing="true" items="{/PROJECT_SET}">
+							<Table id="__tableProjects" growing="true" items="{tics>/PROJECT_SET}">
 								<items>
 									<ColumnListItem>
-										<Text text="{projektnummer}"/>
-										<Text text="{beschreibung}"/>
+										<Text text="{tics>projektnummer}"/>
+										<Text text="{tics>beschreibung}"/>
 									</ColumnListItem>
 								</items>
 								<columns>
