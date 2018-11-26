@@ -9,7 +9,7 @@
 			                <VBox width="40%" direction="Column" id="__vboxDateTime">
 			                <items>
 			                    <DatePicker width="50%" id="__pickerDate"/><TimePicker placeholder="{i18n>From}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerFrom"/>
-			                    <TimePicker placeholder="{i18n>From}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__picker1"/>
+			                    <TimePicker placeholder="{i18n>To}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__picker1"/>
 			                </items>
 			                </VBox>
 			                <Input width="100%" id="__inputBreak" description="{i18n>Break}" type="Number" placeholder="0,5"/>
