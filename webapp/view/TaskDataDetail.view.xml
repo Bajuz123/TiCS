@@ -2,25 +2,72 @@
 	<App>
 		<pages><Page title="{i18n>TaskDetailTitle}">
 			<content>
-			    <VBox width="100%" direction="Column" id="__vbox0">
+			    <VBox width="100%" direction="Column" id="__vbox1">
 			        <items>
-			            <ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__item0" id="__boxProjNum" required="true">
+			            <HBox width="100%" id="__hboxDATATIMEPAUSE">
+			            <items>
+			                <VBox width="40%" direction="Column" id="__vboxDateTime">
 			                <items>
-			                    <core:ListItem text="List Item 1" key="item1" id="__item0"/>
-			                    <core:ListItem text="List Item 2" key="item2" id="__item1"/>
-			                    <core:ListItem text="List Item 3" key="item3" id="__item2"/></items>
-			            </ComboBox>
-			            <Input width="100%" id="__inputBK" description="{i18n>BillingKey}"/>
-			            <Input width="100%" id="__inputPK" description="{i18n>ProjectKey}"/>
-			            <Input width="100%" id="__inputTask" description="{i18n>Task}"/>
-			            <Input width="100%" id="__inputTaskDesc" description="{i18n>TaskDescription}"/>
-			            <Input width="100%" id="__inputComment" description="{i18n>Comment}"/>
+			                    <DatePicker width="50%" id="__pickerDate"/><TimePicker placeholder="{i18n>From}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerFrom"/>
+			                    <TimePicker placeholder="{i18n>To}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__picker1"/>
+			                </items>
+			                </VBox>
+			                <Input width="100%" id="__inputBreak" description="{i18n>Break}" type="Number" placeholder="0,5"/>
+			            </items>
+			            </HBox>
+			            <VBox width="100%" direction="Column" id="__vbox0">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item12" value="List Item 1" selectedKey="item1" selectedItemId="__item12" id="__boxProjectNumber" placeholder="{i18n>ProjectNumber}">
+			                        <items>
+			                            <core:ListItem text="Project Number1" key="item1" id="__item12"/>
+			                            <core:ListItem text="Project Number2" key="item2" id="__item13"/>
+			                           </items>
+			                    </ComboBox>
+			                </items>
+			            </VBox>
+			            <HBox width="100%" id="__hbox5">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item9" value="List Item 1" selectedKey="item1" selectedItemId="__item9" id="__boxBillingKey" placeholder="{i18n>BillingKey}">
+			                        <items>
+			                            <core:ListItem text="Billing Key1" key="item1" id="__item9"/>
+			                            <core:ListItem text="Billing Key2" key="item2" id="__item10"/>
+			                            </items>
+			                    </ComboBox>
+			                </items>
+			            </HBox>
+			            <HBox width="100%" id="__hbox3">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="item1" selectedItemId="__item6" id="__boxProjectKey" placeholder="{i18n>ProjectKey}">
+			                        <items>
+			                            <core:ListItem text="ProjectKey1" key="item1" id="__item6"/>
+			                            <core:ListItem text="ProjectKey2" key="item2" id="__item7"/>
+			                            </items>
+			                    </ComboBox>
+			                </items>
+			            </HBox>
+			            <HBox width="100%" id="__hbox2">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="List Item 1" selectedKey="item1" selectedItemId="__item3" id="__boxTask" placeholder="{i18n>Task}">
+			                        <items>
+			                            <core:ListItem text="Task1" key="item1" id="__item3"/>
+			                            <core:ListItem text="Task2" key="item2" id="__item4"/>
+			                            </items>
+			                    </ComboBox>
+			                </items>
+			            </HBox>
+			            <VBox width="100%" direction="Column" id="__vbox3">
+			                <items>
+			                    <Input width="100%" id="__inputTaskDescription" value="TaskDescription" description="{i18n>TaskDescription}" editable="false"/>
+			                    <Input width="100%" id="__inputCancel" description="{i18n>Comment}"/>
+			                </items>
+			            </VBox>
+			            
 			        </items>
 			    </VBox>
 			    <HBox width="100%" id="__hbox0">
 			        <items>
 			            <Button text="OK" width="100px" id="__buttonOK" icon="sap-icon://add"/>
-			            <Button text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
+			            <Button text="{i18n>Cancel}" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
 			        </items>
 			    </HBox>
 			</content>
