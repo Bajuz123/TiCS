@@ -44,14 +44,9 @@
 			                    </ComboBox>
 			                </items>
 			            </HBox>
-			            <ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__item0" id="__box0" placeholder="{i18n>TaskDescription}">
-			                        <items>
-			                            <core:ListItem text="Task Description 1" key="item1" id="__item0"/>
-			                            <core:ListItem text="Task Description 2" key="item2" id="__item1"/>
-			                           </items>
-			                    </ComboBox>
 			            <VBox width="100%" direction="Column" id="__vbox3">
 			                <items>
+			                    <Input width="100%" id="__input1" value="TaskDescription" description="{i18n>TaskDescription}" editable="false"/>
 			                    <Input width="100%" id="__input0" description="{i18n>Comment}"/>
 			                </items>
 			            </VBox>
