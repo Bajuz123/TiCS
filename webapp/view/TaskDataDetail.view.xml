@@ -8,12 +8,11 @@
 			            <items>
 			                <VBox width="40%" direction="Column" id="__vboxDateTime">
 			                <items>
-			                    <DatePicker width="50%" id="__pickerDate"/>
-			                    <Input width="100%" id="__inputTimeFrom" description="{i18n>From}" fieldWidth="25%" type="Number" textAlign="Center"/>
-			                    <Input width="100%" id="__inputTimeTo" description="{i18n>To}" fieldWidth="25%" type="Number"/>
+			                    <DatePicker width="50%" id="__pickerDate"/><TimePicker placeholder="{i18n>From}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerFrom"/>
+			                    <TimePicker placeholder="{i18n>From}" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__picker1"/>
 			                </items>
 			                </VBox>
-			                <Input width="100%" id="__inputBreak" description="{i18n>Break}" value="0,5" type="Number"/>
+			                <Input width="100%" id="__inputBreak" description="{i18n>Break}" type="Number" placeholder="0,5"/>
 			            </items>
 			            </HBox>
 			            <VBox width="100%" direction="Column" id="__vbox0">
