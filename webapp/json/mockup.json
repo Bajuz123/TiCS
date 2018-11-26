@@ -32,5 +32,11 @@
   	  "Task" : "63",
   	  "Comment":"Deutschkurs"
     }
-  ]  
+  ],
+   "USER_SET": [
+  	{
+  	  "name":"jbreza",
+  	  "permission":"ADMIN"
+    }
+  ]
 }
