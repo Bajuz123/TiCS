@@ -12,8 +12,18 @@
 		"sourceTemplate": {
 			"id": "servicecatalog.connectivityComponent",
 			"version": "0.0.0"
-		}
-	},
+		},
+		"dataSources": {
+            "TICS": {
+                "uri": "http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        }
+    },
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {

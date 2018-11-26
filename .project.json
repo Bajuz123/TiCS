@@ -12,7 +12,7 @@
     }
   ],
   "mockpreview": {
-    "mockUri": "/json/mockup_project.json",
+    "mockUri": "http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/",
     "metadataFilePath": "localService/metadata.xml",
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,
