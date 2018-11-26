@@ -20,19 +20,13 @@
 				            <Button text="{i18n>Edit}" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
 				        </items>
 				    </HBox>
-				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0">
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{/TASK_SET}">
 				        <items>
 				            <ColumnListItem id="__item0">
 				                <cells>
-				                    <Text text="Row 1 Cell 1" id="__text5"/>
-				                    <Text text="Row 1 Cell 2" id="__text6"/>
-				                    <Text text="Row 1 Cell 3" id="__text7"/></cells>
-				            </ColumnListItem>
-				            <ColumnListItem id="__item1">
-				                <cells>
-				                    <Text text="Row 2 Cell 1" id="__text8"/>
-				                    <Text text="Row 2 Cell 2" id="__text9"/>
-				                    <Text text="Row 2 Cell 3" id="__text10"/></cells>
+				                    <Text text="Row 1 Cell 1" id="__text0"/>
+				                    <Text text="Row 1 Cell 2" id="__text1"/>
+				                    <Text text="Row 1 Cell 3" id="__text2"/></cells>
 				            </ColumnListItem></items>
 				        <columns>
 				            <Column id="__column0">
