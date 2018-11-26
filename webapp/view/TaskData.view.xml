@@ -4,8 +4,10 @@
 				<content>
 				    <sap.ui.layout:VerticalLayout xmlns:sap.ui.layout="sap.ui.layout" width="100%" id="__layout1">
 				    <sap.ui.layout:content>
-				        <Label text="{i18n>PersonalNumber}" width="100%" id="__label3"/>
-				        <Input width="100%" id="__inpuParam1"/>
+				        <Label text="{i18n>DateFrom}" width="100%" id="__label3"/>
+				        <DatePicker width="100%" id="__pickerFrom"/>
+				        <Label text="{i18n>DateTo}" width="100%" id="__label5"/>
+				        <DatePicker width="100%" id="__pickerTo"/>
 				        <Label text="{i18n>ProjectKey}" width="100%" id="__label4"/>
 				        <Input width="100%" id="__inputParam2"/>
 				        <Button text="{i18n>Filter}" width="100px" id="__buttonFilter" icon="sap-icon://filter"/>
