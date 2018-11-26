@@ -7,9 +7,10 @@
             xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_WEB_TICS_SRV" xml:lang="en" sap:schema-version="1">
             <EntityType Name="PROJECT" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="projektnummer"/>
                 </Key>
-                <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="GUID"/>
+                <Property Name="projektnummer" Type="Edm.String" Nullable="false" sap:label="PROJEKTNUMMER"/>
+                <Property Name="beschreibung" Type="Edm.String" Nullable="false" sap:label="BESCHREIBUNG"/>
             </EntityType>
             <EntityType Name="TICS" sap:content-version="1">
                 <Key>
@@ -31,9 +32,13 @@
             </EntityType>
             <EntityType Name="TASK" sap:content-version="1">
                 <Key>
+                    <PropertyRef Name="aufgabe"/>
+                    <PropertyRef Name="projektnummer"/>
                     <PropertyRef Name="id"/>
                 </Key>
-                <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="GUID"/>
+                    <Property Name="aufgabe" Type="Edm.String" Nullable="false" sap:label="AUFGABE"/>
+                    <Property Name="projektnummer" Type="Edm.String" Nullable="false" sap:label="PROJEKTNUMMER"/>
+                    <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="ID"/>
             </EntityType>
             <EntityContainer Name="Z_WEB_TICS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="PROJECT_SET" EntityType="Z_WEB_TICS_SRV.PROJECT" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>

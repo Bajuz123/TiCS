@@ -14,16 +14,17 @@
 			"version": "0.0.0"
 		},
 		"dataSources": {
-            "TICS": {
-                "uri": "http://192.168.1.182/tics",
-                "type": "OData",
-                "settings": {
-                    "odataVersion": "2.0",
-                    "localUri": "localService/metadata.xml"
-                }
-            }
-        }
-    },
+			"TICS": {
+				"uri": "http://192.168.1.182/tics",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml",
+					"annotations": []
+				}
+			}
+		}
+	},
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -41,7 +42,6 @@
 		},
 		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "TiCS.view.Main",
@@ -59,7 +59,6 @@
 				"sap.uxap": {}
 			}
 		},
-
 		"routing": {
 			"config": {
 				"viewType": "XML",
@@ -67,59 +66,54 @@
 				"targetAggregation": "detailPages",
 				"clearTarget": false
 			},
-			"routes": [
-				{
-					"pattern": "Logout",
-					"name": "Logout",
-					"view": "Logout",
-					"targetAggregation": "pages"
+			"routes": [{
+				"pattern": "Logout",
+				"name": "Logout",
+				"view": "Logout",
+				"targetAggregation": "pages"
+			}, {
+				"pattern": "Login",
+				"name": "Login",
+				"view": "Login",
+				"targetAggregation": "pages"
+			}, {
+				"pattern": "",
+				"name": "Menu",
+				"view": "Menu",
+				"targetAggregation": "masterPages",
+				"targetControl": "splitapp",
+				"subroutes": [{
+					"pattern": "Project",
+					"name": "Project",
+					"view": "Project",
+					"targetAggregation": "detailPages"
 				}, {
-					"pattern": "Login",
-					"name": "Login",
-					"view": "Login",
-					"targetAggregation": "pages"
-				},				
-				{
-					"pattern": "",
-					"name": "Menu",
-					"view": "Menu",
-					"targetAggregation": "masterPages",
-					"targetControl": "splitapp",
-					"subroutes": [ {
-						"pattern": "Project",
-						"name": "Project",
-						"view": "Project",
-						"targetAggregation": "detailPages"
-					},{
-						"pattern": "ProjectDetail",
-						"name": "ProjectDetail",
-						"view": "ProjectDetail",
-						"targetAggregation": "detailPages"
-					},{
-						"pattern": "TaskData",
-						"name": "TaskData",
-						"view": "TaskData",
-						"targetAggregation": "detailPages"
-					}, {
-						"pattern": "Users",
-						"name": "Users",
-						"view": "UserManager",
-						"targetAggregation": "detailPages"
-					}, {
-						"pattern": "TaskDataDetail",
-						"name": "TaskDataDetail",
-						"view": "TaskDataDetail",
-						"targetAggregation": "detailPages"
-					}]
-				} 
-			]
+					"pattern": "ProjectDetail",
+					"name": "ProjectDetail",
+					"view": "ProjectDetail",
+					"targetAggregation": "detailPages"
+				}, {
+					"pattern": "TaskData",
+					"name": "TaskData",
+					"view": "TaskData",
+					"targetAggregation": "detailPages"
+				}, {
+					"pattern": "Users",
+					"name": "Users",
+					"view": "UserManager",
+					"targetAggregation": "detailPages"
+				}, {
+					"pattern": "TaskDataDetail",
+					"name": "TaskDataDetail",
+					"view": "TaskDataDetail",
+					"targetAggregation": "detailPages"
+				}]
+			}]
 		},
-
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
 		},
-
 		"models": {
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
@@ -128,10 +122,10 @@
 				}
 			},
 			"tics": {
-				"dataSource": "TICS"
+				"dataSource": "TICS",
+				"preload": false
 			}
 		},
-
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"

@@ -20,20 +20,20 @@
 				            <Button text="{i18n>Edit}" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
 				        </items>
 				    </HBox>
-				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{/TASK_SET}">
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0" items="{tics>/TASK_SET}">
 				        <items>
 				            <ColumnListItem id="__item0">
 				                <cells>
-				                    <Text text="{Day}" id="__text0"/>
-				                    <Text text="{Date}" id="__text1"/>
-				                    <Text text="{From}" id="__text2"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{To}" id="__text2_copy"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{Break}" id="__text2_copy2"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{ProjectTime}" id="__text2_copy3"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{Project}" id="__text2_copy4"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{BK}" id="__text2_copy5"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{PK}" id="__text2_copy6"/>
-				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{Comment}" id="__text2_copy7"/></cells>
+				                    <Text text="{tics>Day}" id="__text0"/>
+				                    <Text text="{tics>Date}" id="__text1"/>
+				                    <Text text="{tics>From}" id="__text2"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>To}" id="__text2_copy"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>Break}" id="__text2_copy2"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>ProjectTime}" id="__text2_copy3"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>Project}" id="__text2_copy4"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>BK}" id="__text2_copy5"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>PK}" id="__text2_copy6"/>
+				                    <Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="{tics>Comment}" id="__text2_copy7"/></cells>
 				            </ColumnListItem></items>
 				        <columns>
 				            <Column id="__column0">
