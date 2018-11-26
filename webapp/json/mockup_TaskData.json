@@ -1,8 +1,30 @@
 { 
   "TASK_SET": [
   	{
-  	  "Task":"04",
-  	  "TDetail":"Deutschkurs"
+  	  "Day":"TU",
+  	  "Date":"01.01.2019",
+  	  "From":"07:30",
+  	  "To":"16:00",
+  	  "Break":"0,50",
+  	  "Project" : "9165622",
+  	  "ProjectTime" : "8,00",
+  	  "BK": "03",
+  	  "PK" : "00",
+  	  "Task" : "63",
+  	  "Comment":"Deutschkurs"
+    },
+    {
+  	  "Day":"WE",
+  	  "Date":"02.01.2019",
+  	  "From":"07:30",
+  	  "To":"16:00",
+  	  "Break":"0,50",
+  	  "Project" : "9165622",
+  	  "ProjectTime" : "8,00",
+  	  "BK": "03",
+  	  "PK" : "00",
+  	  "Task" : "63",
+  	  "Comment":"Deutschkurs"
     }
   ]
 }
