@@ -2,19 +2,60 @@
 	<App>
 		<pages><Page title="{i18n>TaskDetailTitle}">
 			<content>
-			    <VBox width="100%" direction="Column" id="__vbox0">
+			    <VBox width="100%" direction="Column" id="__vbox1">
 			        <items>
-			            <ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__item0" id="__boxProjNum" required="true">
+			            <VBox width="100%" direction="Column" id="__vbox0">
 			                <items>
-			                    <core:ListItem text="List Item 1" key="item1" id="__item0"/>
-			                    <core:ListItem text="List Item 2" key="item2" id="__item1"/>
-			                    <core:ListItem text="List Item 3" key="item3" id="__item2"/></items>
-			            </ComboBox>
-			            <Input width="100%" id="__inputBK" description="{i18n>BillingKey}"/>
-			            <Input width="100%" id="__inputPK" description="{i18n>ProjectKey}"/>
-			            <Input width="100%" id="__inputTask" description="{i18n>Task}"/>
-			            <Input width="100%" id="__inputTaskDesc" description="{i18n>TaskDescription}"/>
-			            <Input width="100%" id="__inputComment" description="{i18n>Comment}"/>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item12" value="List Item 1" selectedKey="item1" selectedItemId="__item12" id="__box4">
+			                        <items>
+			                            <core:ListItem text="Project Number1" key="item1" id="__item12"/>
+			                            <core:ListItem text="Project Number2" key="item2" id="__item13"/>
+			                           </items>
+			                    </ComboBox>
+			                </items>
+			            </VBox>
+			            <HBox width="100%" id="__hbox5">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item9" value="List Item 1" selectedKey="item1" selectedItemId="__item9" id="__box3">
+			                        <items>
+			                            <core:ListItem text="Billing Key1" key="item1" id="__item9"/>
+			                            <core:ListItem text="Billing Key2" key="item2" id="__item10"/>
+			                            </items>
+			                    </ComboBox>
+			                </items>
+			            </HBox>
+			            <HBox width="100%" id="__hbox3">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="item1" selectedItemId="__item6" id="__box2">
+			                        <items>
+			                            <core:ListItem text="ProjectKey1" key="item1" id="__item6"/>
+			                            <core:ListItem text="ProjectKey2" key="item2" id="__item7"/>
+			                            </items>
+			                    </ComboBox>
+			                </items>
+			            </HBox>
+			            <HBox width="100%" id="__hbox2">
+			                <items>
+			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="List Item 1" selectedKey="item1" selectedItemId="__item3" id="__box1">
+			                        <items>
+			                            <core:ListItem text="Task1" key="item1" id="__item3"/>
+			                            <core:ListItem text="Task2" key="item2" id="__item4"/>
+			                            </items>
+			                    </ComboBox>
+			                </items>
+			            </HBox>
+			            <ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__item0" id="__box0">
+			                        <items>
+			                            <core:ListItem text="Task Description 1" key="item1" id="__item0"/>
+			                            <core:ListItem text="Task Description 2" key="item2" id="__item1"/>
+			                           </items>
+			                    </ComboBox>
+			            <VBox width="100%" direction="Column" id="__vbox3">
+			                <items>
+			                    <Input width="100%" id="__input0" description="Comment"/>
+			                </items>
+			            </VBox>
+			            
 			        </items>
 			    </VBox>
 			    <HBox width="100%" id="__hbox0">
