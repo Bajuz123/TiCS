@@ -4,6 +4,18 @@
 			<content>
 			    <VBox width="100%" direction="Column" id="__vbox1">
 			        <items>
+			            <HBox width="100%" id="__hboxDATATIMEPAUSE">
+			            <items>
+			                <VBox width="40%" direction="Column" id="__vboxDateTime">
+			                <items>
+			                    <DatePicker width="50%" id="__pickerDate"/>
+			                    <Input width="100%" id="__inputTimeFrom" description="{i18n>From}" fieldWidth="25%" type="Number" textAlign="Center"/>
+			                    <Input width="100%" id="__inputTimeTo" description="{i18n>To}" fieldWidth="25%" type="Number"/>
+			                </items>
+			                </VBox>
+			                <Input width="100%" id="__inputBreak" description="{i18n>Break}" value="0,5" type="Number"/>
+			            </items>
+			            </HBox>
 			            <VBox width="100%" direction="Column" id="__vbox0">
 			                <items>
 			                    <ComboBox selectedItem="Element sap.ui.core.ListItem#__item12" value="List Item 1" selectedKey="item1" selectedItemId="__item12" id="__boxProjectNumber" placeholder="{i18n>ProjectNumber}">
