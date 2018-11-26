@@ -5,9 +5,9 @@
 				<content>
 				    <HBox width="100%" id="__hbox0">
 				        <items>
-				            <Button text="Button" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
-				            <Button text="Button" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
-				            <Button text="Button" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
+				            <Button width="100px" id="__buttonAdd" icon="sap-icon://add" text="Add"/>
+				            <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
+				            <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
 				        </items>
 				    </HBox>
 				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0">
