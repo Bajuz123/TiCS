@@ -17,22 +17,18 @@ sap.ui.define([
 			
 			if (id.includes("__item1")) {
 				oRouter.navTo("Project");
-				return;
 			}	
 
 			if (id.includes("__item2")) {
 				oRouter.navTo("TaskData");
-				return;
 			}	
 
 			if (id.includes("__item3")) {
 				oRouter.navTo("Users");
-				return;
 			}	
 
 			if (id.includes("__item4")) {
 				oRouter.navTo("Logout");
-				return;
 			}	
 		},
 
