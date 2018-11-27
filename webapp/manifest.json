@@ -104,9 +104,9 @@
 					"view": "UserManager",
 					"targetAggregation": "detailPages"
 				}, {
-					"pattern": "TaskDataDetail",
-					"name": "TaskDataDetail",
-					"view": "TaskDataDetail",
+					"pattern": "TicsDataDetail",
+					"name": "TicsDataDetail",
+					"view": "TicsDataDetail",
 					"targetAggregation": "detailPages"
 				}]
 			}]

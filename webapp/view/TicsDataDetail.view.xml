@@ -1,6 +1,6 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.TaskDataDetail">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.TicsDataDetail">
 	<App>
-		<pages><Page title="{i18n>TaskDetailTitle}">
+		<pages><Page title="{i18n>TicsDetailTitle}">
 			<content>
 			    <VBox width="100%" direction="Column" id="__vbox1">
 			        <items>
