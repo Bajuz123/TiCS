@@ -10,9 +10,14 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.UserManager
 		 */
-		//	onInit: function() {
-		//
-		//	},
+			onAddClick: function() {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("UserManagerDetail");
+
+		},	
+		onInit: function() {
+		
+			}
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered

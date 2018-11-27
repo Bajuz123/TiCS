@@ -3,13 +3,6 @@
 		<pages>
 			<Page title="{i18n>UserManagerTitle}"> 
 				<content>
-				    <HBox width="100%" id="__hbox0">
-				        <items>
-				            <Button width="100px" id="__buttonAdd" icon="sap-icon://add" text="Add"/>
-				            <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
-				            <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
-				        </items>
-				    </HBox>
 				   <Table id="__tableUser" growing="true" items="{tics>/USER_SET}">
 								<items>
 									<ColumnListItem>
@@ -31,6 +24,19 @@
 								</columns>
 							</Table>
 				</content>
+			<footer>
+			    <Bar class="sapContrast sapContrastPlus" id="__bar0">
+			        <contentLeft>
+			        </contentLeft>
+			    <contentMiddle>
+			    </contentMiddle>
+			    <contentRight>
+			        <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" />
+			        <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
+			        <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
+			    </contentRight>
+			    </Bar>
+			</footer>
 			</Page>
 		</pages>
 	</App>
