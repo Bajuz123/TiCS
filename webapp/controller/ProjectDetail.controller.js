@@ -10,10 +10,10 @@ sap.ui.define([
 			oEntry.projektnummer = this.getView().byId("__inputProject").getValue();
 			oEntry.beschreibung  = this.getView().byId("__inpuProjectDesc").getValue();
 
-			var oModelRegTest = sap.ui.getCore().getModel("tics");
+			var oModelRegTest = this.getView().getModel("tics");
 			oModelRegTest.create("/PROJECT_SET", oEntry);
 
-			var resourceModel = sap.ui.getCore().getModel("i18n");
+			var resourceModel = this.getView().getModel("i18n");
 			var addOKTxt = resourceModel.getProperty("ProjectAddOK");
 			sap.m.MessageToast.show(addOKTxt);
 
