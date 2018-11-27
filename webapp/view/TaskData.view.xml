@@ -23,80 +23,88 @@
 				    <Table id="__tableTasks" items="{tics>/TASK_SET}">
 				        <items>
 				            <ColumnListItem>
-				                    <Text text="{tics>Day}"/>
-				                    <Text text="{tics>Date}"/>
-				                    <Text text="{tics>From}"/>
-				                    <Text text="{tics>To}"/>
-				                    <Text text="{tics>Break}" />
-				                    <Text text="{tics>ProjectTime}"/>
+				                    <Text text="{tics>tag}"/>
+				                	<Text text="{tics>vonzeit}"/>
+				                	<Text text="{tics>erf_datum}"/>
+				                	<Text text="{tics>erf_uhrzeit}"/>
+				                   	<Text text="{tics>biszeit}"/>
+				                	<Text text="{tics>pause}"/>
+				                	<Text text="{tics>projektzeit}"/>
 				                    <Text text="{tics>projektnummer}"/>
-				                    <Text text="{tics>BK}"/>
-				                    <Text text="{tics>PK}"/>
-				                    <Text text="{tics>Comment}"/>
+									<Text text="{tics>abrechnungsschl}"/>
+									<Text text="{tics>projektschl}"/>
+				                    <Text text="{tics>aufgabe}"/>
+				                    <Text text="{tics>fefahrzeit}"/>
+				                    <Text text="{tics>fakturierbarefah}"/>
+				                    <Text text="{tics>id}"/>
 				            </ColumnListItem></items>
 				        <columns>
 				            <Column id="__column0">
 				                <header>
-				                    <Label text="Day" id="__labelDay"/>
+				                    <Label text="Tag" id="__labelDay"/>
 				                </header>
 				            </Column>
 				            <Column id="__column1">
 				                <header>
-				                    <Label text="Date" id="__labelDate"/>
+				                    <Label text="Vonzeit" id="__labelFrom"/>
 				                </header>
 				            </Column>
 				            <Column id="__column2">
 				                <header>
-				                    <Label text="From" id="__label2"/>
+				                    <Label text="Erstellungs Datum" id="__labelCreateDate"/>
 				                </header>
 				            </Column>
 				            <Column id="__column3">
 				                <header>
-				                    <Text text="To" id="__text5"/>
+				                    <Label text="Erstellung Zeit" id="__labelCreateTime"/>
 				                </header>
 				            </Column>
-				            <Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__column0_copy">
+				             <Column id="__column4">
 				                <header>
-				                    <Label text="Break" id="__label0_copy"/>
-				                    
+				                    <Label text="Biszeit" id="__labelTo"/>
 				                </header>
-				                
 				            </Column>
-				            <Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__column0_copy2">
+				              <Column id="__column5">
 				                <header>
-				                    <Label text="Project Time" id="__label0_copy2"/>
-				                    
+				                    <Label text="Pause" id="__labelBreak"/>
 				                </header>
-				                
 				            </Column>
-				            <Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__column0_copy3">
+				             <Column id="__column6">
 				                <header>
-				                    <Label text="Project" id="__label0_copy3"/>
-				                    
+				                    <Label text="Projektzeit" id="__labelProjectTime"/>
 				                </header>
-				                
 				            </Column>
-				            <Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__column0_copy4">
+				             <Column id="__column7">
 				                <header>
-				                    <Label text="BK" id="__label0_copy4"/>
-				                    
+				                    <Label text="Projektnummer" id="__labelProjectNumb"/>
 				                </header>
-				                
 				            </Column>
-				            <Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__column0_copy5">
+				             <Column id="__column8">
 				                <header>
-				                    <Label text="PK" id="__label0_copy5"/>
-				                    
+				                    <Label text="BK" id="__labelBK"/>
 				                </header>
-				                
 				            </Column>
-				            <Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__column0_copy6">
+				             <Column id="__column9">
 				                <header>
-				                    <Label text="Comment" id="__label0_copy6"/>
-				                    
+				                    <Label text="PK" id="__labelPK"/>
 				                </header>
-				                
-				            </Column></columns></Table>
+				            </Column>
+				             <Column id="__column10">
+				                <header>
+				                    <Label text="Aufgabe" id="__labelTask"/>
+				                </header>
+				            </Column>
+				             <Column id="__column11">
+				                <header>
+				                    <Label text="Ferfahrzeit" id="__labelTravelTime"/>
+				                </header>
+				            </Column>
+				             <Column id="__column12">
+				                <header>
+				                    <Label text="Fakturierbarfah" id="__labelFeTravelTime"/>
+				                </header>
+				            </Column>
+				           </columns></Table>
 				</content>
 			<headerContent>
 			</headerContent>
