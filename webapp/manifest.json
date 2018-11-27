@@ -103,6 +103,12 @@
 					"name": "Users",
 					"view": "UserManager",
 					"targetAggregation": "detailPages"
+				},
+				{
+					"pattern": "UserDetail",
+					"name": "UserDetail",
+					"view": "UserManagerDetail",
+					"targetAggregation": "detailPages"
 				}, {
 					"pattern": "TicsDataDetail",
 					"name": "TicsDataDetail",
