@@ -14,6 +14,7 @@
 			<headerContent>
 				<HBox width="100%" id="__hbox0" alignItems="Start" alignContent="Start">
 				<items>
+					<Label text="{i18n>Version}" width="100%" id="__labelVersion"/>
 					<Button text="SVK" width="42px" height="10px" id="__buttonSVKImg" icon="resources/svk.jpg" press="onSVKLanguChange"/>
 					<Button text="DE" width="42px" height="10px" id="__buttonDEImg" icon="resources/ger.jpg" press="onDELanguChange"/>
 				</items>
