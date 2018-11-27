@@ -3,13 +3,6 @@
 		<pages><Page title="{i18n>ProjectTitle}">
 				<content><VBox width="100%" direction="Column" id="__vbox0">
 						<items>
-							<HBox width="100%" id="__hbox0">
-					    <items>
-					        <Button width="40px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
-					        <Button width="40px" id="__buttonDelete" icon="sap-icon://delete"/>
-					        <Button width="40px" id="__buttonEdit" icon="sap-icon://edit"/>
-					    </items>
-					</HBox>
 							<Table id="__tableProjects" growing="true" items="{tics>/PROJECT_SET}">
 								<items>
 									<ColumnListItem>
@@ -35,6 +28,19 @@
 				</content>
 			<headerContent>
 			</headerContent>
+			<footer>
+			    <Bar class="sapContrast sapContrastPlus" id="__bar0">
+			        <contentLeft>
+			        </contentLeft>
+			    <contentMiddle>
+			    </contentMiddle>
+			    <contentRight>
+			        <Button xmlns="sap.m" text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
+			        <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
+			        <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
+			    </contentRight>
+			    </Bar>
+			</footer>
 			</Page>
 		</pages>
 	</App>
