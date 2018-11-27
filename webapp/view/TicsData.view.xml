@@ -12,7 +12,7 @@
 				        <Input width="25%" id="__inputParam2"/>
 				    </sap.ui.layout:content>
 				    </sap.ui.layout:VerticalLayout>
-				    <Table id="__tableTasks" items="{tics>/TASK_SET}">
+				    <Table id="__tableTics" items="{tics>/TICS_SET}">
 				        <items>
 				            <ColumnListItem>
 				                    <Text text="{tics>tag}"/>
@@ -107,8 +107,8 @@
 				                <Button xmlns="sap.m" text="Filter" width="100px" id="__buttonAdd_copy2" icon="sap-icon://filter" press="onOKClick"/>
 				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Add" width="100px" id="__buttonAdd_copy3" icon="sap-icon://add" press="onOKClick"/>
 				                <Button xmlns="sap.m" text="Cancel" width="100px" id="__buttondelete" icon="sap-icon://delete" press="onCancelClick"/>
-				                 <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit" press="onOKClick"/>
-				                </contentRight>
+				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit" press="onOKClick"/>
+				            </contentRight>
 				            </Bar>
 			</footer>
 			</Page>

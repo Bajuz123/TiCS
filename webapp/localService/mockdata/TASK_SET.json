@@ -1,39 +1,19 @@
 [{
-	"aufgabe": "aufgabe 1",
-	"projektnummer": "projektnummer 1",
+	"aufgabe": 8012.99,
+		"beschreibung": 8587.68,
 	"id": "1be08375-1c2d-411b-9a8f-600bda1fecfe",
-	"erf_datum": "/Date(1542668400000)/",
-	"tag": "TU",
-	"vonzeit": "07:30",
-	"createtime": "07:29",
-	"biszeit": "16:30",
-	"pause": "0,50",
-	"projektzeit": 8.5,
-	"abrechnungsschl": "00",
-	"projektschl": "00",
-	"fefahrzeit": 0,
-	"fakturierbarfah": 0,
 	"__metadata": {
 		"uri": "TASK_SET(aufgabe='aufgabe%201',projektnummer='projektnummer%201',id=guid'1be08375-1c2d-411b-9a8f-600bda1fecfe')",
 		"type": "Z_WEB_TICS_SRV.TASK"
 	}
+
 }, {
-	"aufgabe": "aufgabe 2",
-	"projektnummer": "projektnummer 2",
+	"aufgabe": 8182.58,
+	"beschreibung": 3301.69,
 	"id": "1be08375-1c2d-411b-9a8f-600bda1fecfc",
-	"erf_datum": "/Date(1541545200000)/",
-	"tag": "MO",
-	"vonzeit": "07:30",
-	"createtime": "07:29",
-	"biszeit": "16:30",
-	"pause": "0,50",
-	"projektzeit": 8.5,
-	"abrechnungsschl": "00",
-	"projektschl": "00",
-	"fefahrzeit": 0,
-	"fakturierbarfah": 0,
 	"__metadata": {
 		"uri": "TASK_SET(aufgabe='aufgabe%201',projektnummer='projektnummer%201',id=guid'1be08375-1c2d-411b-9a8f-600bda1fecfe')",
 		"type": "Z_WEB_TICS_SRV.TASK"
 	}
+
 }]
