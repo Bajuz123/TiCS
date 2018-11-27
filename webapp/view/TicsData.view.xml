@@ -4,9 +4,9 @@
 				<content>
 				    <sap.ui.layout:VerticalLayout xmlns:sap.ui.layout="sap.ui.layout" width="100%" id="__layout1">
 				    <sap.ui.layout:content>
-				        <sap.ui.layout.form:Form editable="true" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="__form0">
+				        <sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form0">
 				            <sap.ui.layout.form:formContainers>
-				                <sap.ui.layout.form:FormContainer title="Filter" id="__container0">
+				                <sap.ui.layout.form:FormContainer title="Filter" id="__container0" expandable="true">
 				                    <sap.ui.layout.form:formElements>
 				                        <sap.ui.layout.form:FormElement label="{i18n>DateTo}" id="__labelDateTo">
 				                            <sap.ui.layout.form:fields>
