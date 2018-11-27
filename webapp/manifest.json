@@ -94,9 +94,9 @@
 					"view": "ProjectDetail",
 					"targetAggregation": "detailPages"
 				}, {
-					"pattern": "TaskData",
-					"name": "TaskData",
-					"view": "TaskData",
+					"pattern": "TicsData",
+					"name": "TicsData",
+					"view": "TicsData",
 					"targetAggregation": "detailPages"
 				}, {
 					"pattern": "Users",

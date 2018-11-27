@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("TiCS.controller.TaskData", {
+	return Controller.extend("TiCS.controller.TicsData", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.

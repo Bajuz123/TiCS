@@ -35,7 +35,7 @@ sap.ui.define([
 			}	
 
 			if (id.includes("__item2")) {
-				oRouter.navTo("TaskData");
+				oRouter.navTo("TicsData");
 			}	
 
 			if (id.includes("__item3")) {
