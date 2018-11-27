@@ -7,8 +7,8 @@ sap.ui.define([
 		onOKClick: function() {
 			var oEntry = {};
 
-			oEntry.projektnummer = sap.ui.getCore().byId("__inputProject").getValue();
-			oEntry.beschreibung = sap.ui.getCore().byId("__inpuProjectDesc").getValue();
+			oEntry.projektnummer = this.getView().byId("__inputProject").getValue();
+			oEntry.beschreibung  = this.getView().byId("__inpuProjectDesc").getValue();
 
 			var oModelRegTest = sap.ui.getCore().getModel("tics");
 			oModelRegTest.create("/PROJECT_SET", oEntry);
