@@ -11,6 +11,14 @@
 				            <core:ListItem text="Logout" key="item4" id="__item4"/></items>
 				    </SelectList>
 				</content>
+			<headerContent>
+				<HBox width="100%" id="__hbox0" alignItems="Start" alignContent="Start">
+				<items>
+					<Button text="SVK" width="42px" height="10px" id="__buttonSVKImg" icon="resources/svk.jpg"/>
+					<Button text="DE" width="42px" height="10px" id="__buttonDEImg" icon="resources/ger.jpg"/>
+				</items>
+				</HBox>
+			</headerContent>
 			</Page>
 		</pages>
 	</App>

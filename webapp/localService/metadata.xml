@@ -32,12 +32,36 @@
             </EntityType>
             <EntityType Name="TASK" sap:content-version="1">
                 <Key>
-                    <PropertyRef Name="aufgabe"/>
+               		<PropertyRef Name="tag"/>
+                	<PropertyRef Name="vonzeit"/>
+                	<PropertyRef Name="erf_datum"/>
+                	<PropertyRef Name="erf_uhrzeit"/>
+                	<PropertyRef Name="createtime"/>
+                	<PropertyRef Name="biszeit"/>
+                	<PropertyRef Name="pause"/>
+                	<PropertyRef Name="projektzeit"/>
                     <PropertyRef Name="projektnummer"/>
+					<PropertyRef Name="abrechnungsschl"/>
+					<PropertyRef Name="projektschl"/>
+                    <PropertyRef Name="aufgabe"/>
+                    <PropertyRef Name="fefahrzeit"/>
+                    <PropertyRef Name="fakturierbarefah"/>
                     <PropertyRef Name="id"/>
                 </Key>
+                	<Property Name="tag" Type="Edm.String" Nullable="false" sap:label="TAG"/>
+                	<Property Name="vonzeit" Type="Edm.String" Nullable="false" sap:label="VONZEIT"/>
+                	<Property Name="erf_datum" Type="Edm.Date" Nullable="false" sap:label="ERF_DATUM"/>
+                	<Property Name="erf_uhrzeit" Type="Edm.Time" Nullable="false" sap:label="ERF_UHRZEIT"/>
+                	<Property Name="createtime" Type="Edm.String" Nullable="false" sap:label="CREATETIME"/>
+                	<Property Name="biszeit" Type="Edm.String" Nullable="false" sap:label="BISZEIT"/>
+                	<Property Name="pause" Type="Edm.String" Nullable="false" sap:label="PAUSE"/>
+                	<Property Name="projektzeit" Type="Edm.Decimal" Nullable="false" sap:label="PROJEKTZEIT"/>
+                	<Property Name="projektnummer" Type="Edm.String" Nullable="false" sap:label="PROJEKTNUMMER"/>
+                	<Property Name="abrechnungsschl" Type="Edm.String" Nullable="false" sap:label="ABRECHNUNGSSCHL"/>
+                	<Property Name="projektschl" Type="Edm.String" Nullable="false" sap:label="PROJEKTSCHL"/>
                     <Property Name="aufgabe" Type="Edm.String" Nullable="false" sap:label="AUFGABE"/>
-                    <Property Name="projektnummer" Type="Edm.String" Nullable="false" sap:label="PROJEKTNUMMER"/>
+                    <Property Name="fefahrzeit" Type="Edm.Decimal" Nullable="false" sap:label="FEFAHRZEIT"/>
+                    <Property Name="fakturierbarfah" Type="Edm.Decimal" Nullable="false" sap:label="FAKTURIERBARFAH"/>
                     <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="ID"/>
             </EntityType>
             <EntityContainer Name="Z_WEB_TICS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
