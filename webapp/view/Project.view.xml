@@ -36,7 +36,7 @@
 			    </contentMiddle>
 			    <contentRight>
 			        <Button xmlns="sap.m" text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
-			        <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
+			        <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick"/>
 			        <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
 			    </contentRight>
 			    </Bar>
