@@ -1,25 +1,26 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.ProjectDetail">
 	<App>
-		<pages><Page title="{i18n>ProjectDetailTitle}">
+		<pages><Page title="{i18n>ProjectDetailTitle}" showSubHeader="false">
 			<footer>
 			    <Bar id="__bar0">
 			        <contentMiddle>
 			        </contentMiddle>
 			    <contentRight>
-			        <Button xmlns="sap.m" text="OK" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
-			        <Button xmlns="sap.m" text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
+			        <Button xmlns="sap.m" text="OK" width="100px" id="__buttonAdd" icon="sap-icon://accept" press="onOKClick"/>
+			        <Button xmlns="sap.m" text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 			    </contentRight>
 			    </Bar>
 			</footer>
 			<content>
 			    <VBox width="100%" direction="Column" id="__vbox0">
 			    <items>
-			        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="__form16">
+			        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form16" labelMinWidth="800">
 			            <sap.ui.layout.form:content>
 			                <Label text="Project" id="__label27"/>
-			                <Input width="100%" id="__input31"/>
-			                <Label text="ProjectDescription" id="__label28"/>
-			                <Input width="100%" id="__input33"/></sap.ui.layout.form:content>
+			                <Input width="50%" id="__input31" fieldWidth="100%"/>
+			                <Label text="ProjectDescription" width="100%" id="__label28" textDirection="LTR"/>
+			                <Input width="50%" id="__input33" fieldWidth="100%" maxLength="20"/>
+			            </sap.ui.layout.form:content>
 			        </sap.ui.layout.form:SimpleForm>
 			    </items>
 			    </VBox>
