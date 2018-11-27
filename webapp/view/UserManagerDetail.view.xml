@@ -4,16 +4,21 @@
 			<Page title="{i18n>UserManagerTitle}">
 			<footer>
 			    <Bar class="sapContrast sapContrastPlus" id="__bar0">
-			        <contentRight>
-			            <Button text="OK" width="100px" id="__buttonOk" icon="sap-icon://accept" press="onOKClick"/>
-			            <Button text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
-			        </contentRight>
+			        <contentLeft>
+			        </contentLeft>
+			    <contentMiddle>
+			    </contentMiddle>
+			    <contentRight>
+			        <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
+			        <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
+			        <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
+			    </contentRight>
 			    </Bar>
 			</footer>
 			<content>
 			    <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="__form0">
 			        <sap.ui.layout.form:content>
-			            <Label text="{i18n>User" id="__labelUser"/>
+			            <Label text="{i18n>User}" id="__labelUser"/>
 			            <Input width="50%" id="__inputUser"/>
 			            <Label text="{i18n>Permission}" id="__labelPermission"/>
 			            <Input width="50%" id="__inputPermission"/></sap.ui.layout.form:content>
