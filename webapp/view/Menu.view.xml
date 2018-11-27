@@ -14,8 +14,8 @@
 			<headerContent>
 				<HBox width="100%" id="__hbox0" alignItems="Start" alignContent="Start">
 				<items>
-					<Button text="SVK" width="42px" height="10px" id="__buttonSVKImg" icon="resources/svk.jpg"/>
-					<Button text="DE" width="42px" height="10px" id="__buttonDEImg" icon="resources/ger.jpg"/>
+					<Button text="SVK" width="42px" height="10px" id="__buttonSVKImg" icon="resources/svk.jpg" press="onSVKLanguChange"/>
+					<Button text="DE" width="42px" height="10px" id="__buttonDEImg" icon="resources/ger.jpg" press="onDELanguChange"/>
 				</items>
 				</HBox>
 			</headerContent>

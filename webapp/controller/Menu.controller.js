@@ -10,6 +10,21 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.Menu
 		 */
+		
+		onSVKLanguChange: function() { 
+		  this.onLanguChange("SK");	
+		},
+		
+		onDELanguChange: function() { 
+		  this.onLanguChange("DE");	
+		},
+		
+		onLanguChange: function(langu) {
+			var  messageLanguage = langu;
+			sap.ui.getCore().getConfiguration().setLanguage(messageLanguage); //setting the selected language to the core.
+			messagebundleLocal : messageLanguage; //assigning language to the message bundle.
+		}, 
+		 
 		onMenuClick: function(oControlEvent) {
 			var rowItem = oControlEvent.getParameters().item;
 			var id = rowItem.getId();
@@ -30,12 +45,8 @@ sap.ui.define([
 			if (id.includes("__item4")) {
 				oRouter.navTo("Logout");
 			}	
-		},
+		}
 
-		onInit: function() {
-/*			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("Project");
-*/		}
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).
