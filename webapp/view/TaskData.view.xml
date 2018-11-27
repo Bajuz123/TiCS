@@ -10,16 +10,8 @@
 				        <DatePicker width="25%" id="__pickerTo"/>
 				        <Label text="{i18n>ProjectKey}" width="100%" id="__label4"/>
 				        <Input width="25%" id="__inputParam2"/>
-				        <Button text="{i18n>Filter}" width="100px" id="__buttonFilter" icon="sap-icon://filter"/>
 				    </sap.ui.layout:content>
 				    </sap.ui.layout:VerticalLayout>
-				    <HBox width="100%" id="__hbox0">
-				        <items>
-				            <Button text="{i18n>Add}" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
-				            <Button text="{i18n>Delete}" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
-				            <Button text="{i18n>Edit}" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
-				        </items>
-				    </HBox>
 				    <Table id="__tableTasks" items="{tics>/TASK_SET}">
 				        <items>
 				            <ColumnListItem>
@@ -73,8 +65,7 @@
 				                <header>
 				                    <Label text="Projektzeit" id="__labelProjectTime"/>
 				                </header>
-				            </Column>
-				             <Column id="__column7">
+				            </Column><Column id="__column7">
 				                <header>
 				                    <Label text="Projektnummer" id="__labelProjectNumb"/>
 				                </header>
@@ -108,6 +99,18 @@
 				</content>
 			<headerContent>
 			</headerContent>
+			<footer>
+			    <Bar xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__bar0_copy">
+				            <contentMiddle>
+				                </contentMiddle>
+				            <contentRight>
+				                <Button xmlns="sap.m" text="Filter" width="100px" id="__buttonAdd_copy2" icon="sap-icon://filter" press="onOKClick"/>
+				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Add" width="100px" id="__buttonAdd_copy3" icon="sap-icon://add" press="onOKClick"/>
+				                <Button xmlns="sap.m" text="Cancel" width="100px" id="__buttondelete" icon="sap-icon://delete" press="onCancelClick"/>
+				                 <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" text="Edit" width="100px" id="__buttonAdd_copy4" icon="sap-icon://edit" press="onOKClick"/>
+				                </contentRight>
+				            </Bar>
+			</footer>
 			</Page>
 		</pages>
 	</App>
