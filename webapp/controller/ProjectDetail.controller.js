@@ -4,12 +4,24 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("TiCS.controller.ProjectDetail", {
-
 		onOKClick: function() {
+			var oEntry = {};
+
+			oEntry.projektnummer = sap.ui.getCore().byId("__inputProject").getValue();
+			oEntry.beschreibung = sap.ui.getCore().byId("__inpuProjectDesc").getValue();
+
+			var oModelRegTest = sap.ui.getCore().getModel("tics");
+			oModelRegTest.create("/PROJECT_SET", oEntry);
+
+			var resourceModel = sap.ui.getCore().getModel("i18n");
+			var addOKTxt = resourceModel.getProperty("ProjectAddOK");
+			sap.m.MessageToast.show(addOKTxt);
+
+			oModelRegTest.refresh();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("Project");
 		},
-		
+
 		onCancelClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo(-1);

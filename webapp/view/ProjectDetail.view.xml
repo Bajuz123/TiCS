@@ -16,10 +16,10 @@
 			    <items>
 			        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form16" labelMinWidth="800">
 			            <sap.ui.layout.form:content>
-			                <Label text="Project" id="__label27"/>
-			                <Input width="50%" id="__input31" fieldWidth="100%"/>
-			                <Label text="Project Description" width="100%" id="__label28" textDirection="LTR"/>
-			                <Input width="50%" id="__input33" fieldWidth="100%" maxLength="20"/>
+			                <Label text="Project" id="__labelProject"/>
+			                <Input width="50%" id="__inputProject" fieldWidth="100%"/>
+			                <Label text="Project Description" width="100%" id="__labelProjectDesc" textDirection="LTR"/>
+			                <Input width="50%" id="__inpuProjectDesc" fieldWidth="100%" maxLength="20"/>
 			            </sap.ui.layout.form:content>
 			        </sap.ui.layout.form:SimpleForm>
 			    </items>
