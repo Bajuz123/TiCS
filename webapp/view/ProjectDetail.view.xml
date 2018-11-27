@@ -1,19 +1,29 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.ProjectDetail">
 	<App>
 		<pages><Page title="{i18n>ProjectDetailTitle}">
-				<content>
-				    <VBox width="100%" direction="Column" id="__vbox0">
-				        <items>
-				            <Input width="100%" id="__input0" description="{i18n>Project}"/>
-				            <Input width="100%" id="__input1" description="{i18n>ProjectDescription}"/>
-				        </items>
-				    </VBox><HBox width="100%" id="__hbox0">
-				        <items>
-				            <Button text="OK" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
-				            <Button text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
-				        </items>
-				    </HBox>
-				</content>
+			<footer>
+			    <Bar id="__bar0">
+			        <contentMiddle>
+			        </contentMiddle>
+			    <contentRight>
+			        <Button xmlns="sap.m" text="OK" width="100px" id="__buttonAdd" icon="sap-icon://add"/>
+			        <Button xmlns="sap.m" text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
+			    </contentRight>
+			    </Bar>
+			</footer>
+			<content>
+			    <VBox width="100%" direction="Column" id="__vbox0">
+			    <items>
+			        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="__form16">
+			            <sap.ui.layout.form:content>
+			                <Label text="Project" id="__label27"/>
+			                <Input width="100%" id="__input31"/>
+			                <Label text="ProjectDescription" id="__label28"/>
+			                <Input width="100%" id="__input33"/></sap.ui.layout.form:content>
+			        </sap.ui.layout.form:SimpleForm>
+			    </items>
+			    </VBox>
+			</content>
 			</Page>
 		</pages>
 	</App>
