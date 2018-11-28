@@ -123,6 +123,9 @@
 				                <Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onDeleteClick"/>
 				                <Button xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClick"/>
 				            </contentRight>
+				            <contentLeft>
+				                <Button width="100px" id="__buttonCheck" icon="sap-icon://approvals" press="approveData"/>
+				            </contentLeft>
 				            </Bar>
 			</footer>
 			</Page>

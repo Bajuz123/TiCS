@@ -4,6 +4,10 @@ sap.ui.define([
 	"use strict";
 	var ticsId = "";
 	return Controller.extend("TiCS.controller.TicsData", {
+	approveData: function() {
+		
+	},
+		
 	onItemPress: function(oEvent) {
 			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId") ;
 		},
