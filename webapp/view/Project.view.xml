@@ -3,9 +3,9 @@
 		<pages><Page title="{i18n>ProjectTitle}">
 				<content><VBox width="100%" direction="Column" id="__vbox0">
 						<items>
-							<Table id="__tableProjects" growing="true" items="{tics>/PROJECT_SET}">
+							<Table id="__tableProjects" growing="true" items="{tics>/PROJECT_SET}" itemPress="onItemPress">
 								<items>
-									<ColumnListItem>
+									<ColumnListItem id="__columnListItemProjects" type="Active">
 										<Text text="{tics>projektnummer}"/>
 										<Text text="{tics>beschreibung}"/>
 									</ColumnListItem>

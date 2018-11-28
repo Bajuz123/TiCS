@@ -3,18 +3,16 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
+	var projectNumber = '';
+
 	return Controller.extend("TiCS.controller.Project", {
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.ProjectDetail
 		 */
-
-		getTableSelectedObject:function (oTable, oSelIndex) {
-			var bind = oTable.getBinding("rows");
-			var context = oTable.getContextByIndex(oSelIndex);
-			var boundObject = context.getProperty(context.getPath());
-			return boundObject;
+		onItemPress: function(oEvent) {
+			projectNumber = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer") ;
 		},
 
 		onAddClick: function() {
@@ -24,18 +22,15 @@ sap.ui.define([
 
 		onDeleteClick: function() {
 			var oTable = this.getView().byId("__tableProjects");
-			var selIndex = oTable.getSelectedIndex();
 			var resourceModel = this.getView().getModel("i18n");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (!selIndex.equals("-1")) {
-				var boundObject = this.getTableSelectedObject(oTable, selIndex);
-				var idProject = boundObject.projektnummer;
+			if (!projectNumber.equals('')) {
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/PROJECT_SET(projektnummer ='" + idProject + "')", {
+				oModel.remove("/PROJECT_SET(projektnummer ='" + projectNumber + "')", {
 					method: "DELETE",
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
@@ -52,7 +47,8 @@ sap.ui.define([
 			oRouter.navTo("Project");
 		},
 
-		onInit: function() {}
+		onInit: function() {
+		}
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
