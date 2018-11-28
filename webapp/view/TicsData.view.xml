@@ -118,10 +118,10 @@
 				            <contentMiddle>
 				                </contentMiddle>
 				            <contentRight>
-				                <Button xmlns="sap.m" width="100px" id="__buttonFilter" icon="sap-icon://filter" press="onOKClick"/>
-				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100px" id="__buttonAdd1" icon="sap-icon://add" press="onOKClick"/>
-				                <Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onCancelClick"/>
-				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onOKClick"/>
+				                <Button xmlns="sap.m" width="100px" id="__buttonFilter" icon="sap-icon://filter" press="onFilterClick"/>
+				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100px" id="__buttonAdd1" icon="sap-icon://add" press="onAddClick"/>
+				                <Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onDeleteClick"/>
+				                <Button xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClickk"/>
 				            </contentRight>
 				            </Bar>
 			</footer>
