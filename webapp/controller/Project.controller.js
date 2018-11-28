@@ -31,6 +31,11 @@ sap.ui.define([
 		onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("ProjectDetail");
+	//		if (this._oDialog) {
+    	//	 this._oDialog = sap.ui.xmlfragment("TiCS.webapp.view.ProjectDetail", this);
+        //     this.getView().addDependent(this._oDialog);
+    //		}
+       // 	this._oDialog.open();
 		},
 
 		onDeleteClick: function() {
