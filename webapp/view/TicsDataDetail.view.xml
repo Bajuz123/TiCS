@@ -88,8 +88,8 @@
 			        <contentMiddle>
 			        </contentMiddle>
 			    <contentRight>
-			        <Button text="OK" width="100px" id="__buttonOK" icon="sap-icon://accept"/>
-			        <Button text="{i18n>Cancel}" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
+			        <Button width="100px" id="__buttonOK" icon="sap-icon://accept"/>
+			        <Button width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
 			    </contentRight>
 			    </Bar>
 			</footer>
