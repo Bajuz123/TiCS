@@ -12,7 +12,7 @@ sap.ui.define([
 		 */
 			onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("UserManagerDetail");
+			oRouter.navTo("UserDetail");
 
 		},	
 		onInit: function() {
