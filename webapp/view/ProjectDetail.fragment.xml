@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns:core='sap.ui.core'>
+	<VBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100%"
+		direction="Column" id="__vbox0">
+		<items>
+			<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form16"
+				labelMinWidth="800">
+				<sap.ui.layout.form:content>
+					<Label text="{i18n>Project}" id="__labelProject"/>
+					<Input width="50%" id="__inputProject" fieldWidth="100%"/>
+					<Label text="{i18n>ProjectDescription}" width="100%" id="__labelProjectDesc" textDirection="LTR"/>
+					<Input width="50%" id="__inpuProjectDesc" fieldWidth="100%" maxLength="20"/>
+				</sap.ui.layout.form:content>
+			</sap.ui.layout.form:SimpleForm>
+		</items>
+	</VBox>
+</core:FragmentDefinition>
