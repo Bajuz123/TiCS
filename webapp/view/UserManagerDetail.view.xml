@@ -10,7 +10,7 @@
 			    </contentMiddle>
 			    <contentRight>
 			        <Button width="50px" id="__buttonOk" icon="sap-icon://accept" press="onAddClick"/>
-			        <Button width="50px" id="__buttonCancel" icon="sap-icon://sys-cancel"/>
+			        <Button width="50px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 			    </contentRight>
 			    </Bar>
 			</footer>
