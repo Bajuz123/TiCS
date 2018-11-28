@@ -26,7 +26,7 @@
 				            </sap.ui.layout.form:layout></sap.ui.layout.form:Form>
 				    </sap.ui.layout:content>
 				    </sap.ui.layout:VerticalLayout>
-				    <Table id="__tableTics" items="{tics>/TICS_SET}" itemPress="onItemPress">
+				    <Table id="__tableTics" growing="true" items="{tics>/TICS_SET}" itemPress="onItemPress">
 				        <items>
 				            <ColumnListItem>
 				                    <Text text="{tics>tag}"/>

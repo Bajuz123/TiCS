@@ -2,10 +2,10 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 ], function(Controller) {
 	"use strict";
-	var ticsTab;
+	var ticsId = "";
 	return Controller.extend("TiCS.controller.TicsData", {
 	onItemPress: function(oEvent) {
-			ticsTab = oEvent.getParameter("listItem").getBindingContext("tics") ;
+			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id") ;
 		},
 	onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -21,10 +21,10 @@ sap.ui.define([
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (ticsTab != "") {
+			if (ticsId != "") {
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/TICS_SET(tab_tics='" + ticsTab + "')", {
+				oModel.remove("/TICS_SET(id='" + ticsId + "')", {
 					method: "DELETE",
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
