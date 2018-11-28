@@ -3,22 +3,46 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 	var ticsId = "";
+	var approveDataObj = {
+		personal_nr: "0000001",
+		date_from: "01/01/1900",
+		date_to: "01/01/1900"
+	};
+
 	return Controller.extend("TiCS.controller.TicsData", {
-	approveData: function() {
-		
-	},
-		
-	onItemPress: function(oEvent) {
-			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId") ;
+		setSelectedData: function() {
+			//approveDataObj	
 		},
-	onAddClick: function() {
+
+		approveData: function() {
+			var oDataModel = this.getView().getModel();
+
+			//oData selection (from-to), personalnr
+			this.setSelectedData();
+
+			oDataModel.callFunction("CHECK_DATA", "GET", {
+					"personal_nr": approveDataObj.personal_nr,
+					"date_from": approveDataObj.date_from,
+					"date_to": approveDataObj.date_to
+				}, null, function(oData, response) {
+					sap.m.MessageToast.show("call success");
+				}, // callback function for success
+				function(oError) {
+					sap.m.MessageToast.show("call fail");
+				}); // callback function for error
+		},
+
+		onItemPress: function(oEvent) {
+			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId");
+		},
+		onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("TicsDataDetail");
 		},
-	onFilterClick: function() {
+		onFilterClick: function() {
 
 		},
-	onDeleteClick: function() {
+		onDeleteClick: function() {
 			var oTable = this.getView().byId("__tableTics");
 			var resourceModel = this.getView().getModel("i18n");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
@@ -44,12 +68,11 @@ sap.ui.define([
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("TicsData");
 		},
-	onEditClick: function() {
+		onEditClick: function() {
 
 		},
-			onInit: function() {
-		}
-		
+		onInit: function() {}
+
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
