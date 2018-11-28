@@ -6,8 +6,8 @@
 			        <contentMiddle>
 			        </contentMiddle>
 			    <contentRight>
-			        <Button xmlns="sap.m" text="OK" width="100px" id="__buttonOk" icon="sap-icon://accept" press="onOKClick"/>
-			        <Button xmlns="sap.m" text="Cancel" width="100px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
+			        <Button xmlns="sap.m" width="50px" id="__buttonOk" icon="sap-icon://accept" press="onOKClick"/>
+			        <Button xmlns="sap.m" width="50px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 			    </contentRight>
 			    </Bar>
 			</footer>
@@ -16,9 +16,9 @@
 			    <items>
 			        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form16" labelMinWidth="800">
 			            <sap.ui.layout.form:content>
-			                <Label text="Project" id="__labelProject"/>
+			                <Label text="{i18n>Project}" id="__labelProject"/>
 			                <Input width="50%" id="__inputProject" fieldWidth="100%"/>
-			                <Label text="Project Description" width="100%" id="__labelProjectDesc" textDirection="LTR"/>
+			                <Label text="{i18n>ProjectDescription}" width="100%" id="__labelProjectDesc" textDirection="LTR"/>
 			                <Input width="50%" id="__inpuProjectDesc" fieldWidth="100%" maxLength="20"/>
 			            </sap.ui.layout.form:content>
 			        </sap.ui.layout.form:SimpleForm>
