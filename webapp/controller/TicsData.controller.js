@@ -5,7 +5,7 @@ sap.ui.define([
 	var ticsId = "";
 	return Controller.extend("TiCS.controller.TicsData", {
 	onItemPress: function(oEvent) {
-			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id") ;
+			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId") ;
 		},
 	onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
