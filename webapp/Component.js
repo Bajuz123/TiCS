@@ -21,6 +21,10 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 			this.getRouter().initialize();
 
+			var messageLanguage = 'SK';
+			sap.ui.getCore().getConfiguration().setLanguage(messageLanguage); //setting the selected language to the core.
+			messagebundleLocal : messageLanguage; //assigning language to the message bundle.
+
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 		}
