@@ -121,7 +121,7 @@
 				                <Button xmlns="sap.m" width="100px" id="__buttonFilter" icon="sap-icon://filter" press="onFilterClick"/>
 				                <Button xmlns="sap.m" width="100px" id="__buttonAdd12" icon="sap-icon://add" press="onAddClick"/>
 				                <Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onDeleteClick"/>
-				                <Button xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClickk"/>
+				                <Button xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClick"/>
 				            </contentRight>
 				            </Bar>
 			</footer>
