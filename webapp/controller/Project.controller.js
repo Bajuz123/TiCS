@@ -30,7 +30,7 @@ sap.ui.define([
 			if (projectNumber != "") {
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/PROJECT_SET(projektnummer ='" + projectNumber + "')", {
+				oModel.remove("/PROJECT_SET(projektnummer='" + projectNumber + "')", {
 					method: "DELETE",
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
