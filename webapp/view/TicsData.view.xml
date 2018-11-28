@@ -47,66 +47,66 @@
 				        <columns>
 				            <Column id="__column0">
 				                <header>
-				                    <Label text="Tag" id="__labelDay"/>
+				                    <Label text="{i18n>TicsDay}" id="__labelDay"/>
 				                </header>
 				            </Column>
 				            <Column id="__column1">
 				                <header>
-				                    <Label text="Vonzeit" id="__labelFrom"/>
+				                    <Label text="{i18n>TicsFrom}" id="__labelFrom"/>
 				                </header>
 				            </Column>
 				            <Column id="__column2">
 				                <header>
-				                    <Label text="Erstellungs Datum" id="__labelCreateDate"/>
+				                    <Label text="{i18n>TicsCreateDate}" id="__labelCreateDate"/>
 				                </header>
 				            </Column>
 				            <Column id="__column3">
 				                <header>
-				                    <Label text="Erstellung Zeit" id="__labelCreateTime"/>
+				                    <Label text="{i18n>TicsCreateTime}" id="__labelCreateTime"/>
 				                </header>
 				            </Column>
 				             <Column id="__column4">
 				                <header>
-				                    <Label text="Biszeit" id="__labelTo"/>
+				                    <Label text="{i18n>TicsTo}" id="__labelTo"/>
 				                </header>
 				            </Column>
 				              <Column id="__column5">
 				                <header>
-				                    <Label text="Pause" id="__labelBreak"/>
+				                    <Label text="{i18n>TicsBreak}" id="__labelBreak"/>
 				                </header>
 				            </Column>
 				             <Column id="__column6">
 				                <header>
-				                    <Label text="Projektzeit" id="__labelProjectTime"/>
+				                    <Label text="{i18n>TicsProjectTime}" id="__labelProjectTime"/>
 				                </header>
 				            </Column><Column id="__column7">
 				                <header>
-				                    <Label text="Projektnummer" id="__labelProjectNumb"/>
+				                    <Label text="{i18n>TicsProjectNumber}" id="__labelProjectNumb"/>
 				                </header>
 				            </Column>
 				             <Column id="__column8">
 				                <header>
-				                    <Label text="BK" id="__labelBK"/>
+				                    <Label text="{i18n>TicsBilingKey}" id="__labelBK"/>
 				                </header>
 				            </Column>
 				             <Column id="__column9">
 				                <header>
-				                    <Label text="PK" id="__labelPK"/>
+				                    <Label text="{i18n>TicsProjectKey}" id="__labelPK"/>
 				                </header>
 				            </Column>
 				             <Column id="__column10">
 				                <header>
-				                    <Label text="Aufgabe" id="__labelTask"/>
+				                    <Label text="{i18n>TicsTask}" id="__labelTask"/>
 				                </header>
 				            </Column>
 				             <Column id="__column11">
 				                <header>
-				                    <Label text="Ferfahrzeit" id="__labelTravelTime"/>
+				                    <Label text="{i18n>TicsTravelTime}" id="__labelTravelTime"/>
 				                </header>
 				            </Column>
 				             <Column id="__column12">
 				                <header>
-				                    <Label text="Fakturierbarfah" id="__labelFeTravelTime"/>
+				                    <Label text="{i18n>TicsFETravelTime}" id="__labelFeTravelTime"/>
 				                </header>
 				            </Column>
 				           </columns></Table>
