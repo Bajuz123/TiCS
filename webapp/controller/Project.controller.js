@@ -3,11 +3,29 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	var projectNumber = '';
+	var selProject = {projektnummer: "", beschreibung: ""};
 
 	return Controller.extend("TiCS.controller.Project", {
 		onItemPress: function(oEvent) {
-			projectNumber = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer") ;
+			selProject.projektnummer = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer") ;
+			selProject.beschreibung  = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung") ;
+		},
+
+		onEditClick: function() {
+			var oTable = this.getView().byId("__tableProjects");
+			var resourceModel = this.getView().getModel("i18n");
+			var editSelectText = resourceModel.getProperty("EditSelectFail");
+	
+			if (selProject.projektnummer != "") {
+				var oModel = new sap.ui.model.json.JSONModel();
+				oModel.setData(selProject);
+				sap.ui.getCore().setModel(oModel, "SelectedProject");
+				
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+  				oRouter.navTo("ProjectDetail");
+			} else {
+				sap.m.MessageToast.show(editSelectText);
+			}			
 		},
 
 		onAddClick: function() {
@@ -22,10 +40,10 @@ sap.ui.define([
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (projectNumber != "") {
+			if (selProject.projektnummer != "") {
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/PROJECT_SET(projektnummer='" + projectNumber + "')", {
+				oModel.remove("/PROJECT_SET(projektnummer='" + selProject.projektnummer + "')", {
 					method: "DELETE",
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
