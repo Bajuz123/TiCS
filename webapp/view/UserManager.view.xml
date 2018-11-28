@@ -13,12 +13,12 @@
 								<columns>
 									<Column id="__columnUName">
 										<header>
-											<Label text="User Name" id="__label0"/>
+											<Label text="{i18n>User}" id="__label0"/>
 										</header>
 									</Column>
 									<Column id="__columnPermission">
 										<header>
-											<Label text="Permission" id="__label1"/>
+											<Label text="{i18n>Permission}" id="__label1"/>
 										</header>
 									</Column>
 								</columns>
