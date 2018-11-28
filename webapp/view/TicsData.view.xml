@@ -42,7 +42,7 @@
 				                    <Text text="{tics>aufgabe}"/>
 				                    <Text text="{tics>fefahrzeit}"/>
 				                    <Text text="{tics>fakturierbarefah}"/>
-				                    <Text text="{tics>id}"/>
+				                    <Text text="{tics>ticsId}"/>
 				            </ColumnListItem></items>
 				        <columns>
 				            <Column id="__column0">

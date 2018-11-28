@@ -28,7 +28,7 @@
                     <PropertyRef Name="aufgabe"/>
                     <PropertyRef Name="fefahrzeit"/>
                     <PropertyRef Name="fakturierbarefah"/>
-                    <PropertyRef Name="id"/>
+                    <PropertyRef Name="ticsId"/>
                 </Key>
                	<Property Name="tag" Type="Edm.String" Nullable="false" sap:label="TAG"/>
                 <Property Name="vonzeit" Type="Edm.String" Nullable="false" sap:label="VONZEIT"/>
@@ -44,7 +44,7 @@
                 <Property Name="aufgabe" Type="Edm.String" Nullable="false" sap:label="AUFGABE"/>
                 <Property Name="fefahrzeit" Type="Edm.Decimal" Nullable="false" sap:label="FEFAHRZEIT"/>
                 <Property Name="fakturierbarfah" Type="Edm.Decimal" Nullable="false" sap:label="FAKTURIERBARFAH"/>
-                <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="GUID"/>
+                <Property Name="ticsId" Type="Edm.Guid" Nullable="false" sap:label="GUID"/>
             </EntityType>
             <EntityType Name="PK" sap:content-version="1">
                 <Key>
