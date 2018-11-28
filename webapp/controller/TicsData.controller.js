@@ -2,9 +2,11 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 ], function(Controller) {
 	"use strict";
-
+	var ticsTab;
 	return Controller.extend("TiCS.controller.TicsData", {
-
+	onItemPress: function(oEvent) {
+			ticsTab = oEvent.getParameter("listItem").getBindingContext("tics") ;
+		},
 	onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("TicsDataDetail");
@@ -13,7 +15,30 @@ sap.ui.define([
 
 		},
 	onDeleteClick: function() {
+			var oTable = this.getView().byId("__tableTics");
+			var resourceModel = this.getView().getModel("i18n");
+			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
+			var deleteOKText = resourceModel.getProperty("DeleteOK");
+			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
+			if (ticsTab != "") {
+				var oModel = this.getView().getModel("tics");
+
+				oModel.remove("/TICS_SET(tab_tics='" + ticsTab + "')", {
+					method: "DELETE",
+					success: function(data) {
+						sap.m.MessageToast.show(deleteOKText);
+					},
+					error: function(e) {
+						sap.m.MessageToast.show(deleteFailText);
+					}
+				});
+				oModel.refresh();
+			} else {
+				sap.m.MessageToast.show(deleteSelectText);
+			}
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("TicsData");
 		},
 	onEditClick: function() {
 
