@@ -27,7 +27,7 @@ sap.ui.define([
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (!projectNumber.equals('')) {
+			if (projectNumber != "") {
 				var oModel = this.getView().getModel("tics");
 
 				oModel.remove("/PROJECT_SET(projektnummer ='" + projectNumber + "')", {
