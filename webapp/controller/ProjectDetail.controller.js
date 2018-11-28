@@ -20,7 +20,7 @@ sap.ui.define([
 					var editOKTxt = resourceModel.getProperty("EditOK");
 					var editFailTxt = resourceModel.getProperty("EditFail");
 	
-					oModelRegTest.update("/PROJECT_SET(projektnummer=" + oEntry.projektnummer + "')", oEntry, {
+					oModelRegTest.update("/PROJECT_SET(projektnummer='" + oEntry.projektnummer + "')", oEntry, {
 						success : function(data) {
 							sap.m.MessageToast.show(editOKTxt);
 						},
