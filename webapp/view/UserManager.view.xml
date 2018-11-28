@@ -31,9 +31,9 @@
 			    <contentMiddle>
 			    </contentMiddle>
 			    <contentRight>
-			        <Button text="Add" width="100px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" />
-			        <Button text="Delete" width="100px" id="__buttonDelete" icon="sap-icon://delete"/>
-			        <Button text="Edit" width="100px" id="__buttonEdit" icon="sap-icon://edit"/>
+			        <Button width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
+			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete"/>
+			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit"/>
 			    </contentRight>
 			    </Bar>
 			</footer>

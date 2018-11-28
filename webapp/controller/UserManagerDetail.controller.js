@@ -10,10 +10,9 @@ sap.ui.define([
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.UserManager
 		 */
-			onAddClick: function() {
+			onCancelClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("UserDetail");
-
+			oRouter.navTo(-1);
 		},	
 		onInit: function() {
 		
