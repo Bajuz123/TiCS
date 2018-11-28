@@ -17,6 +17,8 @@ sap.ui.define([
 		},
 	onEditClick: function() {
 
+		},
+			onInit: function() {
 		}
 		
 		/**
