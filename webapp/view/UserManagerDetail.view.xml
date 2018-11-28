@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.UserManager">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.UserManagerDetail">
 	<App>
 		<pages>
 			<Page title="{i18n>UserManagerTitle}">
@@ -9,7 +9,7 @@
 			    <contentMiddle>
 			    </contentMiddle>
 			    <contentRight>
-			        <Button width="50px" id="__buttonOk" icon="sap-icon://accept" press="onAddClick"/>
+			        <Button width="50px" id="__buttonOk" icon="sap-icon://accept" press="onOKClick"/>
 			        <Button width="50px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 			    </contentRight>
 			    </Bar>
