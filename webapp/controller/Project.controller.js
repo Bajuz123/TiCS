@@ -4,12 +4,13 @@ sap.ui.define([
 	"use strict";
 
 	var selProject = {projektnummer: "", beschreibung: ""};
-
+var fragProject = {};
 	return Controller.extend("TiCS.controller.Project", {
 		onItemPress: function(oEvent) {
 			selProject.projektnummer = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer") ;
 			selProject.beschreibung  = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung") ;
 		},
+
 
 		onEditClick: function() {
 			var oTable = this.getView().byId("__tableProjects");
@@ -31,11 +32,13 @@ sap.ui.define([
 		onAddClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("ProjectDetail");
-	//		if (this._oDialog) {
-    	//	 this._oDialog = sap.ui.xmlfragment("TiCS.webapp.view.ProjectDetail", this);
-        //     this.getView().addDependent(this._oDialog);
-    //		}
-       // 	this._oDialog.open();
+	//	var oView = sap.ui.getCore().byId("__xmlview2");
+		
+		//	if (fragProject) {
+    	//	 fragProject  = sap.ui.xmlfragment("TiCS.view.ProjectDetail", oView.getController() );
+           //  oView.addDependent(fragProject);
+    	//	}
+        //	fragProject.open();
 		},
 
 		onDeleteClick: function() {
