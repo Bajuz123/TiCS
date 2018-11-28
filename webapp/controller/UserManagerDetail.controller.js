@@ -12,7 +12,7 @@ sap.ui.define([
 		 */
 			onCancelClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo(-1);
+			oRouter.navTo("Users");
 		}	
 	/*	onInit: function() {
 		

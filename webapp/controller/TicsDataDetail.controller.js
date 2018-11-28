@@ -7,7 +7,7 @@ sap.ui.define([
 
 	onCancelClick: function() {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo(-1);
+			oRouter.navTo("TicsData");
 		}
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
