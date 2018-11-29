@@ -6,7 +6,7 @@ sap.ui.define([
 	var selProject = {
 		projektnummer: "",
 		beschreibung: "",
-		method:"create"
+		method: "create"
 	};
 	var fragProject;
 
@@ -57,9 +57,9 @@ sap.ui.define([
 			if (typeof oModel !== 'undefined') {
 				var selProject = oModel.getData("selProject");
 				if (typeof selProject !== 'undefined') {
+					oEntry.projektnummer = selProject.projektnummer;
+					oEntry.beschreibung = selProject.beschreibung;
 					if (selProject.method !== "create") {
-						oEntry.projektnummer = selProject.projektnummer;
-						oEntry.beschreibung = selProject.beschreibung;
 
 						modelTics.update("/PROJECT_SET(projektnummer='" + oEntry.projektnummer + "')", oEntry, {
 							success: function(data) {
@@ -69,7 +69,7 @@ sap.ui.define([
 								sap.m.MessageToast.show(editFailTxt);
 							}
 						});
-					} else {
+					} else if (selProject.method === "create") {
 						modelTics.create("/PROJECT_SET", oEntry);
 						sap.m.MessageToast.show(addOKTxt);
 					}
