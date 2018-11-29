@@ -75,6 +75,7 @@ sap.ui.define([
 					}
 				}
 			}
+			modelTics.refresh();
 			this.clearSelected();
 			fragProject.close();
 		},
@@ -119,7 +120,5 @@ sap.ui.define([
 			selProject.projektnummer = "";
 			selProject.beschreibung = "";
 		}
-
-
 	});
 });
