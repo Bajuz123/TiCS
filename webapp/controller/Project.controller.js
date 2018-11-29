@@ -8,13 +8,14 @@ sap.ui.define([
 		beschreibung: ""
 	};
 	var fragProject;
-	var resourceModel;
 	var modelTics;
 
 	return Controller.extend("TiCS.controller.Project", {
 		onInit: function() {
-			resourceModel = this.getView().getModel("i18n");
 			modelTics = this.oView.getModel("tics");
+			var oModel = new sap.ui.model.json.JSONModel();
+			oModel.setData(selProject);
+			this.getView().setModel(oModel, "SelectedProject");
 		},
 		onItemPress: function(oEvent) {
 			selProject.projektnummer = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer");
@@ -22,6 +23,7 @@ sap.ui.define([
 		},
 
 		onEditClick: function() {
+			var resourceModel = this.getView().getModel("i18n");
 			var oTable = this.getView().byId("__tableProjects");
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
@@ -37,9 +39,15 @@ sap.ui.define([
 		},
 
 		onAddClick: function() {
+			var oModel = this.getView().getModel("SelectedProject");
+			selProject.projektnummer = "";
+			selProject.beschreibung = "";
+			oModel.setData(selProject);
+			this.getView().setModel(oModel, "SelectedProjekt");
 			this.openFragUser();
 		},
 		onOKClick: function() {
+			var resourceModel = this.getView().getModel("i18n");
 			var editOKTxt = resourceModel.getProperty("EditOK");
 			var editFailTxt = resourceModel.getProperty("EditFail");
 			var addOKTxt = resourceModel.getProperty("ProjectAddOK");
@@ -74,6 +82,7 @@ sap.ui.define([
 		},
 
 		onDeleteClick: function() {
+			var resourceModel = this.getView().getModel("i18n");
 			var oTable = this.getView().byId("__tableProjects");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
