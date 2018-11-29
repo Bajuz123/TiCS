@@ -75,6 +75,7 @@ var fragProject;
 
 		onCancelClick: function() {
 		fragProject.close();
+		//fragProject.destroy(true);
 		},
 
 		onDeleteClick: function() {
