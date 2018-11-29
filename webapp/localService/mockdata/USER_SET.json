@@ -1,0 +1,28 @@
+[{
+	"personal_nr": "11111",
+	"username": "tics",
+	"role": "1",
+	"calendar": "SK",
+	"__metadata": {
+		"uri": "USER_SET('personal_nr%201')",
+		"type": "Z_WEB_TICS_SRV.USER"
+	}
+}, {
+	"personal_nr": "22222",
+	"username": "tics",
+	"role": "1",
+	"calendar": "DE",
+	"__metadata": {
+		"uri": "USER_SET('personal_nr%202')",
+		"type": "Z_WEB_TICS_SRV.USER"
+	}
+}, {
+	"personal_nr": "33333",
+	"username": "tics",
+	"role": "2",
+	"calendar": "SK",
+	"__metadata": {
+		"uri": "USER_SET('personal_nr%203')",
+		"type": "Z_WEB_TICS_SRV.USER"
+	}
+}]

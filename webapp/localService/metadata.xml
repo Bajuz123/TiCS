@@ -68,12 +68,32 @@
                     <Property Name="beschreibung" Type="Edm.Decimal" Nullable="false" sap:label="BESCHREIBUNG"/>
                     <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="ID"/>
             </EntityType>
+            <EntityType Name="USER" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="personal_nr"/>
+                </Key>
+                <Property Name="personal_nr" Type="Edm.String" Nullable="false" sap:label="PERSONAL_NR"/>
+                <Property Name="username"	 Type="Edm.String" Nullable="false" sap:label="USERNAME"/>
+                <Property Name="role"		 Type="Edm.String" Nullable="false" sap:label="ROLE"/>
+                <Property Name="calendar"	 Type="Edm.String" Nullable="false" sap:label="CALENDAR"/>
+            </EntityType>
+            <EntityType Name="TASK" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="aufgabe"/>
+                    <PropertyRef Name="beschreibung"/>
+                    <PropertyRef Name="id"/>
+                </Key>
+                    <Property Name="aufgabe" Type="Edm.Decimal" Nullable="false" sap:label="AUFGABE"/>
+                    <Property Name="beschreibung" Type="Edm.Decimal" Nullable="false" sap:label="BESCHREIBUNG"/>
+                    <Property Name="id" Type="Edm.Guid" Nullable="false" sap:label="ID"/>
+            </EntityType>
             <EntityContainer Name="Z_WEB_TICS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
                 <EntitySet Name="PROJECT_SET" EntityType="Z_WEB_TICS_SRV.PROJECT" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
                 <EntitySet Name="TICS_SET" EntityType="Z_WEB_TICS_SRV.TICS" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
                 <EntitySet Name="PK_SET" EntityType="Z_WEB_TICS_SRV.PK" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
                 <EntitySet Name="BK_SET" EntityType="Z_WEB_TICS_SRV.BK" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
                 <EntitySet Name="TASK_SET" EntityType="Z_WEB_TICS_SRV.TASK" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="USER_SET" EntityType="Z_WEB_TICS_SRV.USER" sap:pageable="false" sap:addressable="false" sap:requires-filter="true" sap:content-version="1"/>
             </EntityContainer>
             <atom:link
                 xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ibssaphd1.ibs.local:8050/sap/opu/odata/sap/Z_WEB_TICS_SRV/$metadata"/>

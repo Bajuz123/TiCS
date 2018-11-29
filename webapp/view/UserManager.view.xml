@@ -6,19 +6,31 @@
 				   <Table id="__tableUser" growing="true" items="{tics>/USER_SET}">
 								<items>
 									<ColumnListItem>
-										<Text text="{tics>name}"/>
-										<Text text="{tics>permission}"/>
+										<Text text="{tics>personal_nr}"/>
+										<Text text="{tics>role}"/>
+										<Text text="{tics>username}"/>
+										<Text text="{tics>calendar}"/>
 									</ColumnListItem>
 								</items>
 								<columns>
-									<Column id="__columnUName">
+									<Column id="__columnPersonal_nr">
 										<header>
-											<Label text="{i18n>User}" id="__label0"/>
+											<Label text="{i18n>User_Personal_nr}" id="__labelPersonal_nr"/>
 										</header>
 									</Column>
-									<Column id="__columnPermission">
+									<Column id="__columnRole">
 										<header>
-											<Label text="{i18n>Permission}" id="__label1"/>
+											<Label text="{i18n>User_Role}" id="__labelRole"/>
+										</header>
+									</Column>
+									<Column id="__columnUsername">
+										<header>
+											<Label text="{i18n>User_Username}" id="__labelUsername"/>
+										</header>
+									</Column>
+									<Column id="__columnCalendar">
+										<header>
+											<Label text="{i18n>User_Calendar}" id="__labelCalendar"/>
 										</header>
 									</Column>
 								</columns>
@@ -31,9 +43,9 @@
 			    <contentMiddle>
 			    </contentMiddle>
 			    <contentRight>
-			        <Button width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick"/>
-			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick"/>
-			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick"/>
+			        <Button width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" enabled="false"/>
+			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick" enabled="false"/>
+			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick" enabled="false"/>
 			    </contentRight>
 			    </Bar>
 			</footer>
