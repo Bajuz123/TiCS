@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns:core='sap.ui.core' xmlns='sap.m'>
-	<Dialog title="Title tics">
+	<Dialog title="Title TicsDetail">
 		<beginButton>
 			<Button xmlns="sap.m" width="50px" id="__buttonTicsOk" icon="sap-icon://accept" press="onOKClick"/>
 		</beginButton>
@@ -7,16 +7,16 @@
 			<Button xmlns="sap.m" width="50px" id="__buttonTicsCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 		</endButton>
 		<content>
-			<sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form0">
+			<sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__formTics">
 				<sap.ui.layout.form:formContainers>
 					<sap.ui.layout.form:FormContainer id="__containerTicsDetail">
 						<sap.ui.layout.form:formElements>
-							<sap.ui.layout.form:FormElement id="__elementDate" label="{i18n>Date}">
+							<sap.ui.layout.form:FormElement id="__elementTicsDate" label="{i18n>Date}">
 								<sap.ui.layout.form:fields>
-									<DatePicker width="35%" id="__picker0"/>
+									<DatePicker width="35%" id="__pickerTicsDate"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
-							<sap.ui.layout.form:FormElement id="__elementTimeFrom" label="{i18n>From}">
+							<sap.ui.layout.form:FormElement id="__elementTicsTimeFrom" label="{i18n>From}">
 								<sap.ui.layout.form:fields>
 									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeFrom"
 										width="35%"/>
@@ -27,14 +27,14 @@
 									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeTo" width="35%"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
-							<sap.ui.layout.form:FormElement label="{i18n>Break}" id="__element1">
+							<sap.ui.layout.form:FormElement label="{i18n>Break}" id="__elementTicsBreak">
 								<sap.ui.layout.form:fields>
-									<Input width="35%" id="__input1" placeholder="0,5"/>
+									<Input width="35%" id="__inputTicsBreak" placeholder="0,5"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
-							<sap.ui.layout.form:FormElement label="{i18n>ProjectNumber}" id="__elementProjNumber">
+							<sap.ui.layout.form:FormElement label="{i18n>ProjectNumber}" id="__elementTicsProjNumber">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__item0"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemTicsProjNum"
 										id="__boxProjNumber" maxWidth="35%">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="Project Number1" key="item1" id="__item12"/>
@@ -45,7 +45,7 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>BillingKey}" id="__elementBK">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="List Item 1" selectedKey="item1" selectedItemId="__item3" id="__boxBK"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="List Item 1" selectedKey="itemTicsBK" selectedItemId="__itemTicsBK" id="__boxBK"
 										maxWidth="35%">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key1" key="item1" id="__item9"/>
@@ -56,7 +56,7 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectKey}" id="__elementPK">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="item1" selectedItemId="__item6" id="__boxPK"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="item1" selectedItemId="__itemTicsPK" id="__boxPK"
 										maxWidth="35%">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey1" key="item1" id="__item6"/>
@@ -67,7 +67,7 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Task}" id="__elementTask">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="List Item 1" selectedKey="item1" selectedItemId="__item11"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="List Item 1" selectedKey="itemTicsTask" selectedItemId="__itemTicsTask"
 										id="__boxTask" maxWidth="35%">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="Task1" key="item1" id="__item3"/>
