@@ -30,8 +30,6 @@ var fragProject;
 		},
 
 		onAddClick: function() {
-		//	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		//	oRouter.navTo("ProjectDetail");
 		if (!fragProject) {
     		 fragProject  = new sap.ui.xmlfragment("TiCS.view.ProjectDetail", this.oView.getController() );
              this.oView.addDependent(fragProject);
