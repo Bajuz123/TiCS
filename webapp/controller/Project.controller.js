@@ -26,10 +26,9 @@ sap.ui.define([
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
 			if (selProject.projektnummer != "") {
-				var oModel = new sap.ui.model.json.JSONModel();
+				var oModel = this.getView().getModel("SelectedProject");
 				oModel.setData(selProject);
 				this.getView().setModel(oModel, "SelectedProject");
-
 				this.openFragUser();
 			} else {
 				sap.m.MessageToast.show(editSelectText);
@@ -41,7 +40,7 @@ sap.ui.define([
 			selProject.projektnummer = "";
 			selProject.beschreibung = "";
 			oModel.setData(selProject);
-			this.getView().setModel(oModel, "SelectedProjekt");
+			this.getView().setModel(oModel, "SelectedProject");
 			this.openFragUser();
 		},
 		onOKClick: function() {

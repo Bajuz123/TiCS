@@ -4,9 +4,8 @@
 			<Button xmlns="sap.m" width="50px" id="__buttonProjOk" icon="sap-icon://accept" press="onOKClick"/>
 		</beginButton>
 		<endButton>
-			  <Button xmlns="sap.m" width="50px" id="__buttonProjCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
+			<Button xmlns="sap.m" width="50px" id="__buttonProjCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 		</endButton>
-      
 		<VBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100%"
 			direction="Column" id="__vbox0">
 			<items>
