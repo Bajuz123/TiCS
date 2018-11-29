@@ -49,7 +49,7 @@ sap.ui.define([
 			if (selectedUser.personal_nr != "") {
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/USER_SET(projektnummer='" + selectedUser.personal_nr + "')", {
+				oModel.remove("/USER_SET(personal_nr='" + selectedUser.personal_nr + "')", {
 					method: "DELETE",
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
