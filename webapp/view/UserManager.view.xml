@@ -3,9 +3,9 @@
 		<pages>
 			<Page title="{i18n>UserManagerTitle}"> 
 				<content>
-				   <Table id="__tableUser" growing="true" items="{tics>/USER_SET}">
+				   <Table id="__tableUser" growing="true" items="{tics>/USER_SET}" itemPress="onItemPress">
 								<items>
-									<ColumnListItem>
+									<ColumnListItem type="Active">
 										<Text text="{tics>personal_nr}"/>
 										<Text text="{tics>role}"/>
 										<Text text="{tics>username}"/>

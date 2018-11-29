@@ -3,6 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 	var fragUser;
+
 	var selectedUser = {
 		personal_nr: "",
 		username: "",
@@ -11,7 +12,27 @@ sap.ui.define([
 	};
 
 	return Controller.extend("TiCS.controller.UserManager", {
+		onInit: function() {
+			var oModel = new sap.ui.model.json.JSONModel();
+			oModel.setData(selectedUser);
+			this.getView().setModel(oModel, "SelectedUser");
+		},
+
+		onItemPress: function(oEvent) {
+			selectedUser.personal_nr = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("personal_nr");
+			selectedUser.role = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("role");
+			selectedUser.calendar = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("calendar");
+			selectedUser.username = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("username");
+		},
+
 		onAddClick: function() {
+			var oModel = this.getView().getModel("SelectedUser");
+			selectedUser.personal_nr = "";
+			selectedUser.username= "";
+			selectedUser.role= "";
+			selectedUser.calendar= "";
+			oModel.setData(selectedUser);
+			this.getView().setModel(oModel, "SelectedUser");
 			this.openFragUser();
 		},
 
@@ -38,8 +59,6 @@ sap.ui.define([
 			} else {
 				sap.m.MessageToast.show(deleteSelectText);
 			}
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("User");
 		},
 
 		onEditClick: function() {
@@ -48,10 +67,9 @@ sap.ui.define([
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
 			if (selectedUser.personal_nr != "") {
-				var oModel = new sap.ui.model.json.JSONModel();
+				var oModel = this.getView().getModel("SelectedUser");
 				oModel.setData(selectedUser);
-				sap.ui.getCore().setModel(oModel, "SelectedUser");
-
+				this.getView().setModel(oModel, "SelectedUser");
 				this.openFragUser();
 			} else {
 				sap.m.MessageToast.show(editSelectText);
@@ -62,35 +80,38 @@ sap.ui.define([
 			var oEntry = {};
 
 			var resourceModel = this.oView.getModel("i18n");
-			oEntry.personal_nr = fragUser.byId("__inputUser_Personal_nr").getValue();
-			oEntry.username    = fragUser.byId("__inputRole").getValue();
-			oEntry.role        = fragUser.byId("__inputUser_Calendar").getValue();
-			oEntry.calendar    = fragUser.byId("__inputUser_Username").getValue();
-
 			var oModelTics = this.oView.getModel("tics");
 
-			var oModel = sap.ui.getCore().getModel("SelectedUser");
+			var oModel = this.getView().getModel("SelectedUser");
 			if (typeof oModel !== 'undefined') {
 				var selUser = oModel.getData("selectedUser");
 				if (typeof selUser !== 'undefined') {
-					var editOKTxt = resourceModel.getProperty("EditOK");
-					var editFailTxt = resourceModel.getProperty("EditFail");
+					if (typeof selUser.personal_nr !== '') {
+						var editOKTxt = resourceModel.getProperty("EditOK");
+						var editFailTxt = resourceModel.getProperty("EditFail");
 
-					oModelTics.update("/USER_SET(projektnummer='" + oEntry.personal_nr + "')", oEntry, {
-						success: function(data) {
-							sap.m.MessageToast.show(editOKTxt);
-						},
-						error: function(e) {
-							sap.m.MessageToast.show(editFailTxt);
-						}
-					});
+						oEntry.personal_nr = selectedUser.personal_nr;
+						oEntry.username = selectedUser.username;
+						oEntry.role = selectedUser.role;
+						oEntry.calendar = selectedUser.calendar;
+
+						oModelTics.update("/USER_SET(projektnummer='" + oEntry.personal_nr + "')", oEntry, {
+							success: function(data) {
+								sap.m.MessageToast.show(editOKTxt);
+							},
+							error: function(e) {
+								sap.m.MessageToast.show(editFailTxt);
+							}
+						});
+					} else {
+						oModelTics.create("/USER_SET", oEntry);
+						var resourceModel = this.getView().getModel("i18n");
+						var addOKTxt = resourceModel.getProperty("ProjectAddOK");
+						sap.m.MessageToast.show(addOKTxt);
+					}
 				}
-			} else {
-				oModelTics.create("/USER_SET", oEntry);
-				var resourceModel = this.getView().getModel("i18n");
-				var addOKTxt = resourceModel.getProperty("ProjectAddOK");
-				sap.m.MessageToast.show(addOKTxt);
 			}
+			fragUser.close();
 		},
 		onCancelClick: function() {
 			fragUser.close();

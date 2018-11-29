@@ -10,13 +10,13 @@
 			<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__formUser">
 				<sap.ui.layout.form:content>
 					<Label text="{i18n>User_Personal_nr}" id="__labelUser_Personal_nr"/>
-					<Input width="50%" id="__inputUser_Personal_nr"/>
+					<Input width="50%" id="__inputUser_Personal_nr" value="{SelectedUser>/personal_nr}"/>
 					<Label text="{i18n>User_Role}" id="__labelRole"/>
-					<Input width="50%" id="__inputRole"/>
+					<Input width="50%" id="__inputRole" value="{SelectedUser>/role}"/>
 					<Label text="{i18n>User_Calendar}" id="__labelUser_Calendar"/>
-					<Input width="50%" id="__inputUser_Calendar"/>
+					<Input width="50%" id="__inputUser_Calendar" value="{SelectedUser>/calendar}"/>
 					<Label text="{i18n>User_Username}" id="__labelUser_Username"/>
-					<Input width="50%" id="__inputUser_Username"/>
+					<Input width="50%" id="__inputUser_Username" value="{SelectedUser>/username}"/>
 				</sap.ui.layout.form:content>
 			</sap.ui.layout.form:SimpleForm>
 		</content>
