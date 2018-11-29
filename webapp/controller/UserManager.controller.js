@@ -2,7 +2,7 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 ], function(Controller) {
 	"use strict";
-
+	var fragUser;
 	return Controller.extend("TiCS.controller.UserManager", {
 
 		/**
@@ -11,12 +11,23 @@ sap.ui.define([
 		 * @memberOf TiCS.view.UserManager
 		 */
 			onAddClick: function() {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("UserDetail");
-
+		//	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		//	oRouter.navTo("UserDetail");
+			
+			if (!fragUser) {
+    		 fragUser  = new sap.ui.xmlfragment("TiCS.view.UserManagerDetail", this.oView.getController() );
+             this.oView.addDependent(fragUser);
+    	}
+        	fragUser.open();
 		},
+
+		
 			onDeleteClick: function() {
 
+		},
+		
+		onCancelClick: function() {
+		fragUser.close();
 		},
 	onEditClick: function() {
 
