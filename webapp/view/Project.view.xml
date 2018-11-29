@@ -13,12 +13,12 @@
 								<columns>
 									<Column id="__columnProjID">
 										<header>
-											<Label text="{i18n>ProjectName}" id="__label0"/>
+											<Label text="{i18n>ProjectName}" id="__labelProjecID"/>
 										</header>
 									</Column>
 									<Column id="__columnProjName">
 										<header>
-											<Label text="{i18n>ProjectDescription}" id="__label1"/>
+											<Label text="{i18n>ProjectDescription}" id="__labelProjectName"/>
 										</header>
 									</Column>
 								</columns>
@@ -36,8 +36,8 @@
 			    </contentMiddle>
 			    <contentRight>
 			        <Button xmlns="sap.m" width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" enabled="true"/>
-			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick" enabled="false"/>
-			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick" enabled="false"/>
+			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick" enabled="true"/>
+			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick" enabled="true"/>
 			    </contentRight>
 			    </Bar>
 			</footer>

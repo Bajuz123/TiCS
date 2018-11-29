@@ -81,14 +81,15 @@ sap.ui.define([
 
 			var resourceModel = this.oView.getModel("i18n");
 			var oModelTics = this.oView.getModel("tics");
+			var editOKTxt = resourceModel.getProperty("EditOK");
+			var editFailTxt = resourceModel.getProperty("EditFail");
+			var addOKTxt = resourceModel.getProperty("ProjectAddOK");
 
 			var oModel = this.getView().getModel("SelectedUser");
 			if (typeof oModel !== 'undefined') {
 				var selUser = oModel.getData("selectedUser");
 				if (typeof selUser !== 'undefined') {
 					if (typeof selUser.personal_nr !== '') {
-						var editOKTxt = resourceModel.getProperty("EditOK");
-						var editFailTxt = resourceModel.getProperty("EditFail");
 
 						oEntry.personal_nr = selectedUser.personal_nr;
 						oEntry.username = selectedUser.username;
@@ -105,11 +106,11 @@ sap.ui.define([
 						});
 					} else {
 						oModelTics.create("/USER_SET", oEntry);
-						var resourceModel = this.getView().getModel("i18n");
-						var addOKTxt = resourceModel.getProperty("ProjectAddOK");
 						sap.m.MessageToast.show(addOKTxt);
 					}
 				}
+			} else {
+				sap.m.MessageToast.show(editFailTxt);
 			}
 			fragUser.close();
 		},
