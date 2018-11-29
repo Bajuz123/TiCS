@@ -15,6 +15,6 @@
 					<Input width="50%" id="__inputPermission"/></sap.ui.layout.form:content>
 			</sap.ui.layout.form:SimpleForm>
 		</content>
-		{
+		
 	</Dialog>
 </core:FragmentDefinition>
