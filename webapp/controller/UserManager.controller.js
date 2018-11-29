@@ -28,10 +28,7 @@ sap.ui.define([
 
 		onAddClick: function() {
 			var oModel = this.getView().getModel("SelectedUser");
-			selectedUser.personal_nr = "";
-			selectedUser.username= "";
-			selectedUser.role= "";
-			selectedUser.calendar= "";
+			this.clearSelected();
 			selectedUser.method = "create";
 
 			oModel.setData(selectedUser);
@@ -59,6 +56,7 @@ sap.ui.define([
 					}
 				});
 				oModel.refresh();
+   				this.clearSelected();
 			} else {
 				sap.m.MessageToast.show(deleteSelectText);
 			}
@@ -123,9 +121,11 @@ sap.ui.define([
 				sap.m.MessageToast.show(editFailTxt);
 			}
 			oModelTics.refresh();
+			this.clearSelected();
 			fragUser.close();
 		},
 		onCancelClick: function() {
+			this.clearSelected();
 			fragUser.close();
 		},
 		openFragUser: function() {
@@ -134,6 +134,12 @@ sap.ui.define([
 				this.oView.addDependent(fragUser);
 			}
 			fragUser.open();
+		},
+		clearSelected:function() {
+			selectedUser.personal_nr = "";
+			selectedUser.username= "";
+			selectedUser.role= "";
+			selectedUser.calendar= "";
 		}
 	});
 });
