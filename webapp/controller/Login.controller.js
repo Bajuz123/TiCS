@@ -5,7 +5,8 @@ sap.ui.define([
 
 	return Controller.extend("TiCS.controller.Login", {
 		onLoginClick:function(){
-			
+//            <Input width="100%" id="__inputUserName"/>
+//           <Input width="100%" id="__inputUserPassword"/>
 		}
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
