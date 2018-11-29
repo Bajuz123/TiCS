@@ -2,7 +2,6 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 ], function(Controller) {
 	"use strict";
-
 	var selProject = {
 		projektnummer: "",
 		beschreibung: ""
@@ -46,8 +45,8 @@ sap.ui.define([
 					var editOKTxt = resourceModel.getProperty("EditOK");
 					var editFailTxt = resourceModel.getProperty("EditFail");
 
-					oEntry.projektnummer = this.oView.byId("__inputProject").getValue();
-					oEntry.beschreibung = this.oView.byId("__inpuProjectDesc").getValue();
+					oEntry.projektnummer = fragProject.byId("__inputProject").getValue();
+					oEntry.beschreibung = fragProject.byId("__inpuProjectDesc").getValue();
 
 					oModelTics.update("/PROJECT_SET(projektnummer='" + oEntry.projektnummer + "')", oEntry, {
 						success: function(data) {

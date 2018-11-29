@@ -62,10 +62,10 @@ sap.ui.define([
 			var oEntry = {};
 
 			var resourceModel = this.oView.getModel("i18n");
-			oEntry.personal_nr = this.oView.byId("__inputUser_Personal_nr").getValue();
-			oEntry.username    = this.oView.byId("__inputRole").getValue();
-			oEntry.role        = this.oView.byId("__inputUser_Calendar").getValue();
-			oEntry.calendar    = this.oView.byId("__inputUser_Username").getValue();
+			oEntry.personal_nr = fragUser.byId("__inputUser_Personal_nr").getValue();
+			oEntry.username    = fragUser.byId("__inputRole").getValue();
+			oEntry.role        = fragUser.byId("__inputUser_Calendar").getValue();
+			oEntry.calendar    = fragUser.byId("__inputUser_Username").getValue();
 
 			var oModelTics = this.oView.getModel("tics");
 
