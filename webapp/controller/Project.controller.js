@@ -8,11 +8,9 @@ sap.ui.define([
 		beschreibung: ""
 	};
 	var fragProject;
-	var modelTics;
 
 	return Controller.extend("TiCS.controller.Project", {
 		onInit: function() {
-			modelTics = this.oView.getModel("tics");
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.setData(selProject);
 			this.getView().setModel(oModel, "SelectedProject");
@@ -53,6 +51,7 @@ sap.ui.define([
 			var addOKTxt = resourceModel.getProperty("ProjectAddOK");
 			var oEntry = {};
 			var oModel = this.getView().getModel("SelectedProject");
+			var modelTics = this.oView.getModel("tics");
 			if (typeof oModel !== 'undefined') {
 				var selProject = oModel.getData("selProject");
 				if (typeof selProject !== 'undefined') {
@@ -83,6 +82,7 @@ sap.ui.define([
 
 		onDeleteClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
+			var modelTics = this.oView.getModel("tics");
 			var oTable = this.getView().byId("__tableProjects");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
