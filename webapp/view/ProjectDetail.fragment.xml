@@ -7,15 +7,15 @@
 			<Button xmlns="sap.m" width="50px" id="__buttonProjCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 		</endButton>
 		<VBox xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" width="100%"
-			direction="Column" id="__vbox0">
+			direction="Column" id="__vboxVertical">
 			<items>
-				<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__form16"
+				<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="__formSimple"
 					labelMinWidth="800">
 					<sap.ui.layout.form:content>
 						<Label text="{i18n>Project}" id="__labelProject"/>
-						<Input width="50%" id="__inputProject" fieldWidth="100%" value="{SelectedProject>projektnummer}"/>
+						<Input width="50%" id="__inputProject" value="{SelectedProject>/projektnummer}"/>
 						<Label text="{i18n>ProjectDescription}" width="100%" id="__labelProjectDesc" textDirection="LTR"/>
-						<Input width="50%" id="__inpuProjectDesc" fieldWidth="100%" maxLength="20" value="{SelectedProject>beschreibung}"/>
+						<Input width="50%" id="__inpuProjectDesc" maxLength="20" value="{SelectedProject>/beschreibung}"/>
 					</sap.ui.layout.form:content>
 				</sap.ui.layout.form:SimpleForm>
 			</items>

@@ -1,7 +1,10 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TiCS.controller.Project" displayBlock="true">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="TiCS.controller.Project"
+	displayBlock="true">
 	<App>
-		<pages><Page title="{i18n>ProjectTitle}">
-				<content><VBox width="100%" direction="Column" id="__vbox0">
+		<pages>
+			<Page title="{i18n>ProjectTitle}">
+				<content>
+					<VBox width="100%" direction="Column" id="__vbox0">
 						<items>
 							<Table id="__tableProjects" growing="true" items="{tics>/PROJECT_SET}" itemPress="onItemPress">
 								<items>
@@ -26,21 +29,18 @@
 						</items>
 					</VBox>
 				</content>
-			<headerContent>
-			</headerContent>
-			<footer>
-			    <Bar class="sapContrast sapContrastPlus" id="__bar0">
-			        <contentLeft>
-			        </contentLeft>
-			    <contentMiddle>
-			    </contentMiddle>
-			    <contentRight>
-			        <Button xmlns="sap.m" width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" enabled="true"/>
-			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick" enabled="true"/>
-			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick" enabled="true"/>
-			    </contentRight>
-			    </Bar>
-			</footer>
+				<headerContent></headerContent>
+				<footer>
+					<Bar class="sapContrast sapContrastPlus" id="__bar0">
+						<contentLeft></contentLeft>
+						<contentMiddle></contentMiddle>
+						<contentRight>
+							<Button xmlns="sap.m" width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" enabled="true"/>
+							<Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick" enabled="true"/>
+							<Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick" enabled="true"/>
+						</contentRight>
+					</Bar>
+				</footer>
 			</Page>
 		</pages>
 	</App>
