@@ -87,18 +87,18 @@ sap.ui.define([
 			var oModelTics = this.oView.getModel("tics");
 			var editOKTxt = resourceModel.getProperty("EditOK");
 			var editFailTxt = resourceModel.getProperty("EditFail");
-			var addOKTxt = resourceModel.getProperty("ProjectAddOK");
+			var addOKTxt = resourceModel.getProperty("UserAddOK");
+			var addFailTxt = resourceModel.getProperty("UserAddFail");
 
 			var oModel = this.getView().getModel("SelectedUser");
 			if (typeof oModel !== 'undefined') {
 				var selUser = oModel.getData("selectedUser");
 				if (typeof selUser !== 'undefined') {
+					oEntry.personal_nr = selectedUser.personal_nr;
+					oEntry.username = selectedUser.username;
+					oEntry.role = selectedUser.role;
+					oEntry.calendar = selectedUser.calendar;
 					if (selUser.method !== 'create') {
-
-						oEntry.personal_nr = selectedUser.personal_nr;
-						oEntry.username = selectedUser.username;
-						oEntry.role = selectedUser.role;
-						oEntry.calendar = selectedUser.calendar;
 
 						oModelTics.update("/USER_SET(projektnummer='" + oEntry.personal_nr + "')", oEntry, {
 							success: function(data) {
@@ -109,13 +109,20 @@ sap.ui.define([
 							}
 						});
 					} else {
-						oModelTics.create("/USER_SET", oEntry);
-						sap.m.MessageToast.show(addOKTxt);
+						oModelTics.create("/USER_SET", oEntry, {
+							success: function(data) {
+								sap.m.MessageToast.show(addOKTxt);
+							},
+							error: function(e) {
+								sap.m.MessageToast.show(addFailTxt);
+							}
+						});
 					}
 				}
 			} else {
 				sap.m.MessageToast.show(editFailTxt);
 			}
+			oModelTics.refresh();
 			fragUser.close();
 		},
 		onCancelClick: function() {
