@@ -14,7 +14,7 @@
 				            <Label text="{i18n>LoginLabel}" width="100%" id="__labelCredentials"/>
 				            <Input width="100%" id="__inputUserName"/>
 				            <Input width="100%" id="__inputUserPassword"/>
-				            <Button text="{i18n>Login}" width="100px" id="__buttonLogin"/>
+				            <Button text="{i18n>Login}" width="100px" id="__buttonLogin" press="onLoginClick"/>
 				        </items>
 				    </VBox>
 				        </content>
