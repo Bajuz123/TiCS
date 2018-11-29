@@ -27,7 +27,8 @@ sap.ui.define([
 		},
 		
 		onCancelClick: function() {
-		fragUser.close();
+		//fragUser.close();
+		fragUser.destroy(true);
 		},
 	onEditClick: function() {
 
