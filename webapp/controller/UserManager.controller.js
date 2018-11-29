@@ -8,7 +8,8 @@ sap.ui.define([
 		personal_nr: "",
 		username: "",
 		role: "",
-		calendar: ""
+		calendar: "",
+		method:"create"
 	};
 
 	return Controller.extend("TiCS.controller.UserManager", {
@@ -31,6 +32,8 @@ sap.ui.define([
 			selectedUser.username= "";
 			selectedUser.role= "";
 			selectedUser.calendar= "";
+			selectedUser.method = "create";
+
 			oModel.setData(selectedUser);
 			this.getView().setModel(oModel, "SelectedUser");
 			this.openFragUser();
@@ -67,6 +70,7 @@ sap.ui.define([
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
 			if (selectedUser.personal_nr != "") {
+				selectedUser.method = "update";
 				var oModel = this.getView().getModel("SelectedUser");
 				oModel.setData(selectedUser);
 				this.getView().setModel(oModel, "SelectedUser");
@@ -89,7 +93,7 @@ sap.ui.define([
 			if (typeof oModel !== 'undefined') {
 				var selUser = oModel.getData("selectedUser");
 				if (typeof selUser !== 'undefined') {
-					if (typeof selUser.personal_nr !== '') {
+					if (typeof selUser.method !== 'create') {
 
 						oEntry.personal_nr = selectedUser.personal_nr;
 						oEntry.username = selectedUser.username;

@@ -5,7 +5,8 @@ sap.ui.define([
 
 	var selProject = {
 		projektnummer: "",
-		beschreibung: ""
+		beschreibung: "",
+		method:"create"
 	};
 	var fragProject;
 
@@ -27,6 +28,7 @@ sap.ui.define([
 
 			if (selProject.projektnummer != "") {
 				var oModel = this.getView().getModel("SelectedProject");
+				selProject.method = "update";
 				oModel.setData(selProject);
 				this.getView().setModel(oModel, "SelectedProject");
 				this.openFragUser();
@@ -39,6 +41,7 @@ sap.ui.define([
 			var oModel = this.getView().getModel("SelectedProject");
 			selProject.projektnummer = "";
 			selProject.beschreibung = "";
+			selProject.method = "create";
 			oModel.setData(selProject);
 			this.getView().setModel(oModel, "SelectedProject");
 			this.openFragUser();
@@ -54,7 +57,7 @@ sap.ui.define([
 			if (typeof oModel !== 'undefined') {
 				var selProject = oModel.getData("selProject");
 				if (typeof selProject !== 'undefined') {
-					if (selProject.projektnummer !== "") {
+					if (selProject.method !== "create") {
 						oEntry.projektnummer = selProject.projektnummer;
 						oEntry.beschreibung = selProject.beschreibung;
 
