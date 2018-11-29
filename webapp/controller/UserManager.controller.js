@@ -100,7 +100,7 @@ sap.ui.define([
 					oEntry.calendar = selectedUser.calendar;
 					if (selUser.method !== 'create') {
 
-						oModelTics.update("/USER_SET(projektnummer='" + oEntry.personal_nr + "')", oEntry, {
+						oModelTics.update("/USER_SET(personal_nr='" + oEntry.personal_nr + "')", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(editOKTxt);
 							},
