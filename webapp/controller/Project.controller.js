@@ -16,6 +16,7 @@ sap.ui.define([
 			oModel.setData(selProject);
 			this.getView().setModel(oModel, "SelectedProject");
 		},
+
 		onItemPress: function(oEvent) {
 			selProject.projektnummer = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer");
 			selProject.beschreibung = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung");
@@ -39,8 +40,7 @@ sap.ui.define([
 
 		onAddClick: function() {
 			var oModel = this.getView().getModel("SelectedProject");
-			selProject.projektnummer = "";
-			selProject.beschreibung = "";
+			this.clearSelected();
 			selProject.method = "create";
 			oModel.setData(selProject);
 			this.getView().setModel(oModel, "SelectedProject");
@@ -75,10 +75,12 @@ sap.ui.define([
 					}
 				}
 			}
+			this.clearSelected();
 			fragProject.close();
 		},
 
 		onCancelClick: function() {
+			this.clearSelected();
 			fragProject.close();
 		},
 
@@ -101,6 +103,7 @@ sap.ui.define([
 					}
 				});
 				modelTics.refresh();
+				this.clearSelected();
 			} else {
 				sap.m.MessageToast.show(deleteSelectText);
 			}
@@ -111,6 +114,12 @@ sap.ui.define([
 				this.oView.addDependent(fragProject);
 			}
 			fragProject.open();
+		},
+		clearSelected: function() {
+			selProject.projektnummer = "";
+			selProject.beschreibung = "";
 		}
+
+
 	});
 });

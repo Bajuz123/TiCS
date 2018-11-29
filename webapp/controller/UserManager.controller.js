@@ -9,7 +9,7 @@ sap.ui.define([
 		username: "",
 		role: "",
 		calendar: "",
-		method:"create"
+		method: "create"
 	};
 
 	return Controller.extend("TiCS.controller.UserManager", {
@@ -56,7 +56,7 @@ sap.ui.define([
 					}
 				});
 				oModel.refresh();
-   				this.clearSelected();
+				this.clearSelected();
 			} else {
 				sap.m.MessageToast.show(deleteSelectText);
 			}
@@ -106,7 +106,7 @@ sap.ui.define([
 								sap.m.MessageToast.show(editFailTxt);
 							}
 						});
-					} else {
+					} else if (selUser.method === 'create') {
 						oModelTics.create("/USER_SET", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(addOKTxt);
@@ -135,11 +135,11 @@ sap.ui.define([
 			}
 			fragUser.open();
 		},
-		clearSelected:function() {
+		clearSelected: function() {
 			selectedUser.personal_nr = "";
-			selectedUser.username= "";
-			selectedUser.role= "";
-			selectedUser.calendar= "";
+			selectedUser.username = "";
+			selectedUser.role = "";
+			selectedUser.calendar = "";
 		}
 	});
 });
