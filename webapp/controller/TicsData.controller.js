@@ -14,21 +14,30 @@ sap.ui.define([
 			//approveDataObj	
 		},
 
+		successApproval: function() {
+			sap.m.MessageToast.show("ok");
+		},
+		
+		errorApproval: function() {
+			sap.m.MessageToast.show("fail");
+		},
+
 		approveData: function() {
-			var oDataModel = this.getView().getModel();
+			var oDataModel = this.getView().getModel("tics");
 
 			//oData selection (from-to), personalnr
 			this.setSelectedData();
+			var oUrlParams = { 
+			  personal_nr : approveDataObj.personal_nr,
+			  date_from   : approveDataObj.date_from,
+			  date_to    : approveDataObj.date_to
+			};
 
-			oDataModel.callFunction("CHECK_DATA", "GET", {
-					"personal_nr": approveDataObj.personal_nr,
-					"date_from": approveDataObj.date_from,
-					"date_to": approveDataObj.date_to
-				}, null, function(oData, response) {
-					sap.m.MessageToast.show("call success");
-				}, // callback function for success
-				function(oError) {
-					sap.m.MessageToast.show("call fail");
+			oDataModel.callFunction("/CHECK_DATA", { 
+				method:"GET",
+				urlParameters: oUrlParams,
+				success: jQuery.proxy(this.successApproval, this),
+				error: jQuery.proxy(this.errorApproval,this)
 				}); // callback function for error
 		},
 
