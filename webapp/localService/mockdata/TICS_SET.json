@@ -1,12 +1,12 @@
 [{
-	"tag": "tag 1",
-	"vonzeit": "vonzeit 1",
+	"tag": "28.11.2019",
+	"vonzeit": "08:00",
 	"erf_datum": "/Date(1542150000000)/",
 	"erf_uhrzeit": "PT9H1M54S",
 	"createtime": "createtime 1",
-	"biszeit": "biszeit 1",
-	"pause": "pause 1",
-	"projektzeit": 6142.25,
+	"biszeit": "09:00",
+	"pause": "0",
+	"projektzeit": 1,
 	"projektnummer": "projektnummer 1",
 	"abrechnungsschl": "abrechnungsschl 1",
 	"projektschl": "projektschl 1",
@@ -19,14 +19,14 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 2",
-	"vonzeit": "vonzeit 2",
+	"tag": "28.11.2019",
+	"vonzeit": "09:00",
 	"erf_datum": "/Date(1540940400000)/",
 	"erf_uhrzeit": "PT20H6M21S",
 	"createtime": "createtime 2",
-	"biszeit": "biszeit 2",
-	"pause": "pause 2",
-	"projektzeit": 1063.5,
+	"biszeit": "10:00",
+	"pause": "0",
+	"projektzeit": 1,
 	"projektnummer": "projektnummer 2",
 	"abrechnungsschl": "abrechnungsschl 2",
 	"projektschl": "projektschl 2",
@@ -39,15 +39,15 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 3",
-	"vonzeit": "vonzeit 3",
+	"tag": "28.11.2019",
+	"vonzeit": "10:00",
 	"erf_datum": "/Date(1542754800000)/",
 	"erf_uhrzeit": "PT8H54M11S",
 	"createtime": "createtime 3",
-	"biszeit": "biszeit 3",
-	"pause": "pause 3",
-	"projektzeit": 1382.87,
-	"projektnummer": "projektnummer 3",
+	"biszeit": "11:00",
+	"pause": "0",
+	"projektzeit": 1,
+	"projektnummer": "projektnummer 1",
 	"abrechnungsschl": "abrechnungsschl 3",
 	"projektschl": "projektschl 3",
 	"aufgabe": "aufgabe 3",
@@ -59,15 +59,15 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 4",
-	"vonzeit": "vonzeit 4",
+	"tag": "28.11.2019",
+	"vonzeit": "08:00",
 	"erf_datum": "/Date(1542063600000)/",
 	"erf_uhrzeit": "PT12H10M34S",
 	"createtime": "createtime 4",
-	"biszeit": "biszeit 4",
-	"pause": "pause 4",
-	"projektzeit": 5187.4,
-	"projektnummer": "projektnummer 4",
+	"biszeit": "09:00",
+	"pause": "0",
+	"projektzeit": 1,
+	"projektnummer": "projektnummer 2",
 	"abrechnungsschl": "abrechnungsschl 4",
 	"projektschl": "projektschl 4",
 	"aufgabe": "aufgabe 4",
@@ -79,15 +79,15 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 5",
-	"vonzeit": "vonzeit 5",
+	"tag": "28.11.2019",
+	"vonzeit": "10:00",
 	"erf_datum": "/Date(1541545200000)/",
 	"erf_uhrzeit": "PT22H15M32S",
 	"createtime": "createtime 5",
-	"biszeit": "biszeit 5",
-	"pause": "pause 5",
-	"projektzeit": 9526.94,
-	"projektnummer": "projektnummer 5",
+	"biszeit": "11:00",
+	"pause": "0",
+	"projektzeit": 1,
+	"projektnummer": "projektnummer 1",
 	"abrechnungsschl": "abrechnungsschl 5",
 	"projektschl": "projektschl 5",
 	"aufgabe": "aufgabe 5",
@@ -99,15 +99,15 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 6",
-	"vonzeit": "vonzeit 6",
+	"tag": "28.11.2019",
+	"vonzeit": "11:00",
 	"erf_datum": "/Date(1540940400000)/",
 	"erf_uhrzeit": "PT11H34M33S",
 	"createtime": "createtime 6",
-	"biszeit": "biszeit 6",
-	"pause": "pause 6",
-	"projektzeit": 5564.93,
-	"projektnummer": "projektnummer 6",
+	"biszeit": "12:00",
+	"pause": "0",
+	"projektzeit": 1,
+	"projektnummer": "projektnummer 2",
 	"abrechnungsschl": "abrechnungsschl 6",
 	"projektschl": "projektschl 6",
 	"aufgabe": "aufgabe 6",
@@ -119,15 +119,15 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 7",
-	"vonzeit": "vonzeit 7",
+	"tag": "28.11.2019",
+	"vonzeit": "08:00",
 	"erf_datum": "/Date(1542236400000)/",
 	"erf_uhrzeit": "PT9H10M40S",
 	"createtime": "createtime 7",
-	"biszeit": "biszeit 7",
-	"pause": "pause 7",
-	"projektzeit": 4216.9,
-	"projektnummer": "projektnummer 7",
+	"biszeit": "17:30",
+	"pause": "0.5",
+	"projektzeit": 8,
+	"projektnummer": "projektnummer 1",
 	"abrechnungsschl": "abrechnungsschl 7",
 	"projektschl": "projektschl 7",
 	"aufgabe": "aufgabe 7",
@@ -139,15 +139,15 @@
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }, {
-	"tag": "tag 8",
-	"vonzeit": "vonzeit 8",
+	"tag": "28.11.2019",
+	"vonzeit": "09:00",
 	"erf_datum": "/Date(1542841200000)/",
 	"erf_uhrzeit": "PT17H1M18S",
 	"createtime": "createtime 8",
-	"biszeit": "biszeit 8",
-	"pause": "pause 8",
-	"projektzeit": 8560.27,
-	"projektnummer": "projektnummer 8",
+	"biszeit": "11:00",
+	"pause": "0",
+	"projektzeit": 2,
+	"projektnummer": "projektnummer 2",
 	"abrechnungsschl": "abrechnungsschl 8",
 	"projektschl": "projektschl 8",
 	"aufgabe": "aufgabe 8",
@@ -156,46 +156,6 @@
 	"ticsId": "d7fe22d3-9075-4b7a-b198-c7240455c017",
 	"__metadata": {
 		"uri": "TICS_SET(tag='tag%208',vonzeit='vonzeit%208',erf_datum=[object Object],erf_uhrzeit=PT17H1M18S,createtime='createtime%208',biszeit='biszeit%208',pause='pause%208',projektzeit=8560.27,projektnummer='projektnummer%208',abrechnungsschl='abrechnungsschl%208',projektschl='projektschl%208',aufgabe='aufgabe%208',fefahrzeit=5490.96,fakturierbarefah=undefined,id=guid'd7fe22d3-9075-4b7a-b198-c7240455c017')",
-		"type": "Z_WEB_TICS_SRV.TICS"
-	}
-}, {
-	"tag": "tag 9",
-	"vonzeit": "vonzeit 9",
-	"erf_datum": "/Date(1542236400000)/",
-	"erf_uhrzeit": "PT8H44M8S",
-	"createtime": "createtime 9",
-	"biszeit": "biszeit 9",
-	"pause": "pause 9",
-	"projektzeit": 1054.2,
-	"projektnummer": "projektnummer 9",
-	"abrechnungsschl": "abrechnungsschl 9",
-	"projektschl": "projektschl 9",
-	"aufgabe": "aufgabe 9",
-	"fefahrzeit": 8374.59,
-	"fakturierbarfah": 9240.18,
-	"ticsId": "9acf617c-9632-4c8e-b883-acdb79b3640b",
-	"__metadata": {
-		"uri": "TICS_SET(tag='tag%209',vonzeit='vonzeit%209',erf_datum=[object Object],erf_uhrzeit=PT8H44M8S,createtime='createtime%209',biszeit='biszeit%209',pause='pause%209',projektzeit=1054.2,projektnummer='projektnummer%209',abrechnungsschl='abrechnungsschl%209',projektschl='projektschl%209',aufgabe='aufgabe%209',fefahrzeit=8374.59,fakturierbarefah=undefined,id=guid'9acf617c-9632-4c8e-b883-acdb79b3640b')",
-		"type": "Z_WEB_TICS_SRV.TICS"
-	}
-}, {
-	"tag": "tag 10",
-	"vonzeit": "vonzeit 10",
-	"erf_datum": "/Date(1542236400000)/",
-	"erf_uhrzeit": "PT12H26M24S",
-	"createtime": "createtime 10",
-	"biszeit": "biszeit 10",
-	"pause": "pause 10",
-	"projektzeit": 2409.66,
-	"projektnummer": "projektnummer 10",
-	"abrechnungsschl": "abrechnungsschl 10",
-	"projektschl": "projektschl 10",
-	"aufgabe": "aufgabe 10",
-	"fefahrzeit": 4014.26,
-	"fakturierbarfah": 1156.45,
-	"ticsId": "45f2030b-3e90-48bd-a819-62027bea8136",
-	"__metadata": {
-		"uri": "TICS_SET(tag='tag%2010',vonzeit='vonzeit%2010',erf_datum=[object Object],erf_uhrzeit=PT12H26M24S,createtime='createtime%2010',biszeit='biszeit%2010',pause='pause%2010',projektzeit=2409.66,projektnummer='projektnummer%2010',abrechnungsschl='abrechnungsschl%2010',projektschl='projektschl%2010',aufgabe='aufgabe%2010',fefahrzeit=4014.26,fakturierbarefah=undefined,id=guid'45f2030b-3e90-48bd-a819-62027bea8136')",
 		"type": "Z_WEB_TICS_SRV.TICS"
 	}
 }]

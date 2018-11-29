@@ -1,133 +1,118 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="TiCS.controller.TicsData">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="TiCS.controller.TicsData">
 	<App>
-		<pages><Page title="{i18n>TicsTitle}">
+		<pages>
+			<Page title="{i18n>TicsTitle}">
 				<content>
-				    <sap.ui.layout:VerticalLayout xmlns:sap.ui.layout="sap.ui.layout" width="100%" id="__layout1">
-				    <sap.ui.layout:content>
-				        <sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form0">
-				            <sap.ui.layout.form:formContainers>
-				                <sap.ui.layout.form:FormContainer title="Filter" id="__container0" expandable="true" expanded="false">
-				                    <sap.ui.layout.form:formElements>
-				                        <sap.ui.layout.form:FormElement label="{i18n>DateTo}" id="__labelDateTo">
-				                            <sap.ui.layout.form:fields>
-				                            	<DatePicker width="25%" id="__pickerTo"/>
-				                            </sap.ui.layout.form:fields>
-				                        </sap.ui.layout.form:FormElement>
-				                         <sap.ui.layout.form:FormElement label="{i18n>DateFrom}" id="__labelDateFrom">
-				                            <sap.ui.layout.form:fields>
-				                            	<DatePicker width="25%" id="__pickerFrom"/>
-				                            </sap.ui.layout.form:fields>
-				                        </sap.ui.layout.form:FormElement>
-				                    </sap.ui.layout.form:formElements>
-				                </sap.ui.layout.form:FormContainer>
-				            </sap.ui.layout.form:formContainers>
-				            <sap.ui.layout.form:layout>
-				                <sap.ui.layout.form:ResponsiveGridLayout id="__layout0"/>
-				            </sap.ui.layout.form:layout></sap.ui.layout.form:Form>
-				    </sap.ui.layout:content>
-				    </sap.ui.layout:VerticalLayout>
-				    <Table id="__tableTics" growing="true" items="{tics>/TICS_SET}" itemPress="onItemPress">
-				        <items>
-				            <ColumnListItem>
-				                    <Text text="{tics>tag}"/>
-				                	<Text text="{tics>vonzeit}"/>
-				                	<Text text="{tics>erf_datum}"/>
-				                	<Text text="{tics>erf_uhrzeit}"/>
-				                   	<Text text="{tics>biszeit}"/>
-				                	<Text text="{tics>pause}"/>
-				                	<Text text="{tics>projektzeit}"/>
-				                    <Text text="{tics>projektnummer}"/>
-									<Text text="{tics>abrechnungsschl}"/>
-									<Text text="{tics>projektschl}"/>
-				                    <Text text="{tics>aufgabe}"/>
-				                    <Text text="{tics>fefahrzeit}"/>
-				                    <Text text="{tics>fakturierbarefah}"/>
-				                    <Text text="{tics>ticsId}"/>
-				            </ColumnListItem></items>
-				        <columns>
-				            <Column id="__column0">
-				                <header>
-				                    <Label text="{i18n>TicsDay}" id="__labelDay"/>
-				                </header>
-				            </Column>
-				            <Column id="__column1">
-				                <header>
-				                    <Label text="{i18n>TicsFrom}" id="__labelFrom"/>
-				                </header>
-				            </Column>
-				            <Column id="__column2">
-				                <header>
-				                    <Label text="{i18n>TicsCreateDate}" id="__labelCreateDate"/>
-				                </header>
-				            </Column>
-				            <Column id="__column3">
-				                <header>
-				                    <Label text="{i18n>TicsCreateTime}" id="__labelCreateTime"/>
-				                </header>
-				            </Column>
-				             <Column id="__column4">
-				                <header>
-				                    <Label text="{i18n>TicsTo}" id="__labelTo"/>
-				                </header>
-				            </Column>
-				              <Column id="__column5">
-				                <header>
-				                    <Label text="{i18n>TicsBreak}" id="__labelBreak"/>
-				                </header>
-				            </Column>
-				             <Column id="__column6">
-				                <header>
-				                    <Label text="{i18n>TicsProjectTime}" id="__labelProjectTime"/>
-				                </header>
-				            </Column><Column id="__column7">
-				                <header>
-				                    <Label text="{i18n>TicsProjectNumber}" id="__labelProjectNumb"/>
-				                </header>
-				            </Column>
-				             <Column id="__column8">
-				                <header>
-				                    <Label text="{i18n>TicsBilingKey}" id="__labelBK"/>
-				                </header>
-				            </Column>
-				             <Column id="__column9">
-				                <header>
-				                    <Label text="{i18n>TicsProjectKey}" id="__labelPK"/>
-				                </header>
-				            </Column>
-				             <Column id="__column10">
-				                <header>
-				                    <Label text="{i18n>TicsTask}" id="__labelTask"/>
-				                </header>
-				            </Column>
-				             <Column id="__column11">
-				                <header>
-				                    <Label text="{i18n>TicsTravelTime}" id="__labelTravelTime"/>
-				                </header>
-				            </Column>
-				             <Column id="__column12">
-				                <header>
-				                    <Label text="{i18n>TicsFETravelTime}" id="__labelFeTravelTime"/>
-				                </header>
-				            </Column>
-				           </columns></Table>
+					<sap.ui.layout:VerticalLayout xmlns:sap.ui.layout="sap.ui.layout" width="100%" id="__layout1">
+						<sap.ui.layout:content>
+							<sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form0">
+								<sap.ui.layout.form:formContainers>
+									<sap.ui.layout.form:FormContainer title="Filter" id="__container0" expandable="true" expanded="false">
+										<sap.ui.layout.form:formElements>
+											<sap.ui.layout.form:FormElement label="{i18n>DateTo}" id="__labelDateTo">
+												<sap.ui.layout.form:fields>
+													<DatePicker width="25%" id="__pickerTo"/>
+												</sap.ui.layout.form:fields>
+											</sap.ui.layout.form:FormElement>
+											<sap.ui.layout.form:FormElement label="{i18n>DateFrom}" id="__labelDateFrom">
+												<sap.ui.layout.form:fields>
+													<DatePicker width="25%" id="__pickerFrom"/>
+												</sap.ui.layout.form:fields>
+											</sap.ui.layout.form:FormElement>
+										</sap.ui.layout.form:formElements>
+									</sap.ui.layout.form:FormContainer>
+								</sap.ui.layout.form:formContainers>
+								<sap.ui.layout.form:layout>
+									<sap.ui.layout.form:ResponsiveGridLayout id="__layout0"/>
+								</sap.ui.layout.form:layout>
+							</sap.ui.layout.form:Form>
+						</sap.ui.layout:content>
+					</sap.ui.layout:VerticalLayout>
+					<Table id="__tableTics" growing="true" items="{tics>/TICS_SET}" itemPress="onItemPress">
+						<items>
+							<ColumnListItem>
+								<Text text="{tics>tag}"/>
+								<Text text="{tics>vonzeit}"/>
+								<Text text="{tics>biszeit}"/>
+								<Text text="{tics>projektzeit}"/>
+								<Text text="{tics>pause}"/>
+								<Text text="{tics>projektnummer}"/>
+								<Text text="{tics>abrechnungsschl}"/>
+								<Text text="{tics>projektschl}"/>
+								<Text text="{tics>aufgabe}"/>
+								<Text text="{tics>bemerkung}"/>
+							</ColumnListItem>
+						</items>
+						<columns>
+							<Column id="__columnTag" visible="true">
+								<header>
+									<Label text="{i18n>Tag}" id="__labelTag"/>
+								</header>
+							</Column>
+							<Column id="__columnVonzeit" visible="true">
+								<header>
+									<Label text="{i18n>Vonzeit}" id="__labelVonzeit"/>
+								</header>
+							</Column>
+							<Column id="__columnBiszeit" visible="true">
+								<header>
+									<Label text="{i18n>Biszeit}" id="__labelBiszeit"/>
+								</header>
+							</Column>
+							<Column id="__columnProjektzeit" visible="true">
+								<header>
+									<Label text="{i18n>Projektzeit}" id="__labelProjektzeit"/>
+								</header>
+							</Column>
+							<Column id="__columnPause" visible="true">
+								<header>
+									<Label text="{i18n>Pause}" id="__labelPause"/>
+								</header>
+							</Column>
+							<Column id="__columnprojektnummer" visible="true">
+								<header>
+									<Label text="{i18n>Projektnummer}" id="__labelProjektnummer"/>
+								</header>
+							</Column>
+							<Column id="__columnAbrechnungsschl" visible="false">
+								<header>
+									<Label text="{i18n>Abrechnungsschl}" id="__labelAbrechnungsschl"/>
+								</header>
+							</Column>
+							<Column id="__columnProjektschl" visible="false">
+								<header>
+									<Label text="{i18n>Projektschl}" id="__labelProjektschl"/>
+								</header>
+							</Column>
+							<Column id="__columnAufgabe" visible="true">
+								<header>
+									<Label text="{i18n>Aufgabe}" id="__labelAufgabe"/>
+								</header>
+							</Column>
+							<Column id="__columnBemerkung" visible="false">
+								<header>
+									<Label text="{i18n>Bemerkung}" id="__labelBemerkung"/>
+								</header>
+							</Column>
+						</columns>
+					</Table>
 				</content>
-			<headerContent>
-			</headerContent>
-			<footer>
-			    <Bar xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__bar0_copy">
-				            <contentMiddle>
-				                </contentMiddle>
-				            <contentRight>
-				                <Button xmlns="sap.m" width="100px" id="__buttonFilter" icon="sap-icon://filter" press="onFilterClick"/>
-				                <Button xmlns="sap.m" width="100px" id="__buttonAdd12" icon="sap-icon://add" press="onAddClick"/>
-				                <Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onDeleteClick"/>
-				                <Button xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClick"/>
-				            </contentRight>
-				            <contentLeft>
-				                <Button width="100px" id="__buttonCheck" icon="sap-icon://approvals" press="approveData"/>
-				            </contentLeft>
-				            </Bar>
-			</footer>
+				<headerContent></headerContent>
+				<footer>
+					<Bar xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns="sap.m" id="__bar0_copy">
+						<contentMiddle></contentMiddle>
+						<contentRight>
+							<Button xmlns="sap.m" width="100px" id="__buttonFilter" icon="sap-icon://filter" press="onFilterClick"/>
+							<Button xmlns="sap.m" width="100px" id="__buttonAdd12" icon="sap-icon://add" press="onAddClick"/>
+							<Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onDeleteClick"/>
+							<Button xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClick"/>
+						</contentRight>
+						<contentLeft>
+							<Button width="100px" id="__buttonCheck" icon="sap-icon://approvals" press="approveData"/>
+						</contentLeft>
+					</Bar>
+				</footer>
 			</Page>
 		</pages>
 	</App>
