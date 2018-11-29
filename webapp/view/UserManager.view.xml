@@ -43,7 +43,7 @@
 			    <contentMiddle>
 			    </contentMiddle>
 			    <contentRight>
-			        <Button width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" enabled="false"/>
+			        <Button width="50px" id="__buttonAdd" icon="sap-icon://add" press="onAddClick" enabled="true"/>
 			        <Button width="50px" id="__buttonDelete" icon="sap-icon://delete" press="onDeleteClick" enabled="false"/>
 			        <Button width="50px" id="__buttonEdit" icon="sap-icon://edit" press="onEditClick" enabled="false"/>
 			    </contentRight>

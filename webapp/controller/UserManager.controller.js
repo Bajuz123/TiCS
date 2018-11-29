@@ -4,37 +4,32 @@ sap.ui.define([
 	"use strict";
 	var fragUser;
 	return Controller.extend("TiCS.controller.UserManager", {
-
-		/**
-		 * Called when a controller is instantiated and its View controls (if available) are already created.
-		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf TiCS.view.UserManager
-		 */
-			onAddClick: function() {
-		//	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-		//	oRouter.navTo("UserDetail");
-			
-			if (!fragUser) {
-    		 fragUser  = new sap.ui.xmlfragment("TiCS.view.UserManagerDetail", this.oView.getController() );
-             this.oView.addDependent(fragUser);
-    	}
-        	fragUser.open();
-		},
-
-		
-			onDeleteClick: function() {
-
-		},
-		
-		onCancelClick: function() {
-		fragUser.close();
-		},
-	onEditClick: function() {
-
-		},
 		onInit: function() {
-		
+
+		},
+
+		onCancelClick: function() {
+			fragUser.close();
+		},
+
+		onAddClick: function() {
+			//	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			//	oRouter.navTo("UserDetail");
+
+			if (!fragUser) {
+				fragUser = new sap.ui.xmlfragment("TiCS.view.UserManagerDetail", this.oView.getController());
+				this.oView.addDependent(fragUser);
 			}
+			fragUser.open();
+		},
+
+		onDeleteClick: function() {
+
+		},
+
+		onEditClick: function() {
+
+		}
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
