@@ -15,10 +15,10 @@
 				</footer> -->
 				
 		<beginButton>
-			<Button  width="50px" id="__buttonOk" icon="sap-icon://accept" press="onOKClick"/>
+			<Button  width="50px" id="__buttonUserOk" icon="sap-icon://accept" press="onOKClick"/>
 		</beginButton>
 		<endButton>
-			  <Button width="50px" id="__buttonCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
+			  <Button width="50px" id="__buttonUserCancel" icon="sap-icon://sys-cancel" press="onCancelClick"/>
 		</endButton>
 		
 				<content>
