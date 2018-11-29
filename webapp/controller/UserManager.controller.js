@@ -93,7 +93,7 @@ sap.ui.define([
 			if (typeof oModel !== 'undefined') {
 				var selUser = oModel.getData("selectedUser");
 				if (typeof selUser !== 'undefined') {
-					if (typeof selUser.method !== 'create') {
+					if (selUser.method !== 'create') {
 
 						oEntry.personal_nr = selectedUser.personal_nr;
 						oEntry.username = selectedUser.username;
