@@ -13,23 +13,23 @@
 						<sap.ui.layout.form:formElements>
 							<sap.ui.layout.form:FormElement id="__elementTicsDate" label="{i18n>Date}">
 								<sap.ui.layout.form:fields>
-									<DatePicker width="35%" id="__pickerTicsDate"/>
+									<DatePicker width="35%" id="__pickerTicsDate" value="{SelectedTics>/tag}"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement id="__elementTicsTimeFrom" label="{i18n>From}">
 								<sap.ui.layout.form:fields>
 									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeFrom"
-										width="35%"/>
+										width="35%" value="{SelectedTics>/vonzeit}"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>To}" id="__element8">
 								<sap.ui.layout.form:fields>
-									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeTo" width="35%"/>
+									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeTo" width="35%" value="{SelectedTics>/biszeit}"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Break}" id="__elementTicsBreak">
 								<sap.ui.layout.form:fields>
-									<Input width="35%" id="__inputTicsBreak" placeholder="0,5"/>
+									<Input width="35%" id="__inputTicsBreak" placeholder="0,5" value="{SelectedTics>/pause}" />
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectNumber}" id="__elementTicsProjNumber">
@@ -78,7 +78,7 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>TaskDescription}" id="__elementTaskDescription">
 								<sap.ui.layout.form:fields>
-									<Input width="50%" id="__inputTaskDescription" editable="false"/>
+									<Input width="50%" id="__inputTaskDescription" editable="false" />
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Comment}" id="__elementComment">

@@ -9,25 +9,31 @@ sap.ui.define([
 		date_from: "01/01/1900",
 		date_to: "01/01/1900"
 	};
-	var selTics= {
-	tag: "",
-	vonzeit: "",
-	erf_datum: "",
-	erf_uhrzeit: "",
-	createtime: "",
-	biszeit: "",
-	pause: "",
-	projektzeit: "",
-	projektnummer: "",
-	abrechnungsschl: "",
-	projektschl: "",
-	aufgabe: "",
-	fefahrzeit: "",
-	fakturierbarfah: "",
-	ticsId: ""	
+	var selTics = {
+		tag: "",
+		vonzeit: "",
+		erf_datum: "",
+		erf_uhrzeit: "",
+		createtime: "",
+		biszeit: "",
+		pause: "",
+		projektzeit: "",
+		projektnummer: "",
+		abrechnungsschl: "",
+		projektschl: "",
+		aufgabe: "",
+		fefahrzeit: "",
+		fakturierbarfah: "",
+		ticsId: ""
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
+
+		onInit: function() {
+			var oModel = new sap.ui.model.json.JSONModel();
+			oModel.setData(selTics);
+			this.getView().setModel(oModel, "SelectedTics");
+		},
 		setSelectedData: function() {
 			//approveDataObj	
 		},
@@ -69,19 +75,15 @@ sap.ui.define([
 			selTics.fefahrzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("fefahrzeit");
 			selTics.fakturierbarfah = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("fakturierbarfah");
 			selTics.erf_uhrzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("erf_uhrzeit");
-			selTics.createtime= oEvent.getParameter("listItem").getBindingContext("tics").getProperty("createtime");
+			selTics.createtime = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("createtime");
 			selTics.erf_datum = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("erf_datum");
-			selTics.biszeit= oEvent.getParameter("listItem").getBindingContext("tics").getProperty("biszeit");
+			selTics.biszeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("biszeit");
 			selTics.aufgabe = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("aufgabe");
 			selTics.abrechnungsschl = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("abrechnungsschl");
 		},
 
 		onAddClick: function() {
-			if (!fragTics) {
-				fragTics = new sap.ui.xmlfragment("TiCS.view.TicsDataDetail", this.oView.getController());
-				this.oView.addDependent(fragTics);
-			}
-			fragTics.open();
+			this.openFragTics();
 		},
 
 		onFilterClick: function() {
@@ -99,10 +101,10 @@ sap.ui.define([
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (ticsId != "") {
+			if (selTics.ticsId != "") {
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/TICS_SET(id='" + ticsId + "')", {
+				oModel.remove("/TICS_SET(ticsId='" + selTics.ticsId + "')", {
 					method: "DELETE",
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
@@ -119,10 +121,27 @@ sap.ui.define([
 			oRouter.navTo("TicsData");
 		},
 		onEditClick: function() {
+			var resourceModel = this.getView().getModel("i18n");
+			var oTable = this.getView().byId("__tableTicss");
+			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
+			if (selTics.ticsId != "") {
+				var oModel = this.getView().getModel("SelectedTics");
+				selTics.method = "update";
+				oModel.setData(selTics);
+				this.getView().setModel(oModel, "SelectedTics");
+				this.openFragTics();
+			} else {
+				sap.m.MessageToast.show(editSelectText);
+			}
 		},
-
-		onInit: function() {}
+		openFragTics: function() {
+			if (!fragTics) {
+				fragTics = new sap.ui.xmlfragment("TiCS.view.TicsDataDetail", this.oView.getController());
+				this.oView.addDependent(fragTics);
+			}
+			fragTics.open();
+		}
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
