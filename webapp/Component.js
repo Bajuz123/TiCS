@@ -32,7 +32,8 @@ sap.ui.define([
 			var user = {
 				username: "",
 				passwd: "",
-				authentificated: false
+				authentificated: false,
+				is_admin:false
 			};
 			var oUserModel = new sap.ui.model.json.JSONModel();
 			oUserModel.setData(user);
