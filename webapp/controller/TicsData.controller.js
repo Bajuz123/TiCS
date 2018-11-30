@@ -9,6 +9,23 @@ sap.ui.define([
 		date_from: "01/01/1900",
 		date_to: "01/01/1900"
 	};
+	var selTics= {
+	tag: "",
+	vonzeit: "",
+	erf_datum: "",
+	erf_uhrzeit: "",
+	createtime: "",
+	biszeit: "",
+	pause: "",
+	projektzeit: "",
+	projektnummer: "",
+	abrechnungsschl: "",
+	projektschl: "",
+	aufgabe: "",
+	fefahrzeit: "",
+	fakturierbarfah: "",
+	ticsId: ""	
+	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
 		setSelectedData: function() {
@@ -43,7 +60,20 @@ sap.ui.define([
 		},
 
 		onItemPress: function(oEvent) {
-			ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId");
+			selTics.vonzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("vonzeit");
+			selTics.ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId");
+			selTics.tag = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("tag");
+			selTics.projektzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektzeit");
+			selTics.projektschl = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektschl");
+			selTics.pause = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("pause");
+			selTics.fefahrzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("fefahrzeit");
+			selTics.fakturierbarfah = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("fakturierbarfah");
+			selTics.erf_uhrzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("erf_uhrzeit");
+			selTics.createtime= oEvent.getParameter("listItem").getBindingContext("tics").getProperty("createtime");
+			selTics.erf_datum = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("erf_datum");
+			selTics.biszeit= oEvent.getParameter("listItem").getBindingContext("tics").getProperty("biszeit");
+			selTics.aufgabe = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("aufgabe");
+			selTics.abrechnungsschl = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("abrechnungsschl");
 		},
 
 		onAddClick: function() {

@@ -37,8 +37,8 @@
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemTicsProjNum"
 										id="__boxProjNumber" maxWidth="35%">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="Project Number1" key="item1" id="__item12"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="Project Number2" key="item2" id="__item13"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="Project Number1" key="item1" id="__itemTics12"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="Project Number2" key="item2" id="__itemTics13"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
@@ -48,8 +48,8 @@
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="List Item 1" selectedKey="itemTicsBK" selectedItemId="__itemTicsBK" id="__boxBK"
 										maxWidth="35%">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key1" key="item1" id="__item9"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key2" key="item2" id="__item10"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key1" key="item1" id="__itemTics9"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key2" key="item2" id="__itemTics10"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
@@ -59,8 +59,8 @@
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="item1" selectedItemId="__itemTicsPK" id="__boxPK"
 										maxWidth="35%">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey1" key="item1" id="__item6"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey2" key="item2" id="__item7"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey1" key="item1" id="__itemTics6"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey2" key="item2" id="__itemTics7"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
@@ -70,8 +70,8 @@
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="List Item 1" selectedKey="itemTicsTask" selectedItemId="__itemTicsTask"
 										id="__boxTask" maxWidth="35%">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="Task1" key="item1" id="__item3"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="Task2" key="item2" id="__item4"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="Task1" key="item1" id="__itemTics3"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="Task2" key="item2" id="__itemTics4"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
