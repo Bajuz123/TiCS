@@ -4,19 +4,24 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("TiCS.controller.Login", {
+		onInit: function() {
+			var oModel = sap.ui.getCore().getModel("User");
+			this.getView().setModel(oModel,"User");	
+		},
+
 		onLoginClick:function(){
 //            <Input width="100%" id="__inputUserName"/>
 //           <Input width="100%" id="__inputUserPassword"/>
+
+//			var oUserModel = sap.ui.getCore().getModel("User");
+//			var user = oUserModel.getData("user");
 		}
+
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 		 * @memberOf TiCS.view.Login
 		 */
-		//	onInit: function() {
-		//
-		//	},
-
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).
