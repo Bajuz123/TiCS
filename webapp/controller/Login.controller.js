@@ -10,11 +10,29 @@ sap.ui.define([
 		},
 
 		onLoginClick:function(){
-//            <Input width="100%" id="__inputUserName"/>
-//           <Input width="100%" id="__inputUserPassword"/>
+			var oDataModel = this.getView("tics");
+			var oUserModel = sap.ui.getCore().getModel("User");
+			var user = oUserModel.getData("user");
 
-//			var oUserModel = sap.ui.getCore().getModel("User");
-//			var user = oUserModel.getData("user");
+			var oUrlParams = {
+				username: user.username,
+				password: user.passwd
+			};
+
+			oDataModel.callFunction("/AUTHENTIFICATE", {
+				method: "GET",
+				urlParameters: oUrlParams,
+				success: jQuery.proxy(this.successApproval, this),
+				error: jQuery.proxy(this.errorApproval, this)
+			}); // callback function for error
+		},
+
+		successApproval: function() {
+			sap.m.MessageToast.show("ok");
+		},
+
+		errorApproval: function() {
+			sap.m.MessageToast.show("fail");
 		}
 
 		/**
