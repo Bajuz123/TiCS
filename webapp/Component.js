@@ -23,10 +23,20 @@ sap.ui.define([
 
 			var messageLanguage = 'SK';
 			sap.ui.getCore().getConfiguration().setLanguage(messageLanguage); //setting the selected language to the core.
-			messagebundleLocal : messageLanguage; //assigning language to the message bundle.
+			messagebundleLocal: messageLanguage; //assigning language to the message bundle.
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+
+			// set the user model
+			var user = {
+				username: "",
+				passwd: "",
+				authentificated: false
+			};
+			var oUserModel = new sap.ui.model.json.JSONModel();
+			oUserModel.setData(user);
+			sap.ui.getCore().setModel(user, "User");
 		}
 	});
 });
