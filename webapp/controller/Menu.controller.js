@@ -43,7 +43,13 @@ sap.ui.define([
 			}	
 
 			if (id.includes("__item4")) {
-				oRouter.navTo("Logout");
+				var oUserModel = sap.ui.getCore().getModel("User");
+				var user = oUserModel.getData("user");
+				user.username = "";
+				user.password = "";
+				user.authentificated = false;
+				sap.ui.getCore().setModel("User");
+				oRouter.navTo("Login");
 			}	
 		}
 
