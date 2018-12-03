@@ -4,5 +4,5 @@
 		  displayBlock="true"
 		  controllerName="TiCS.controller.Main"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<App id="app" />
+	<SplitApp id="splitapp" />
 </mvc:View>

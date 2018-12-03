@@ -71,50 +71,64 @@
 				"pattern": "Logout",
 				"name": "Logout",
 				"view": "Logout",
-				"targetAggregation": "pages"
-			}, {
-				"pattern": "Login",
-				"name": "Login",
-				"view": "Login",
+				"targetControl": "app",
 				"targetAggregation": "pages"
 			}, {
 				"pattern": "",
-				"name": "Menu",
-				"view": "Menu",
-				"targetAggregation": "masterPages",
-				"targetControl": "splitapp",
+				"name": "Login",
+				"view": "Login",
+				"targetControl": "app",
+				"targetAggregation": "pages"
+			},
+			{
+				"pattern": "SplitMain",
+				"name": "SplitMain",
+				"view": "SplitMain",
+				"targetControl": "app",
+				"targetAggregation": "pages",
 				"subroutes": [{
-					"pattern": "",
-					"name": "Project",
-					"view": "Project",
-					"targetAggregation": "detailPages"
-				}, {
-					"pattern": "ProjectDetail",
-					"name": "ProjectDetail",
-					"view": "ProjectDetail",
-					"targetAggregation": "detailPages"
-				}, {
-					"pattern": "TicsData",
-					"name": "TicsData",
-					"view": "TicsData",
-					"targetAggregation": "detailPages"
-				}, {
-					"pattern": "Users",
-					"name": "Users",
-					"view": "UserManager",
-					"targetAggregation": "detailPages"
-				}, {
-					"pattern": "UserDetail",
-					"name": "UserDetail",
-					"view": "UserManagerDetail",
-					"targetAggregation": "detailPages"
-				}, {
-					"pattern": "TicsDataDetail",
-					"name": "TicsDataDetail",
-					"view": "TicsDataDetail",
-					"targetAggregation": "detailPages"
+					"pattern": "SplitMain/",
+					"name": "Menu",
+					"view": "Menu",
+					"targetAggregation": "masterPages",
+					"targetControl": "splitapp",
+					"subroutes": [{
+						"pattern": "SplitMain/",
+						"name": "Project",
+						"view": "Project",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "ProjectDetail",
+						"name": "ProjectDetail",
+						"view": "ProjectDetail",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "TicsData",
+						"name": "TicsData",
+						"view": "TicsData",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "Users",
+						"name": "Users",
+						"view": "UserManager",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "UserDetail",
+						"name": "UserDetail",
+						"view": "UserManagerDetail",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "TicsDataDetail",
+						"name": "TicsDataDetail",
+						"view": "TicsDataDetail",
+						"targetAggregation": "detailPages"
+					}]
 				}]
-			}]
+			}
+			
+		]
+			
+			
 		},
 		"contentDensities": {
 			"compact": true,

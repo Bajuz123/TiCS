@@ -10,7 +10,7 @@ sap.ui.define([
 		},
 
 		onLoginClick:function(){
-			var oDataModel = this.getView("tics");
+/*			var oDataModel = this.getView("tics");
 			var oUserModel = sap.ui.getCore().getModel("User");
 			var user = oUserModel.getData("user");
 
@@ -24,7 +24,9 @@ sap.ui.define([
 				urlParameters: oUrlParams,
 				success: jQuery.proxy(this.successApproval, this),
 				error: jQuery.proxy(this.errorApproval, this)
-			}); // callback function for error
+			}); // callback function for error*/
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("SplitMain");
 		},
 
 		successApproval: function() {
