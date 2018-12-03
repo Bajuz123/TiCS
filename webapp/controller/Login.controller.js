@@ -36,7 +36,7 @@ sap.ui.define([
 		successApproval: function(data, response) {
 			var user = this.getView().getModel("User");
 
-			if (data.msg_id === '1') {
+			if (data.MSG_ID === "1") {
 				user.authentificated = true;
 				sap.ui.getCore().setModel(user, "User");
 				sap.m.MessageToast.show("Authentificated");

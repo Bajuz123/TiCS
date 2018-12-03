@@ -11,10 +11,49 @@ sap.ui.define([
 	var fragProject;
 
 	return Controller.extend("TiCS.controller.Project", {
+		createUserFilter: function(oUser) {
+			var filterUname = new sap.ui.modelFilter({
+				path: "username",
+				operator: sap.ui.model.FilterOperator.Contains,
+				value1: oUser.username
+			});
+
+			var filterPwd = new sap.ui.modelFilter({
+				path: "password",
+				operator: sap.ui.model.FilterOperator.Contains,
+				value1: oUser.password
+			});
+
+			var filtersAuth = new sap.ui.model.Filter({
+				filters: [filterUname, filterPwd],
+				and: true
+			});
+		},
+
+		isUserValid: function(oUser) {
+			return oUser.authentificated;
+		},
+
 		onInit: function() {
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.setData(selProject);
-			this.getView().setModel(oModel, "SelectedProject");
+			var oUserModel = sap.ui.getCore().getModel("User");
+			this.getView().setModel(oUserModel, "User");
+
+			var isValid = this.isUserValid(oUserModel);
+			if (isValid === true) {
+				var oModel = new sap.ui.model.json.JSONModel();
+				oModel.setData(selProject);
+				this.getView().setModel(oModel, "SelectedProject");
+
+				var oModel = this.getView().getModel("tics");
+
+				oModel.read("/PROJECT_SET", {
+					filters: this.createUserFilter(oUserModel),
+					success: function() {},
+					error: function(e) {
+						sap.m.MessageToast.show("Binding failed");
+					}
+				});
+			}
 		},
 
 		onItemPress: function(oEvent) {
@@ -59,6 +98,10 @@ sap.ui.define([
 				if (typeof selProject !== 'undefined') {
 					oEntry.projektnummer = selProject.projektnummer;
 					oEntry.beschreibung = selProject.beschreibung;
+
+					var oUserModel = this.getView().getModel("User");
+					oEntry.username = oUserModel.username;
+					oEntry.password = oUserModel.password;
 					if (selProject.method !== "create") {
 
 						modelTics.update("/PROJECT_SET(projektnummer='" + oEntry.projektnummer + "')", oEntry, {
