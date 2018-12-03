@@ -19,7 +19,6 @@ sap.ui.define([
 		init: function() {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
-			this.getRouter().initialize();
 
 			var messageLanguage = 'SK';
 			sap.ui.getCore().getConfiguration().setLanguage(messageLanguage); //setting the selected language to the core.
@@ -28,12 +27,16 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 
+			this.initializeUserModel();
+			this.getRouter().initialize();
+		},
+		initializeUserModel: function() {
 			// set the user model
 			var user = {
 				username: "",
 				passwd: "",
 				authentificated: false,
-				is_admin:false
+				isAdmin: false
 			};
 			var oUserModel = new sap.ui.model.json.JSONModel();
 			oUserModel.setData(user);

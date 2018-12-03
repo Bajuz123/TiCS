@@ -10,13 +10,19 @@ sap.ui.define([
 		},
 
 		onLoginClick:function(){
-/*			var oDataModel = this.getView("tics");
-			var oUserModel = sap.ui.getCore().getModel("User");
-			var user = oUserModel.getData("user");
+			var oDataModel = this.getView().getModel("tics");
+			
+			var username = this.getView().byId("__inputUserName").getValue();
+			var pwd = this.getView().byId("__inputUserPassword").getValue();			
+
+			var user = sap.ui.getCore().getModel("User");
+			user.username = username;
+			user.password = pwd; 
+			sap.ui.getCore().setModel(user, "User");
 
 			var oUrlParams = {
-				username: user.username,
-				password: user.passwd
+				username: username,
+				password: pwd
 			};
 
 			oDataModel.callFunction("/AUTHENTIFICATE", {
@@ -25,8 +31,6 @@ sap.ui.define([
 				success: jQuery.proxy(this.successApproval, this),
 				error: jQuery.proxy(this.errorApproval, this)
 			}); // callback function for error*/
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("SplitMain");
 		},
 
 		successApproval: function() {
@@ -35,6 +39,8 @@ sap.ui.define([
 			user.authentificated = true;
 			sap.ui.getCore().setModel(oUserModel, "User");
 			sap.m.MessageToast.show("Authentificated");
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("SplitMain");
 		},
 
 		errorApproval: function() {
