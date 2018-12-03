@@ -34,7 +34,7 @@ sap.ui.define([
 			// set the user model
 			var user = {
 				username: "",
-				passwd: "",
+				password: "",
 				authentificated: false,
 				isAdmin: false
 			};

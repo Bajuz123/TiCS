@@ -12,13 +12,13 @@ sap.ui.define([
 
 	return Controller.extend("TiCS.controller.Project", {
 		createUserFilter: function(oUser) {
-			var filterUname = new sap.ui.modelFilter({
+			var filterUname = new sap.ui.model.Filter({
 				path: "username",
 				operator: sap.ui.model.FilterOperator.Contains,
 				value1: oUser.username
 			});
 
-			var filterPwd = new sap.ui.modelFilter({
+			var filterPwd = new sap.ui.model.Filter({
 				path: "password",
 				operator: sap.ui.model.FilterOperator.Contains,
 				value1: oUser.password
@@ -28,6 +28,7 @@ sap.ui.define([
 				filters: [filterUname, filterPwd],
 				and: true
 			});
+			return filtersAuth;
 		},
 
 		isUserValid: function(oUser) {
@@ -37,23 +38,6 @@ sap.ui.define([
 		onInit: function() {
 			var oUserModel = sap.ui.getCore().getModel("User");
 			this.getView().setModel(oUserModel, "User");
-
-			var isValid = this.isUserValid(oUserModel);
-			if (isValid === true) {
-				var oModel = new sap.ui.model.json.JSONModel();
-				oModel.setData(selProject);
-				this.getView().setModel(oModel, "SelectedProject");
-
-				var oModel = this.getView().getModel("tics");
-
-				oModel.read("/PROJECT_SET", {
-					filters: this.createUserFilter(oUserModel),
-					success: function() {},
-					error: function(e) {
-						sap.m.MessageToast.show("Binding failed");
-					}
-				});
-			}
 		},
 
 		onItemPress: function(oEvent) {
@@ -162,6 +146,27 @@ sap.ui.define([
 		clearSelected: function() {
 			selProject.projektnummer = "";
 			selProject.beschreibung = "";
+		},
+		onBeforeRendering: function() {
+			var oUserModel = this.getView().getModel("User");
+			var isValid = this.isUserValid(oUserModel);
+			if (isValid === true) {
+				var oModel = new sap.ui.model.json.JSONModel();
+				oModel.setData(selProject);
+				this.getView().setModel(oModel, "SelectedProject");
+
+				var oDataModel = this.getView().getModel("tics");
+
+				oDataModel.read("/PROJECT_SET", {
+					filters: this.createUserFilter(oUserModel),
+					success: function(data) {
+						sap.m.MessageToast.show("Binding OK");
+					},
+					error: function(e) {
+						sap.m.MessageToast.show("Binding failed");
+					}
+				});
+			}
 		}
 	});
 });

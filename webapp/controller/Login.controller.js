@@ -12,17 +12,14 @@ sap.ui.define([
 		onLoginClick: function() {
 			var oDataModel = this.getView().getModel("tics");
 
-			var username = this.getView().byId("__inputUserName").getValue();
-			var pwd = this.getView().byId("__inputUserPassword").getValue();
-
 			var user = this.getView().getModel("User");
-			user.username = username;
-			user.password = pwd;
+			user.username = this.getView().byId("__inputUserName").getValue();
+			user.password = this.getView().byId("__inputUserPassword").getValue();
 			sap.ui.getCore().setModel(user, "User");
 
 			var oUrlParams = {
-				username: username,
-				password: pwd
+				username: user.username,
+				password: user.password
 			};
 
 			oDataModel.callFunction("/AUTHENTIFICATE", {
