@@ -12,23 +12,27 @@ sap.ui.define([
 
 	return Controller.extend("TiCS.controller.Project", {
 		createUserFilter: function(oUser) {
-			var filterUname = new sap.ui.model.Filter({
-				path: "username",
-				operator: sap.ui.model.FilterOperator.Contains,
-				value1: oUser.username
-			});
-
 			var filterPwd = new sap.ui.model.Filter({
 				path: "password",
-				operator: sap.ui.model.FilterOperator.Contains,
+				operator: sap.ui.model.FilterOperator.EQ,
 				value1: oUser.password
 			});
 
+			var filterUname = new sap.ui.model.Filter({
+				path: "username",
+				operator: sap.ui.model.FilterOperator.EQ,
+				value1: oUser.username
+			});
+
 			var filtersAuth = new sap.ui.model.Filter({
-				filters: [filterUname, filterPwd],
+				filters: [filterPwd, filterUname],
 				and: true
 			});
-			return filtersAuth;
+			var oTable = this.getView().byId("__tableProjects");
+			var oBinding = oTable.getBinding("items");
+			oBinding.filter(filtersAuth);
+//			oTable.getBinding("rows").filter(filtersAuth, sap.ui.model.FilterType.Application);
+//			return filtersAuth;
 		},
 
 		isUserValid: function(oUser) {
@@ -158,7 +162,6 @@ sap.ui.define([
 				var oDataModel = this.getView().getModel("tics");
 
 				oDataModel.read("/PROJECT_SET", {
-					filters: this.createUserFilter(oUserModel),
 					success: function(data) {
 						sap.m.MessageToast.show("Binding OK");
 					},
@@ -166,6 +169,8 @@ sap.ui.define([
 						sap.m.MessageToast.show("Binding failed");
 					}
 				});
+				this.createUserFilter(oUserModel);
+				//oTable.bindRows("/PROJECT_SET");
 			}
 		}
 	});
