@@ -43,13 +43,15 @@ sap.ui.define([
 			}	
 
 			if (id.includes("__item4")) {
-				var oUserModel = sap.ui.getCore().getModel("User");
-				var user = oUserModel.getData("user");
+				var user = sap.ui.getCore().getModel("User");
 				user.username = "";
 				user.password = "";
 				user.authentificated = false;
+				user.admin = false;
 				sap.ui.getCore().setModel("User");
 				oRouter.navTo("Login");
+				var oModel = this.getView().getModel("tics");
+				oModel.refresh();
 			}	
 		}
 

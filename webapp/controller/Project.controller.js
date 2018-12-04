@@ -11,6 +11,11 @@ sap.ui.define([
 	var fragProject;
 
 	return Controller.extend("TiCS.controller.Project", {
+		onInit: function() {
+			var oUserModel = sap.ui.getCore().getModel("User");
+			this.getView().setModel(oUserModel, "User");
+		},
+
 		createUserFilter: function(oUser) {
 			var filterPwd = new sap.ui.model.Filter({
 				path: "password",
@@ -39,11 +44,6 @@ sap.ui.define([
 			return oUser.authentificated;
 		},
 
-		onInit: function() {
-			var oUserModel = sap.ui.getCore().getModel("User");
-			this.getView().setModel(oUserModel, "User");
-		},
-
 		onItemPress: function(oEvent) {
 			selProject.projektnummer = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektnummer");
 			selProject.beschreibung = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung");
@@ -51,10 +51,10 @@ sap.ui.define([
 
 		onEditClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
-			var oTable = this.getView().byId("__tableProjects");
+//			var oTable = this.getView().byId("__tableProjects");
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
-			if (selProject.projektnummer != "") {
+			if (selProject.projektnummer !== "") {
 				var oModel = this.getView().getModel("SelectedProject");
 				selProject.method = "update";
 				oModel.setData(selProject);
@@ -81,9 +81,9 @@ sap.ui.define([
 			var oEntry = {};
 			var oModel = this.getView().getModel("SelectedProject");
 			var modelTics = this.oView.getModel("tics");
-			if (typeof oModel !== 'undefined') {
-				var selProject = oModel.getData("selProject");
-				if (typeof selProject !== 'undefined') {
+			if (typeof oModel !== "undefined") {
+				selProject = oModel.getData("selProject");
+				if (typeof selProject !== "undefined") {
 					oEntry.projektnummer = selProject.projektnummer;
 					oEntry.beschreibung = selProject.beschreibung;
 
@@ -93,10 +93,10 @@ sap.ui.define([
 					if (selProject.method !== "create") {
 
 						modelTics.update("/PROJECT_SET(projektnummer='" + oEntry.projektnummer + "')", oEntry, {
-							success: function(data) {
+							success: function() {
 								sap.m.MessageToast.show(editOKTxt);
 							},
-							error: function(e) {
+							error: function() {
 								sap.m.MessageToast.show(editFailTxt);
 							}
 						});
@@ -119,18 +119,18 @@ sap.ui.define([
 		onDeleteClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
 			var modelTics = this.oView.getModel("tics");
-			var oTable = this.getView().byId("__tableProjects");
+//			var oTable = this.getView().byId("__tableProjects");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (selProject.projektnummer != "") {
+			if (selProject.projektnummer !== "") {
 				modelTics.remove("/PROJECT_SET(projektnummer='" + selProject.projektnummer + "')", {
 					method: "DELETE",
-					success: function(data) {
+					success: function() {
 						sap.m.MessageToast.show(deleteOKText);
 					},
-					error: function(e) {
+					error: function() {
 						sap.m.MessageToast.show(deleteFailText);
 					}
 				});
@@ -162,11 +162,8 @@ sap.ui.define([
 				var oDataModel = this.getView().getModel("tics");
 
 				oDataModel.read("/PROJECT_SET", {
-					success: function(data) {
-						sap.m.MessageToast.show("Binding OK");
-					},
 					error: function(e) {
-						sap.m.MessageToast.show("Binding failed");
+						sap.m.MessageToast.show(e);
 					}
 				});
 				this.createUserFilter(oUserModel);
