@@ -36,8 +36,6 @@ sap.ui.define([
 			var oTable = this.getView().byId("__tableProjects");
 			var oBinding = oTable.getBinding("items");
 			oBinding.filter(filtersAuth);
-//			oTable.getBinding("rows").filter(filtersAuth, sap.ui.model.FilterType.Application);
-//			return filtersAuth;
 		},
 
 		isUserValid: function(oUser) {

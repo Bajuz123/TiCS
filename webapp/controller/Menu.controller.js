@@ -48,10 +48,8 @@ sap.ui.define([
 				user.password = "";
 				user.authentificated = false;
 				user.admin = false;
-				sap.ui.getCore().setModel("User");
+				sap.ui.getCore().setModel(user, "User");
 				oRouter.navTo("Login");
-				var oModel = this.getView().getModel("tics");
-				oModel.refresh();
 			}	
 		}
 
