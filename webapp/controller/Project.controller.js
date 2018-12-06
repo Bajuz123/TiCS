@@ -159,7 +159,7 @@ sap.ui.define([
 		onBeforeRendering: function() {
 			var oUserModel = this.getView().getModel("User");
 			var isValid = this.isUserValid(oUserModel);
-			if (isValid === true) {
+			if ((isValid === true)||(isValid === "true")) {
 				var oModel = new sap.ui.model.json.JSONModel();
 				oModel.setData(selProject);
 				this.getView().setModel(oModel, "SelectedProject");
