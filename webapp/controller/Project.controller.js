@@ -13,6 +13,10 @@ sap.ui.define([
 	return Controller.extend("TiCS.controller.Project", {
 		onInit: function() {
 			var oUserModel = sap.ui.getCore().getModel("User");
+			oUserModel.username = localStorage.getItem("User_Login");
+			oUserModel.password = localStorage.getItem("User_Pwd");
+			oUserModel.authentificated = localStorage.getItem("User_Authentificated");
+			oUserModel.admin = localStorage.getItem("User_Admin");
 			this.getView().setModel(oUserModel, "User");
 		},
 

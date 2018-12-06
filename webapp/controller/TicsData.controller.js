@@ -33,6 +33,12 @@ sap.ui.define([
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.setData(selTics);
 			this.getView().setModel(oModel, "SelectedTics");
+			var oUserModel = sap.ui.getCore().getModel("User");
+			oUserModel.username = localStorage.getItem("User_Login");
+			oUserModel.password = localStorage.getItem("User_Pwd");
+			oUserModel.authentificated = localStorage.getItem("User_Authentificated");
+			oUserModel.admin = localStorage.getItem("User_Admin");
+			this.getView().setModel(oUserModel, "User");
 		},
 		setSelectedData: function() {
 			//approveDataObj	

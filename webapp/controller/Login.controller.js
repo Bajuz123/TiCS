@@ -15,6 +15,10 @@ sap.ui.define([
 			var user = this.getView().getModel("User");
 			user.username = this.getView().byId("__inputUserName").getValue();
 			user.password = this.getView().byId("__inputUserPassword").getValue();
+			localStorage.setItem("User_Login", user.username);
+			localStorage.setItem("User_Pwd", user.password);
+			localStorage.setItem("User_Authentificated", user.authentificated);
+			localStorage.getItem("User_Admin", user.admin);
 			sap.ui.getCore().setModel(user, "User");
 
 			var oUrlParams = {

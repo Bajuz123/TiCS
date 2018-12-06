@@ -49,6 +49,8 @@ sap.ui.define([
 				user.authentificated = false;
 				user.admin = false;
 				sap.ui.getCore().setModel(user, "User");
+				localStorage.setItem("User_Login", "");
+				localStorage.setItem("User_Pwd", "");
 				oRouter.navTo("Login");
 			}	
 		}
