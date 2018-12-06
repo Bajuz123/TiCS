@@ -41,6 +41,8 @@ sap.ui.define([
 				sap.ui.getCore().setModel(models.createDeviceModel(), "device");
 
 				user.authentificated = true;
+				localStorage.setItem("User_Authentificated", user.authentificated);
+
 				sap.ui.getCore().setModel(user, "User");
 				sap.m.MessageToast.show("Authentificated");
 				var oDataModel = this.getView().getModel("tics");
@@ -54,6 +56,7 @@ sap.ui.define([
 
 		errorApproval: function() {
 			sap.m.MessageToast.show("Authentification fail");
+			localStorage.setItem("User_Authentificated", false);
 		}
 	});
 });
