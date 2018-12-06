@@ -1,6 +1,7 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"TiCS/model/models"
+], function(Controller, models) {
 	"use strict";
 
 	return Controller.extend("TiCS.controller.Login", {
@@ -11,7 +12,6 @@ sap.ui.define([
 
 		onLoginClick: function() {
 			var oDataModel = this.getView().getModel("tics");
-
 			var user = this.getView().getModel("User");
 			user.username = this.getView().byId("__inputUserName").getValue();
 			user.password = this.getView().byId("__inputUserPassword").getValue();
@@ -34,9 +34,13 @@ sap.ui.define([
 			var user = this.getView().getModel("User");
 
 			if (data.MSG_ID === "1") {
+				sap.ui.getCore().setModel(models.createDeviceModel(), "device");
+
 				user.authentificated = true;
 				sap.ui.getCore().setModel(user, "User");
 				sap.m.MessageToast.show("Authentificated");
+				var oDataModel = this.getView().getModel("tics");
+				oDataModel.refresh();
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("SplitMain");
 			} else {

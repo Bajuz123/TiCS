@@ -123,8 +123,11 @@ sap.ui.define([
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
 			if (selProject.projektnummer !== "") {
+				var user = this.getView().getModel("User");
+
 				modelTics.remove("/PROJECT_SET(projektnummer='" + selProject.projektnummer + "')", {
 					method: "DELETE",
+					urlParameters: { "username": user.username, "password": user.password },
 					success: function() {
 						sap.m.MessageToast.show(deleteOKText);
 					},
@@ -158,7 +161,6 @@ sap.ui.define([
 				this.getView().setModel(oModel, "SelectedProject");
 
 				var oDataModel = this.getView().getModel("tics");
-
 				oDataModel.read("/PROJECT_SET", {
 					error: function(e) {
 						sap.m.MessageToast.show(e);
