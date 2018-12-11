@@ -12,8 +12,8 @@
 				            <VBox width="100%" direction="Column" id="__vboxLogin" alignContent="Center" alignItems="Center" justifyContent="Center" fitContainer="true">
 				        <items>
 				            <Label text="{i18n>LoginLabel}" width="100%" id="__labelCredentials"/>
-				            <Input width="100%" id="__inputUserName" value=""/> 
-				            <Input width="100%" id="__inputUserPassword" value=""/> 
+				            <Input width="100%" id="__inputUserName" value="" onsapenter = "onLoginClick"/> 
+				            <Input width="100%" id="__inputUserPassword" value="" onsapenter = "onLoginClick"/> 
 				            <Button text="{i18n>Login}" width="100px" id="__buttonLogin" press="onLoginClick"/>
 				        </items>
 				    </VBox>

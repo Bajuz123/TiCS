@@ -39,6 +39,10 @@ sap.ui.define([
 			oUserModel.authentificated = localStorage.getItem("User_Authentificated");
 			oUserModel.admin = localStorage.getItem("User_Admin");
 			this.getView().setModel(oUserModel, "User");
+
+			var today = new Date();
+			this.getView().byId("__pickerFrom").setValue(today.getDate() - 1); 
+			this.getView().byId("__pickerTo").setValue(today.getDate());
 		},
 		setSelectedData: function() {
 			//approveDataObj	

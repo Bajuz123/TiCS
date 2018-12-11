@@ -37,11 +37,19 @@ sap.ui.define([
 		successApproval: function(data, response) {
 			var user = this.getView().getModel("User");
 
-			if (data.MSG_ID === "1") {
-				sap.ui.getCore().setModel(models.createDeviceModel(), "device");
-
+			if (data.MSG_ID !== "1") {
 				user.authentificated = true;
 				localStorage.setItem("User_Authentificated", user.authentificated);
+
+				switch (data.MSG_ID) {
+					case "2":
+						user.admin = true;
+						break;
+					case "3":
+						user.admin = false;
+						break;
+				}
+				localStorage.setItem("User_Admin", user.admin);
 
 				sap.ui.getCore().setModel(user, "User");
 				sap.m.MessageToast.show("Authentificated");
