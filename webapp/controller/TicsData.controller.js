@@ -105,21 +105,21 @@ sap.ui.define([
 		},
 
 		onDeleteClick: function() {
-			var oTable = this.getView().byId("__tableTics");
+//			var oTable = this.getView().byId("__tableTics");
 			var resourceModel = this.getView().getModel("i18n");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
-			if (selTics.ticsId != "") {
+			if (selTics.ticsId !== "") {
 				var oModel = this.getView().getModel("tics");
 
 				oModel.remove("/TICS_SET(ticsId='" + selTics.ticsId + "')", {
 					method: "DELETE",
-					success: function(data) {
+					success: function() {
 						sap.m.MessageToast.show(deleteOKText);
 					},
-					error: function(e) {
+					error: function() {
 						sap.m.MessageToast.show(deleteFailText);
 					}
 				});
@@ -132,10 +132,10 @@ sap.ui.define([
 		},
 		onEditClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
-			var oTable = this.getView().byId("__tableTicss");
+//			var oTable = this.getView().byId("__tableTicss");
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
-			if (selTics.ticsId != "") {
+			if (selTics.ticsId !== "") {
 				var oModel = this.getView().getModel("SelectedTics");
 				selTics.method = "update";
 				oModel.setData(selTics);
@@ -152,39 +152,6 @@ sap.ui.define([
 			}
 			fragTics.open();
 		}
-
-		/**
-		 * Called when a controller is instantiated and its View controls (if available) are already created.
-		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf TiCS.view.TaskData
-		 */
-
-		/**
-		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf TiCS.view.TaskData
-		 */
-		//	onBeforeRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
-		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf TiCS.view.TaskData
-		 */
-		//	onAfterRendering: function() {
-		//
-		//	},
-
-		/**
-		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf TiCS.view.TaskData
-		 */
-		//	onExit: function() {
-		//
-		//	}
-
 	});
 
 });
