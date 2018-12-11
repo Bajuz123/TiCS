@@ -28,6 +28,11 @@ sap.ui.define([
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
+		addDays: function(date, days) {
+		  var result = new Date(date);
+		  result.setDate(result.getDate() + days);
+		  return result;
+		},
 
 		onInit: function() {
 			var oModel = new sap.ui.model.json.JSONModel();
@@ -40,9 +45,10 @@ sap.ui.define([
 			oUserModel.admin = localStorage.getItem("User_Admin");
 			this.getView().setModel(oUserModel, "User");
 
-			var today = new Date();
-			this.getView().byId("__pickerFrom").setValue(today.getDate() - 1); 
-			this.getView().byId("__pickerTo").setValue(today.getDate());
+		    var today = new Date();
+			this.getView().byId("__pickerTo").setValue(today.toJSON().slice(0,10).replace(/-/g,"/")); 
+    		today = this.addDays(today, -7);
+			this.getView().byId("__pickerFrom").setValue(today.toJSON().slice(0,10).replace(/-/g,"/"));
 		},
 		setSelectedData: function() {
 			//approveDataObj	
