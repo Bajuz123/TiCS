@@ -49,6 +49,9 @@ sap.ui.define([
 			this.getView().byId("__pickerTo").setValue(today.toJSON().slice(0,10).replace(/-/g,"/")); 
     		today = this.addDays(today, -7);
 			this.getView().byId("__pickerFrom").setValue(today.toJSON().slice(0,10).replace(/-/g,"/"));
+			
+			var fieldPersNr = this.getView().byId("__labelTicsPersonNumb");
+			fieldPersNr.setEnabled( oUserModel.admin === "true");
 		},
 		setSelectedData: function() {
 			//approveDataObj	
@@ -103,6 +106,9 @@ sap.ui.define([
 		},
 
 		onFilterClick: function() {
+//get filter data
+
+//read
 
 		},
 
