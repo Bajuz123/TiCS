@@ -121,13 +121,13 @@ sap.ui.define([
 			var filterDateFrom = new sap.ui.model.Filter({
 				path: "vonzeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerFrom").getDateValue()
+				value1: this.getView().byId("__pickerFrom").getValue() //proper conversion needed
 			});
 
 			var filterDateTo = new sap.ui.model.Filter({
 				path: "biszeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerTo").getDateValue()
+				value1: this.getView().byId("__pickerTo").getValue() //proper conversion needed
 			});
 
 			var filterPersonalNr = new sap.ui.model.Filter({
