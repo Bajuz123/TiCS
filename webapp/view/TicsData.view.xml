@@ -9,14 +9,14 @@
 								<sap.ui.layout.form:formContainers>
 									<sap.ui.layout.form:FormContainer title="Filter" id="__container0" expandable="true" expanded="false">
 										<sap.ui.layout.form:formElements>
-											<sap.ui.layout.form:FormElement label="{i18n>DateTo}" id="__labelDateTo">
-												<sap.ui.layout.form:fields>
-													<DatePicker width="25%" id="__pickerTo"/>
-												</sap.ui.layout.form:fields>
-											</sap.ui.layout.form:FormElement>
 											<sap.ui.layout.form:FormElement label="{i18n>DateFrom}" id="__labelDateFrom">
 												<sap.ui.layout.form:fields>
 													<DatePicker width="25%" id="__pickerFrom"/>
+												</sap.ui.layout.form:fields>
+											</sap.ui.layout.form:FormElement>
+											<sap.ui.layout.form:FormElement label="{i18n>DateTo}" id="__labelDateTo">
+												<sap.ui.layout.form:fields>
+													<DatePicker width="25%" id="__pickerTo"/>
 												</sap.ui.layout.form:fields>
 											</sap.ui.layout.form:FormElement>
 											<sap.ui.layout.form:FormElement label="{i18n>PersonalNumber}" id="__labelTicsPersonNumb">

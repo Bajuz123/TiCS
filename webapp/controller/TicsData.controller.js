@@ -109,9 +109,42 @@ sap.ui.define([
 
 		onFilterClick: function() {
 //get filter data
+			var oModel = this.getView().getModel("tics");
+			oModel.read("TICS_SET", {
+				error: function(e) {
+					sap.m.MessageToast.show(e);
+				}
+			});
+			this.createUserFilter(oModel);
+		},
 
-//read
+		createUserFilter: function(oUser) {
+			var filterDateFrom = new sap.ui.model.Filter({
+				path: "vonzeit",
+				operator: sap.ui.model.FilterOperator.EQ,
+				value1: this.getView().byId("__pickerFrom")
+			});
 
+			var filterDateTo = new sap.ui.model.Filter({
+				path: "biszeit",
+				operator: sap.ui.model.FilterOperator.EQ,
+				value1: this.getView().byId("__pickerTo")
+			});
+
+			var filterPersonalNr = new sap.ui.model.Filter({
+				path: "personalnr",
+				operator: sap.ui.model.FilterOperator.EQ,
+				value1: this.getView().byId("__inputPersonalNumber")
+			});
+
+			var filtersTics = new sap.ui.model.Filter({
+				filters: [filterDateFrom, filterDateTo, filterPersonalNr],
+				and: true
+			});
+
+			var oTable = this.getView().byId("__tableTics");
+			var oBinding = oTable.getBinding("items");
+			oBinding.filter(filtersTics);
 		},
 
 		onCancelClick: function() {

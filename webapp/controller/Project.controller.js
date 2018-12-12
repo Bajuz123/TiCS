@@ -179,7 +179,6 @@ sap.ui.define([
 					}
 				});
 				this.createUserFilter(oUserModel);
-				//oTable.bindRows("/PROJECT_SET");
 			}
 		}
 	});
