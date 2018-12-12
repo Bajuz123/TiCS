@@ -20,11 +20,11 @@ sap.ui.define([
 			this.getView().setModel(oUserModel, "User");
 	
 			var btnAdd = this.getView().byId("__buttonAdd");
-			btnAdd.setEnabled( oUserModel.admin === true );
+			btnAdd.setEnabled( oUserModel.admin === "true" );
 			var btnEdit = this.getView().byId("__buttonEdit");
-			btnEdit.setEnabled( oUserModel.admin === true );
+			btnEdit.setEnabled( oUserModel.admin === "true" );
 			var btnDelete = this.getView().byId("__buttonDelete");
-			btnDelete.setEnabled( oUserModel.admin === true );
+			btnDelete.setEnabled( oUserModel.admin === "true" );
 		},
 
 		createUserFilter: function(oUser) {
