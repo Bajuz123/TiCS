@@ -52,6 +52,7 @@ sap.ui.define([
 			this.getView().byId("__pickerFrom").setValue(today.toJSON().slice(0,10).replace(/-/g,"/"));
 			
 			var fieldPersNr = this.getView().byId("__inputPersonalNumber");
+			fieldPersNr.setValue(oUserModel.personalNr);
 			fieldPersNr.setEnabled( oUserModel.admin === "true");
 		},
 		setSelectedData: function() {
