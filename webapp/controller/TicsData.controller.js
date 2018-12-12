@@ -43,6 +43,7 @@ sap.ui.define([
 			oUserModel.password = localStorage.getItem("User_Pwd");
 			oUserModel.authentificated = localStorage.getItem("User_Authentificated");
 			oUserModel.admin = localStorage.getItem("User_Admin");
+			oUserModel.personalNr = localStorage.getItem("User_PersonalNr");
 			this.getView().setModel(oUserModel, "User");
 
 		    var today = new Date();

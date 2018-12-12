@@ -19,6 +19,7 @@ sap.ui.define([
 			localStorage.setItem("User_Pwd", user.password);
 			localStorage.setItem("User_Authentificated", user.authentificated);
 			localStorage.getItem("User_Admin", user.admin);
+			localStorage.getItem("User_PersonalNr", user.personalNr);
 			sap.ui.getCore().setModel(user, "User");
 
 			var oUrlParams = {
@@ -39,7 +40,9 @@ sap.ui.define([
 
 			if (data.MSG_ID !== "1") {
 				user.authentificated = true;
+				user.personalNr = data.TEXT;
 				localStorage.setItem("User_Authentificated", user.authentificated);
+				localStorage.setItem("User_PersonalNr", user.personalNr);
 
 				switch (data.MSG_ID) {
 					case "2":
