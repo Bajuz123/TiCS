@@ -29,9 +29,9 @@ sap.ui.define([
 
 	return Controller.extend("TiCS.controller.TicsData", {
 		addDays: function(date, days) {
-		  var result = new Date(date);
-		  result.setDate(result.getDate() + days);
-		  return result;
+			var result = new Date(date);
+			result.setDate(result.getDate() + days);
+			return result;
 		},
 
 		onInit: function() {
@@ -46,15 +46,14 @@ sap.ui.define([
 			oUserModel.personalNr = localStorage.getItem("User_PersonalNr");
 			this.getView().setModel(oUserModel, "User");
 
-		    var today = new Date();
-			this.getView().byId("__pickerTo").setValue(today.toJSON().slice(0,10).replace(/-/g,"/")); 
-    		today = this.addDays(today, -7);
-			this.getView().byId("__pickerFrom").setValue(today.toJSON().slice(0,10).replace(/-/g,"/"));
-			
+			var today = new Date();
+			this.getView().byId("__pickerTo").setValue(today.toJSON().slice(0, 10).replace(/-/g, "/"));
+			today = this.addDays(today, -7);
+			this.getView().byId("__pickerFrom").setValue(today.toJSON().slice(0, 10).replace(/-/g, "/"));
+
 			var fieldPersNr = this.getView().byId("__inputPersonalNumber");
 			fieldPersNr.setValue(oUserModel.personalNr);
-			fieldPersNr.setEnabled( oUserModel.admin === "true");
-			this.onFilterClick();
+			fieldPersNr.setEnabled(oUserModel.admin === "true");
 		},
 		setSelectedData: function() {
 			//approveDataObj	
@@ -109,13 +108,13 @@ sap.ui.define([
 		},
 
 		onFilterClick: function() {
-			var oModel = this.getView().getModel("tics");
-			oModel.read("TICS_SET", {
+			var oDataModel = this.getView().getModel("tics");
+			oDataModel.read("TICS_SET", {
 				error: function(e) {
 					sap.m.MessageToast.show(e);
 				}
 			});
-			this.createUserFilter(oModel);
+			this.createUserFilter(oDataModel);
 		},
 
 		createUserFilter: function(oUser) {
@@ -164,7 +163,7 @@ sap.ui.define([
 		},
 
 		onDeleteClick: function() {
-//			var oTable = this.getView().byId("__tableTics");
+			//			var oTable = this.getView().byId("__tableTics");
 			var resourceModel = this.getView().getModel("i18n");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
@@ -191,7 +190,7 @@ sap.ui.define([
 		},
 		onEditClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
-//			var oTable = this.getView().byId("__tableTicss");
+			//			var oTable = this.getView().byId("__tableTicss");
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
 			if (selTics.ticsId !== "") {
@@ -210,7 +209,9 @@ sap.ui.define([
 				this.oView.addDependent(fragTics);
 			}
 			fragTics.open();
+		},
+		onBeforeRendering: function() {
+			this.onFilterClick();
 		}
 	});
-
 });
