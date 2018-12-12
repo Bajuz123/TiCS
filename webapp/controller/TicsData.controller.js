@@ -109,7 +109,7 @@ sap.ui.define([
 
 		onFilterClick: function() {
 			var oDataModel = this.getView().getModel("tics");
-			oDataModel.read("TICS_SET", {
+			oDataModel.read("/TICS_SET", {
 				error: function(e) {
 					sap.m.MessageToast.show(e);
 				}
@@ -121,13 +121,13 @@ sap.ui.define([
 			var filterDateFrom = new sap.ui.model.Filter({
 				path: "vonzeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerFrom").getValue()
+				value1: this.getView().byId("__pickerFrom").getDateValue()
 			});
 
 			var filterDateTo = new sap.ui.model.Filter({
 				path: "biszeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerTo").getValue()
+				value1: this.getView().byId("__pickerTo").getDateValue()
 			});
 
 			var filterPersonalNr = new sap.ui.model.Filter({
