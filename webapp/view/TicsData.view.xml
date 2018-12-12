@@ -21,7 +21,7 @@
 											</sap.ui.layout.form:FormElement>
 											<sap.ui.layout.form:FormElement label="{i18n>PersonalNumber}" id="__labelTicsPersonNumb">
 												<sap.ui.layout.form:fields>
-													<Input ariaLabelledBy="__xmlview0--__labelTag" width="25%" id="__inputPersonalNumber" value="{tics>personal_nr}"/>
+													<Input ariaLabelledBy="__xmlview0--__labelTag" width="25%" id="__inputPersonalNumber" />
 												</sap.ui.layout.form:fields>
 											</sap.ui.layout.form:FormElement>
 												
