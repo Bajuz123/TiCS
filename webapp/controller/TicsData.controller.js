@@ -54,6 +54,7 @@ sap.ui.define([
 			var fieldPersNr = this.getView().byId("__inputPersonalNumber");
 			fieldPersNr.setValue(oUserModel.personalNr);
 			fieldPersNr.setEnabled( oUserModel.admin === "true");
+			this.onFilterClick();
 		},
 		setSelectedData: function() {
 			//approveDataObj	
@@ -108,7 +109,6 @@ sap.ui.define([
 		},
 
 		onFilterClick: function() {
-//get filter data
 			var oModel = this.getView().getModel("tics");
 			oModel.read("TICS_SET", {
 				error: function(e) {
@@ -122,23 +122,35 @@ sap.ui.define([
 			var filterDateFrom = new sap.ui.model.Filter({
 				path: "vonzeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerFrom")
+				value1: this.getView().byId("__pickerFrom").getValue()
 			});
 
 			var filterDateTo = new sap.ui.model.Filter({
 				path: "biszeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerTo")
+				value1: this.getView().byId("__pickerTo").getValue()
 			});
 
 			var filterPersonalNr = new sap.ui.model.Filter({
 				path: "personalnr",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__inputPersonalNumber")
+				value1: this.getView().byId("__inputPersonalNumber").getValue()
+			});
+
+			var filterPwd = new sap.ui.model.Filter({
+				path: "password",
+				operator: sap.ui.model.FilterOperator.EQ,
+				value1: oUser.password
+			});
+
+			var filterUname = new sap.ui.model.Filter({
+				path: "username",
+				operator: sap.ui.model.FilterOperator.EQ,
+				value1: oUser.username
 			});
 
 			var filtersTics = new sap.ui.model.Filter({
-				filters: [filterDateFrom, filterDateTo, filterPersonalNr],
+				filters: [filterDateFrom, filterDateTo, filterPersonalNr, filterUname, filterPwd],
 				and: true
 			});
 
