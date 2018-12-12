@@ -51,7 +51,7 @@ sap.ui.define([
     		today = this.addDays(today, -7);
 			this.getView().byId("__pickerFrom").setValue(today.toJSON().slice(0,10).replace(/-/g,"/"));
 			
-			var fieldPersNr = this.getView().byId("__labelTicsPersonNumb");
+			var fieldPersNr = this.getView().byId("__inputPersonalNumber");
 			fieldPersNr.setEnabled( oUserModel.admin === "true");
 		},
 		setSelectedData: function() {
