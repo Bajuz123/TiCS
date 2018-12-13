@@ -118,16 +118,20 @@ sap.ui.define([
 		},
 
 		createUserFilter: function(oUser) {
+			var dateFrom = this.getView().byId("__pickerFrom").getValue();
+			dateFrom = dateFrom.replace(new RegExp("/", "g"), "");
 			var filterDateFrom = new sap.ui.model.Filter({
 				path: "vonzeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerFrom").getValue() //proper conversion needed
+				value1: dateFrom
 			});
 
+			var dateTo = this.getView().byId("__pickerTo").getValue();
+			dateTo = dateTo.replace(new RegExp("/", "g"), "");
 			var filterDateTo = new sap.ui.model.Filter({
 				path: "biszeit",
 				operator: sap.ui.model.FilterOperator.EQ,
-				value1: this.getView().byId("__pickerTo").getValue() //proper conversion needed
+				value1: dateTo
 			});
 
 			var filterPersonalNr = new sap.ui.model.Filter({
