@@ -122,7 +122,7 @@ sap.ui.define([
 			var dateFrom = this.getView().byId("__pickerFrom").getValue();
 			dateFrom = dateFrom.replace(new RegExp("/", "g"), "");
 			var filterDateFrom = new sap.ui.model.Filter({
-				path: "vonzeit",
+				path: "date_from",
 				operator: sap.ui.model.FilterOperator.EQ,
 				value1: dateFrom
 			});
@@ -130,7 +130,7 @@ sap.ui.define([
 			var dateTo = this.getView().byId("__pickerTo").getValue();
 			dateTo = dateTo.replace(new RegExp("/", "g"), "");
 			var filterDateTo = new sap.ui.model.Filter({
-				path: "biszeit",
+				path: "date_to",
 				operator: sap.ui.model.FilterOperator.EQ,
 				value1: dateTo
 			});
