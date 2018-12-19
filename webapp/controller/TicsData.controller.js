@@ -114,7 +114,8 @@ sap.ui.define([
 					sap.m.MessageToast.show(e);
 				}
 			});
-			this.createUserFilter(oDataModel);
+			var oUser = this.getView().getModel("User");
+			this.createUserFilter(oUser);
 		},
 
 		createUserFilter: function(oUser) {
