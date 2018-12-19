@@ -122,7 +122,7 @@ sap.ui.define([
 			var dateFrom = this.getView().byId("__pickerFrom").getValue();
 			dateFrom = dateFrom.replace(new RegExp("/", "g"), "");
 			var filterDateFrom = new sap.ui.model.Filter({
-				path: "date_from",
+				path: "datefrom",
 				operator: sap.ui.model.FilterOperator.EQ,
 				value1: dateFrom
 			});
@@ -130,7 +130,7 @@ sap.ui.define([
 			var dateTo = this.getView().byId("__pickerTo").getValue();
 			dateTo = dateTo.replace(new RegExp("/", "g"), "");
 			var filterDateTo = new sap.ui.model.Filter({
-				path: "date_to",
+				path: "dateto",
 				operator: sap.ui.model.FilterOperator.EQ,
 				value1: dateTo
 			});
@@ -154,7 +154,7 @@ sap.ui.define([
 			});
 
 			var filtersTics = new sap.ui.model.Filter({
-				filters: [filterDateFrom, filterDateTo, filterPersonalNr, filterUname, filterPwd],
+				filters: [filterPersonalNr, filterUname, filterPwd, filterDateFrom, filterDateTo],
 				and: true
 			});
 
@@ -217,6 +217,9 @@ sap.ui.define([
 		},
 		onBeforeRendering: function() {
 			this.onFilterClick();
+		},
+		onOKClick:function(){
+			var test = "test";
 		}
 	});
 });

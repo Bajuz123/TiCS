@@ -37,9 +37,30 @@
 					<Table id="__tableTics" growing="true" items="{tics>/TICS_SET}" itemPress="onItemPress">
 						<items>
 							<ColumnListItem type="Active">
-								<Text text="{tics>tag}"/>
-								<Text text="{tics>vonzeit}"/>
-								<Text text="{tics>biszeit}"/>
+								<Text text="{
+									path: 'tics>tag',
+									type: 'sap.ui.model.type.Date',
+									formatOptions: {
+        								pattern: 'dd/MM/yyyy'
+        							}
+        						}"/>
+
+								<Text text="{
+									path: 'tics>vonzeit',
+									type: 'sap.ui.model.type.Time',
+									formatOptions: {
+        								pattern: 'HH:MM'
+        							}
+        						}"/>
+
+								<Text text="{
+									path: 'tics>biszeit',
+									type: 'sap.ui.model.type.Time',
+									formatOptions: {
+        								pattern: 'HH:MM'
+        							}
+        						}"/>
+
 								<Text text="{tics>projektzeit}"/>
 								<Text text="{tics>pause}"/>
 								<Text text="{tics>projektnummer}"/>
