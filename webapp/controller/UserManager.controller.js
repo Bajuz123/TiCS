@@ -108,8 +108,9 @@ sap.ui.define([
 				if (typeof selUser !== 'undefined') {
 					oEntry.personal_nr = selectedUser.personal_nr;
 					oEntry.username = selectedUser.username;
-					oEntry.role = selectedUser.role;
-					oEntry.calendar = selectedUser.calendar;
+					oEntry.role 	= sap.ui.getCore().byId('__boxUserRole').getSelectedItem().getKey();
+					oEntry.calendar = sap.ui.getCore().byId('__boxUserCalendar').getSelectedItem().getKey();
+
 					if (selUser.method !== 'create') {
 
 						oModelTics.update("/USER_SET(personal_nr='" + oEntry.personal_nr + "')", oEntry, {
