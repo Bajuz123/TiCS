@@ -110,6 +110,7 @@ sap.ui.define([
 				if (typeof selUser !== 'undefined') {
 					oEntry.personal_nr = selectedUser.personal_nr;
 					oEntry.username = selectedUser.username;
+					oEntry.password = selectedUser.password;
 					oEntry.role 	= sap.ui.getCore().byId('__boxUserRole').getSelectedItem().getKey();
 					oEntry.calendar = sap.ui.getCore().byId('__boxUserCalendar').getSelectedItem().getKey();
 					var oUserModel = this.getView().getModel("User");

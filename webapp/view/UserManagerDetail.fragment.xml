@@ -41,6 +41,11 @@
 								<Input width="50%" id="__inputUser_Username" value="{SelectedUser>/username}"/>
 							</sap.ui.layout.form:fields>
 						</sap.ui.layout.form:FormElement>
+						<sap.ui.layout.form:FormElement label="{i18n>User_Password}" id="__labelUser_Password">
+							<sap.ui.layout.form:fields>
+								<Input width="50%" id="__inputUser_Password" value="{SelectedUser>/password}"/>
+							</sap.ui.layout.form:fields>
+						</sap.ui.layout.form:FormElement>
 					</sap.ui.layout.form:FormContainer>
 				</sap.ui.layout.form:formContainers>
 				<sap.ui.layout.form:layout>
