@@ -19,10 +19,9 @@
 						<sap.ui.layout.form:FormElement label="{i18n>User_Role}" id="__labelRole">
 							<sap.ui.layout.form:fields>
 								<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemUserRole"
-									id="__boxUserRole" maxWidth="50%">
+									id="__boxUserRole" maxWidth="50%" items="{i18n>Role}">
 									<items>
-										<core:ListItem xmlns:core="sap.ui.core" text="user" key="item2" id="__item__itemUserRoleuser"/>
-										<core:ListItem xmlns:core="sap.ui.core" text="admin" key="item1" id="__itemUserRoleAdmin"/>
+										<core:Item xmlns:core="sap.ui.core" text="{i18n>text}" key="{i18n>id}" id="__item__itemUserRoleuser"/>
 									</items>
 								</ComboBox>
 							</sap.ui.layout.form:fields>
@@ -32,8 +31,8 @@
 								<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemUserCalendar"
 									id="__boxUserCalendar" maxWidth="50%">
 									<items>
-										<core:ListItem xmlns:core="sap.ui.core" text="Calendar1" key="item2" id="__item__itemUserCalendar1"/>
-										<core:ListItem xmlns:core="sap.ui.core" text="Calendar2" key="item1" id="__item__itemUserCalendar2"/>
+										<core:ListItem xmlns:core="sap.ui.core" text="SK" key="item2" id="__item__itemUserCalendar1"/>
+										<core:ListItem xmlns:core="sap.ui.core" text="DE" key="item1" id="__item__itemUserCalendar2"/>
 									</items>
 								</ComboBox>
 							</sap.ui.layout.form:fields>

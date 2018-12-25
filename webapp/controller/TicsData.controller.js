@@ -2,7 +2,6 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller"
 ], function(Controller) {
 	"use strict";
-	var ticsId = "";
 	var fragTics;
 	var approveDataObj = {
 		personal_nr: "0000001",
