@@ -58,10 +58,12 @@ sap.ui.define([
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
 			if (selectedUser.personal_nr != "") {
+				var user = this.getView().getModel("User");
 				var oModel = this.getView().getModel("tics");
 
 				oModel.remove("/USER_SET(personal_nr='" + selectedUser.personal_nr + "')", {
 					method: "DELETE",
+					urlParameters: { "username": user.username, "password": user.password },
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
 					},
@@ -110,9 +112,11 @@ sap.ui.define([
 					oEntry.username = selectedUser.username;
 					oEntry.role 	= sap.ui.getCore().byId('__boxUserRole').getSelectedItem().getKey();
 					oEntry.calendar = sap.ui.getCore().byId('__boxUserCalendar').getSelectedItem().getKey();
+					var oUserModel = this.getView().getModel("User");
+					oEntry.username = oUserModel.username;
+					oEntry.password = oUserModel.password;
 
 					if (selUser.method !== 'create') {
-
 						oModelTics.update("/USER_SET(personal_nr='" + oEntry.personal_nr + "')", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(editOKTxt);
