@@ -198,7 +198,6 @@ sap.ui.define([
 		},
 		onEditClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
-			//			var oTable = this.getView().byId("__tableTicss");
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
 
 			if (selTics.ticsId !== "") {
@@ -222,7 +221,62 @@ sap.ui.define([
 			this.onFilterClick();
 		},
 		onOKClick:function(){
-			var test = "test";
+			var oEntry = {};
+
+			var resourceModel = this.oView.getModel("i18n");
+			var oModelTics = this.oView.getModel("tics");
+			var editOKTxt = resourceModel.getProperty("EditOK");
+			var editFailTxt = resourceModel.getProperty("EditFail");
+			var addOKTxt = resourceModel.getProperty("TicsAddOK");
+			var addFailTxt = resourceModel.getProperty("TicsAddFail");
+
+			var oTicsDataModel = this.getView().getModel("SelectedTics");
+			if (typeof oModel !== 'undefined') {
+				var selectedTics = oTicsDataModel.getData("selectedTics");
+				if (typeof selectedTics !== 'undefined') {
+					oEntry.username = oTicsDataModel.username;
+					oEntry.password = oTicsDataModel.password;
+					oEntry.personalnr = '';
+					oEntry.tag = selectedTics.tag;
+					oEntry.vonzeit = selectedTics.vonzeit; 
+					oEntry.createtime = selectedTics.createtime;
+					oEntry.biszeit = selectedTics.biszeit;
+					oEntry.pause = selectedTics.pause;
+					oEntry.projektnummer = selectedTics.projektnummer;
+					oEntry.abrechnungsschl = selectedTics.abrechnungsschl;
+					oEntry.projektschl = selectedTics.projektschl;
+					oEntry.aufgabe = selectedTics.aufgabe;
+					oEntry.bemerkung = selectedTics.comment;
+/*
+					if (selUser.method !== 'create') {
+						oModelTics.update("/USER_SET(personal_nr='" + oEntry.personal_nr + "')", oEntry, {
+							success: function(data) {
+								sap.m.MessageToast.show(editOKTxt);
+							},
+							error: function(e) {
+								sap.m.MessageToast.show(editFailTxt);
+							}
+						});
+					} else if (selUser.method === 'create') {
+						oModelTics.create("/USER_SET", oEntry, {
+							success: function(data) {
+								sap.m.MessageToast.show(addOKTxt);
+							},
+							error: function(e) {
+								sap.m.MessageToast.show(addFailTxt);
+							}
+						});
+					}*/
+				}
+			} else {
+				sap.m.MessageToast.show(editFailTxt);
+			}
+			oModelTics.refresh();
+			this.clearSelected();
+			fragTics.close();
+		},
+		clearSelected: function() {
+			
 		}
 	});
 });
