@@ -18,7 +18,7 @@
 						</sap.ui.layout.form:FormElement>
 						<sap.ui.layout.form:FormElement label="{i18n>User_Role}" id="__labelRole">
 							<sap.ui.layout.form:fields>
-								<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemUserRole"
+								<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="{SelectedUser>/role}" selectedItemId="__itemUserRole"
 									id="__boxUserRole" maxWidth="50%" items="{tics>/ROLE_SET}">
 									<items>
 										<core:Item xmlns:core="sap.ui.core" text="{tics>text}" key="{tics>id}" id="__item__itemUserRoleuser"/>
@@ -28,7 +28,7 @@
 						</sap.ui.layout.form:FormElement>
 						<sap.ui.layout.form:FormElement label="{i18n>User_Calendar}" id="__labelUser_Calendar">
 							<sap.ui.layout.form:fields>
-								<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemUserCalendar"
+								<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="{SelectedUser>/calendar}" selectedItemId="__itemUserCalendar"
 									id="__boxUserCalendar" maxWidth="50%" items="{tics>/CALENDAR_SET}">
 									<items>
 										<core:ListItem xmlns:core="sap.ui.core" text="{tics>description}" key="{tics>calendar}" id="__item__itemUserCalendar2"/>

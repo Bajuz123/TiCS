@@ -8,8 +8,8 @@ sap.ui.define([
 		personal_nr: "",
 		role: "",
 		calendar: "",
-		usr_name:"",
-		pwd:"",
+		usr_name: "",
+		pwd: "",
 		method: "create"
 	};
 
@@ -25,13 +25,13 @@ sap.ui.define([
 			oUserModel.admin = localStorage.getItem("User_Admin");
 			oUserModel.personalNr = localStorage.getItem("User_PersonalNr");
 			this.getView().setModel(oUserModel, "User");
-			
+
 			var btnAdd = this.getView().byId("__buttonAdd");
-			btnAdd.setEnabled( oUserModel.admin === "true" );
+			btnAdd.setEnabled(oUserModel.admin === "true");
 			var btnEdit = this.getView().byId("__buttonEdit");
-			btnEdit.setEnabled( oUserModel.admin === "true" );
+			btnEdit.setEnabled(oUserModel.admin === "true");
 			var btnDelete = this.getView().byId("__buttonDelete");
-			btnDelete.setEnabled( oUserModel.admin === "true" );
+			btnDelete.setEnabled(oUserModel.admin === "true");
 		},
 
 		onItemPress: function(oEvent) {
@@ -65,7 +65,10 @@ sap.ui.define([
 
 				oModel.remove("/USER_SET(personal_nr='" + selectedUser.personal_nr + "')", {
 					method: "DELETE",
-					urlParameters: { "username": user.username, "password": user.password },
+					urlParameters: {
+						"username": user.username,
+						"password": user.password
+					},
 					success: function(data) {
 						sap.m.MessageToast.show(deleteOKText);
 					},
@@ -112,8 +115,8 @@ sap.ui.define([
 				if (typeof selUser !== 'undefined') {
 					oEntry.personal_nr = selectedUser.personal_nr;
 					oEntry.usr_name = selectedUser.usr_name;
-					oEntry.pwd		= selectedUser.pwd;
-					oEntry.role 	= sap.ui.getCore().byId('__boxUserRole').getSelectedItem().getKey();
+					oEntry.pwd = selectedUser.pwd;
+					oEntry.role = sap.ui.getCore().byId('__boxUserRole').getSelectedItem().getKey();
 					oEntry.calendar = sap.ui.getCore().byId('__boxUserCalendar').getSelectedItem().getKey();
 					var oUserModel = this.getView().getModel("User");
 					oEntry.username = oUserModel.username;
