@@ -29,61 +29,57 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Break}" id="__elementTicsBreak">
 								<sap.ui.layout.form:fields>
-									<Input width="35%" id="__inputTicsBreak" placeholder="0,5" value="{SelectedTics>/pause}" />
+									<Input width="35%" id="__inputTicsBreak" placeholder="0" value="{SelectedTics>/pause}" />
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectNumber}" id="__elementTicsProjNumber">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="item1" selectedItemId="__itemTicsProjNum"
-										id="__boxProjNumber" maxWidth="35%">
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="{SelectedTics>projektnummer}" selectedKey="item1" selectedItemId="__itemTicsProjNum"
+										id="__boxProjNumber" maxWidth="35%" items="{tics>/PROJECT_SET}">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="Project Number1" key="item1" id="__itemTics12"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="Project Number2" key="item2" id="__itemTics13"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="{tics>projektnummer}" key="{tics>projektnummer}" id="__itemTics12"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>BillingKey}" id="__elementBK">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="List Item 1" selectedKey="itemTicsBK" selectedItemId="__itemTicsBK" id="__boxBK"
-										maxWidth="35%">
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="" selectedKey="{SelectedTics>abrechnungsschl}" selectedItemId="__itemTicsBK" id="__boxBK"
+										maxWidth="35%" items="{tics>/BK_SET}">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key1" key="item1" id="__itemTics9"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="Billing Key2" key="item2" id="__itemTics10"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="{tics>abrechnungsschl}" key="{tics>abrechnungsschl}" id="__itemTics9"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectKey}" id="__elementPK">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="item1" selectedItemId="__itemTicsPK" id="__boxPK"
-										maxWidth="35%">
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item6" value="List Item 1" selectedKey="{SelectedTics>projektschl}" selectedItemId="__itemTicsPK" id="__boxPK"
+										maxWidth="35%" items="{tics>/PK_SET}">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey1" key="item1" id="__itemTics6"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="ProjectKey2" key="item2" id="__itemTics7"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="{tics>projektschl}" key="{tics>projektschl}" id="__itemTics6"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Task}" id="__elementTask">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="List Item 1" selectedKey="itemTicsTask" selectedItemId="__itemTicsTask"
-										id="__boxTask" maxWidth="35%">
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="List Item 1" selectedKey="{SelectedTics>projektnummer}" selectedItemId="__itemTicsTask"
+										id="__boxTask" maxWidth="35%" items="{tics>TASK_SET}">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="Task1" key="item1" id="__itemTics3"/>
-											<core:ListItem xmlns:core="sap.ui.core" text="Task2" key="item2" id="__itemTics4"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="{tics>aufgabe}" key="{tics>projektnummer}" id="__itemTics3"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>TaskDescription}" id="__elementTaskDescription">
 								<sap.ui.layout.form:fields>
-									<Input width="50%" id="__inputTaskDescription" editable="false" />
+									<Input width="50%" id="__inputTaskDescription" editable="false" value="{SelectedTics>description}"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Comment}" id="__elementComment">
 								<sap.ui.layout.form:fields>
-									<Input width="100%" id="__inputComment"/>
+									<Input width="100%" id="__inputComment" value="{SelectedTics>comment}"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 						</sap.ui.layout.form:formElements>

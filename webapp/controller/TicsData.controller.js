@@ -23,7 +23,9 @@ sap.ui.define([
 		aufgabe: "",
 		fefahrzeit: "",
 		fakturierbarfah: "",
-		ticsId: ""
+		ticsId: "",
+		description:"",
+		comment:""
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
