@@ -34,7 +34,7 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectNumber}" id="__elementTicsProjNumber">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="{SelectedTics>projektnummer}" selectedKey="item1" selectedItemId="__itemTicsProjNum"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="{SelectedTics>projektnummer}" selectedKey="{SelectedTics>projektnummer}" selectedItemId="__itemTicsProjNum"
 										id="__boxProjNumber" maxWidth="35%" items="{tics>/PROJECT_SET}">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="{tics>projektnummer}" key="{tics>projektnummer}" id="__itemTics12"/>
@@ -44,7 +44,7 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>BillingKey}" id="__elementBK">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="" selectedKey="{SelectedTics>abrechnungsschl}" selectedItemId="__itemTicsBK" id="__boxBK"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item3" value="{SelectedTics>abrechnungsschl}" selectedKey="{SelectedTics>abrechnungsschl}" selectedItemId="__itemTicsBK" id="__boxBK"
 										maxWidth="35%" items="{tics>/BK_SET}">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="{tics>abrechnungsschl}" key="{tics>abrechnungsschl}" id="__itemTics9"/>
@@ -64,10 +64,10 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Task}" id="__elementTask">
 								<sap.ui.layout.form:fields>
-									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="List Item 1" selectedKey="{SelectedTics>projektnummer}" selectedItemId="__itemTicsTask"
+									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item11" value="{SelectedTics>aufgabe}" selectedKey="{SelectedTics>aufgabe}" selectedItemId="__itemTicsTask"
 										id="__boxTask" maxWidth="35%" items="{tics>TASK_SET}">
 										<items>
-											<core:ListItem xmlns:core="sap.ui.core" text="{tics>aufgabe}" key="{tics>projektnummer}" id="__itemTics3"/>
+											<core:ListItem xmlns:core="sap.ui.core" text="{tics>aufgabe}" key="{tics>aufgabe}" id="__itemTics3"/>
 										</items>
 									</ComboBox>
 								</sap.ui.layout.form:fields>

@@ -105,6 +105,8 @@ sap.ui.define([
 		},
 
 		onAddClick: function() {
+			var today = new Date();
+			selTics.tag = today.toJSON().slice(0, 10).replace(/-/g, "/");
 			this.openFragTics();
 		},
 
