@@ -6,9 +6,10 @@ sap.ui.define([
 
 	var selectedUser = {
 		personal_nr: "",
-		username: "",
 		role: "",
 		calendar: "",
+		usr_name:"",
+		pwd:"",
 		method: "create"
 	};
 
@@ -37,7 +38,8 @@ sap.ui.define([
 			selectedUser.personal_nr = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("personal_nr");
 			selectedUser.role = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("role");
 			selectedUser.calendar = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("calendar");
-			selectedUser.username = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("username");
+			selectedUser.usr_name = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("usr_name");
+			selectedUser.pwd = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("pwd");
 		},
 
 		onAddClick: function() {
@@ -109,8 +111,8 @@ sap.ui.define([
 				var selUser = oModel.getData("selectedUser");
 				if (typeof selUser !== 'undefined') {
 					oEntry.personal_nr = selectedUser.personal_nr;
-					oEntry.username = selectedUser.username;
-					oEntry.password = selectedUser.password;
+					oEntry.usr_name = selectedUser.usr_name;
+					oEntry.pwd		= selectedUser.pwd;
 					oEntry.role 	= sap.ui.getCore().byId('__boxUserRole').getSelectedItem().getKey();
 					oEntry.calendar = sap.ui.getCore().byId('__boxUserCalendar').getSelectedItem().getKey();
 					var oUserModel = this.getView().getModel("User");
@@ -157,9 +159,10 @@ sap.ui.define([
 		},
 		clearSelected: function() {
 			selectedUser.personal_nr = "";
-			selectedUser.username = "";
 			selectedUser.role = "";
 			selectedUser.calendar = "";
+			selectedUser.usr_name = "";
+			selectedUser.pwd = "";
 		}
 	});
 });

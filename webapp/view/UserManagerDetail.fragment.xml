@@ -38,12 +38,12 @@
 						</sap.ui.layout.form:FormElement>
 						<sap.ui.layout.form:FormElement label="{i18n>User_Username}" id="__labelUser_Username">
 							<sap.ui.layout.form:fields>
-								<Input width="50%" id="__inputUser_Username" value="{SelectedUser>/username}"/>
+								<Input width="50%" id="__inputUser_Username" value="{SelectedUser>/usr_name}"/>
 							</sap.ui.layout.form:fields>
 						</sap.ui.layout.form:FormElement>
 						<sap.ui.layout.form:FormElement label="{i18n>User_Password}" id="__labelUser_Password">
 							<sap.ui.layout.form:fields>
-								<Input width="50%" id="__inputUser_Password" value="{SelectedUser>/password}"/>
+								<Input width="50%" id="__inputUser_Password" value="{SelectedUser>/pwd}"/>
 							</sap.ui.layout.form:fields>
 						</sap.ui.layout.form:FormElement>
 					</sap.ui.layout.form:FormContainer>

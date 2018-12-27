@@ -8,7 +8,7 @@
 									<ColumnListItem type="Active">
 										<Text text="{tics>personal_nr}"/>
 										<Text text="{tics>role}"/>
-										<Text text="{tics>username}"/>
+										<Text text="{tics>usr_name}"/>
 										<Text text="{tics>calendar}"/>
 									</ColumnListItem>
 								</items>
