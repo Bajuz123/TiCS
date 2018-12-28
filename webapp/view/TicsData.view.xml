@@ -38,6 +38,7 @@
 						<items>
 							<ColumnListItem type="Active">
 								<Text text="{tics>guid}"/>
+								<Text text="{tics>personalnr}"/>
 								<Text text="{
 									path: 'tics>tag',
 									type: 'sap.ui.model.type.Date',
@@ -67,6 +68,11 @@
 							<Column id="__columnGuid" visible="false">
 								<header>
 									<Label text="{i18n>guid}" id="__labelGuid"/>
+								</header>
+							</Column>
+							<Column id="__columnPersonalnr" visible="false">
+								<header>
+									<Label text="{i18n>personalnr}" id="__labelPersonalnr"/>
 								</header>
 							</Column>
 							<Column id="__columnTag" visible="true">

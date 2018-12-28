@@ -26,6 +26,7 @@ sap.ui.define([
 		ticsId: "",
 		description:"",
 		comment:"",
+		personalnr:"",
 		method:"create"
 	};
 
@@ -92,6 +93,7 @@ sap.ui.define([
 			selTics.vonzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("vonzeit");
 			selTics.ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id");
 			selTics.tag = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("tag");
+			selTics.personalnr = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("personalnr");
 			selTics.projektzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektzeit");
 			selTics.projektschl = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektschl");
 			selTics.pause = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("pause");
@@ -188,7 +190,8 @@ sap.ui.define([
 					method: "DELETE",
 					urlParameters: {
 						"username": user.username,
-						"password": user.password
+						"password": user.password,
+						"personalNr": selTics.personalnr
 					},
 					success: function() {
 						sap.m.MessageToast.show(deleteOKText);
@@ -201,7 +204,6 @@ sap.ui.define([
 			} else {
 				sap.m.MessageToast.show(deleteSelectText);
 			}
-			fragTics.close();
 		},
 		onEditClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
