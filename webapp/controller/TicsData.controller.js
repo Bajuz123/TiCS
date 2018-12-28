@@ -25,7 +25,8 @@ sap.ui.define([
 		fakturierbarfah: "",
 		ticsId: "",
 		description:"",
-		comment:""
+		comment:"",
+		method:"create"
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
@@ -106,7 +107,7 @@ sap.ui.define([
 
 		onAddClick: function() {
 			var today = new Date();
-			selTics.tag = today.toJSON().slice(0, 10).replace(/-/g, "/");
+			selTics.tag = today;
 			this.openFragTics();
 		},
 
@@ -229,27 +230,30 @@ sap.ui.define([
 			var editFailTxt = resourceModel.getProperty("EditFail");
 			var addOKTxt = resourceModel.getProperty("TicsAddOK");
 			var addFailTxt = resourceModel.getProperty("TicsAddFail");
+			var noModelTxt = resourceModel.getProperty("NoModel");
 
 			var oTicsDataModel = this.getView().getModel("SelectedTics");
-			if (typeof oModel !== 'undefined') {
+			if (typeof oTicsDataModel !== 'undefined') {
 				var selectedTics = oTicsDataModel.getData("selectedTics");
 				if (typeof selectedTics !== 'undefined') {
-					oEntry.username = oTicsDataModel.username;
-					oEntry.password = oTicsDataModel.password;
-					oEntry.personalnr = '';
+					var oUserModel = this.getView().getModel("User");
+					oEntry.id = '1';
+					oEntry.username = oUserModel.username;
+					oEntry.password = oUserModel.password;
+					oEntry.personalnr = oUserModel.personalNr;
 					oEntry.tag = selectedTics.tag;
-					oEntry.vonzeit = selectedTics.vonzeit; 
+					oEntry.vonzeit = selectedTics.vonzeit.slice(0,5); 
 					oEntry.createtime = selectedTics.createtime;
-					oEntry.biszeit = selectedTics.biszeit;
+					oEntry.biszeit = selectedTics.biszeit.slice(0,5);
 					oEntry.pause = selectedTics.pause;
 					oEntry.projektnummer = selectedTics.projektnummer;
 					oEntry.abrechnungsschl = selectedTics.abrechnungsschl;
 					oEntry.projektschl = selectedTics.projektschl;
 					oEntry.aufgabe = selectedTics.aufgabe;
 					oEntry.bemerkung = selectedTics.comment;
-/*
-					if (selUser.method !== 'create') {
-						oModelTics.update("/USER_SET(personal_nr='" + oEntry.personal_nr + "')", oEntry, {
+
+					if (selectedTics.method !== 'create') {
+						oModelTics.update("/TICS_SET(id='" + oEntry.id + "')", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(editOKTxt);
 							},
@@ -257,8 +261,8 @@ sap.ui.define([
 								sap.m.MessageToast.show(editFailTxt);
 							}
 						});
-					} else if (selUser.method === 'create') {
-						oModelTics.create("/USER_SET", oEntry, {
+					} else if (selectedTics.method === 'create') {
+						oModelTics.create("/TICS_SET", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(addOKTxt);
 							},
@@ -266,10 +270,10 @@ sap.ui.define([
 								sap.m.MessageToast.show(addFailTxt);
 							}
 						});
-					}*/
+					}
 				}
 			} else {
-				sap.m.MessageToast.show(editFailTxt);
+				sap.m.MessageToast.show(noModelTxt);
 			}
 			oModelTics.refresh();
 			this.clearSelected();
