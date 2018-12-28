@@ -37,6 +37,7 @@
 					<Table id="__tableTics" growing="true" items="{tics>/TICS_SET}" itemPress="onItemPress">
 						<items>
 							<ColumnListItem type="Active">
+								<Text text="{tics>guid}"/>
 								<Text text="{
 									path: 'tics>tag',
 									type: 'sap.ui.model.type.Date',
@@ -63,6 +64,11 @@
 							</ColumnListItem>
 						</items>
 						<columns>
+							<Column id="__columnGuid" visible="false">
+								<header>
+									<Label text="{i18n>guid}" id="__labelGuid"/>
+								</header>
+							</Column>
 							<Column id="__columnTag" visible="true">
 								<header>
 									<Label text="{i18n>Tag}" id="__labelTag"/>

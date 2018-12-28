@@ -90,7 +90,7 @@ sap.ui.define([
 
 		onItemPress: function(oEvent) {
 			selTics.vonzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("vonzeit");
-			selTics.ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("ticsId");
+			selTics.ticsId = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id");
 			selTics.tag = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("tag");
 			selTics.projektzeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektzeit");
 			selTics.projektschl = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("projektschl");
@@ -103,11 +103,13 @@ sap.ui.define([
 			selTics.biszeit = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("biszeit");
 			selTics.aufgabe = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("aufgabe");
 			selTics.abrechnungsschl = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("abrechnungsschl");
+			selTics.comment = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("bemerkung");
 		},
 
 		onAddClick: function() {
 			var today = new Date();
 			selTics.tag = today;
+			selTics.method = "create";
 			this.openFragTics();
 		},
 
@@ -179,10 +181,15 @@ sap.ui.define([
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
 
 			if (selTics.ticsId !== "") {
+				var user = this.getView().getModel("User");
 				var oModel = this.getView().getModel("tics");
 
-				oModel.remove("/TICS_SET(ticsId='" + selTics.ticsId + "')", {
+				oModel.remove("/TICS_SET(id='" + selTics.ticsId + "')", {
 					method: "DELETE",
+					urlParameters: {
+						"username": user.username,
+						"password": user.password
+					},
 					success: function() {
 						sap.m.MessageToast.show(deleteOKText);
 					},
@@ -194,12 +201,12 @@ sap.ui.define([
 			} else {
 				sap.m.MessageToast.show(deleteSelectText);
 			}
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo("TicsData");
+			fragTics.close();
 		},
 		onEditClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
 			var editSelectText = resourceModel.getProperty("EditSelectFail");
+			selTics.method = "edit";
 
 			if (selTics.ticsId !== "") {
 				var oModel = this.getView().getModel("SelectedTics");
