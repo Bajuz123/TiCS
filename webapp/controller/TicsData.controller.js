@@ -110,6 +110,7 @@ sap.ui.define([
 
 		onAddClick: function() {
 			var today = new Date();
+			this.clearSelected();
 			selTics.tag = today;
 			selTics.method = "create";
 			this.openFragTics();
@@ -176,7 +177,6 @@ sap.ui.define([
 		},
 
 		onDeleteClick: function() {
-			//			var oTable = this.getView().byId("__tableTics");
 			var resourceModel = this.getView().getModel("i18n");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
@@ -227,12 +227,13 @@ sap.ui.define([
 			}
 			fragTics.open();
 		},
+
 		onBeforeRendering: function() {
 			this.onFilterClick();
 		},
+
 		onOKClick:function(){
 			var oEntry = {};
-
 			var resourceModel = this.oView.getModel("i18n");
 			var oModelTics = this.oView.getModel("tics");
 			var editOKTxt = resourceModel.getProperty("EditOK");
@@ -246,7 +247,6 @@ sap.ui.define([
 				var selectedTics = oTicsDataModel.getData("selectedTics");
 				if (typeof selectedTics !== 'undefined') {
 					var oUserModel = this.getView().getModel("User");
-					oEntry.id = '1';
 					oEntry.username = oUserModel.username;
 					oEntry.password = oUserModel.password;
 					oEntry.personalnr = oUserModel.personalNr;
@@ -262,6 +262,7 @@ sap.ui.define([
 					oEntry.bemerkung = selectedTics.comment;
 
 					if (selectedTics.method !== 'create') {
+   						oEntry.id = selectedTics.ticsId;
 						oModelTics.update("/TICS_SET(id='" + oEntry.id + "')", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(editOKTxt);
@@ -289,7 +290,22 @@ sap.ui.define([
 			fragTics.close();
 		},
 		clearSelected: function() {
-			
+			selTics.vonzeit = "";
+			selTics.ticsId = "";
+			selTics.tag = "";
+			selTics.personalnr = "";
+			selTics.projektzeit = "";
+			selTics.projektschl = "";
+			selTics.pause = "";
+			selTics.fefahrzeit = "";
+			selTics.fakturierbarfah = "";
+			selTics.erf_uhrzeit = "";
+			selTics.createtime = "";
+			selTics.erf_datum = "";
+			selTics.biszeit = "";
+			selTics.aufgabe = "";
+			selTics.abrechnungsschl = "";
+			selTics.comment = "";
 		}
 	});
 });
