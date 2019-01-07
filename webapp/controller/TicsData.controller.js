@@ -62,18 +62,22 @@ sap.ui.define([
 				oRouter.navTo("Login");
 			}
 		},
+		removeSlashes: function(date) {
+			return date.replace(new RegExp("/", "g"), "");
+		},
+		
 		setSelectedData: function() {
-			approveDataObj.datefrom = this.getView().byId("__pickerFrom").getValue();
-			approveDataObj.dateto = this.getView().byId("__pickerTo").getValue();
+			approveDataObj.datefrom = this.removeSlashes(this.getView().byId("__pickerFrom").getValue());
+			approveDataObj.dateto = this.removeSlashes(this.getView().byId("__pickerTo").getValue());
 			approveDataObj.personalnr = this.getView().byId("__inputPersonalNumber").getValue();
 		},
 
-		successApproval: function() {
-			sap.m.MessageToast.show("ok");
+		successApproval: function(data, response) {
+			sap.m.MessageToast.show(data.MSG_ID + ": " + data.TEXT);
 		},
 
 		errorApproval: function() {
-			sap.m.MessageToast.show("fail");
+			sap.m.MessageToast.show("something gone wrong by data exchange");
 		},
 
 		approveData: function() {
