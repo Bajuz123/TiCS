@@ -26,6 +26,11 @@ sap.ui.define([
 			btnEdit.setEnabled( oUserModel.admin === "true" );
 			var btnDelete = this.getView().byId("__buttonDelete");
 			btnDelete.setEnabled( oUserModel.admin === "true" );
+			
+			if (oUserModel.authentificated !== "true" && oUserModel.authentificated !== true) {
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("Login");
+			}
 		},
 
 		createUserFilter: function(oUser) {

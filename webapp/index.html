@@ -20,10 +20,10 @@
 
 		<script>
 			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
+				new sap.m.Shell("Shell", {
 					app: new sap.ui.core.ComponentContainer({
 						height : "100%",
-						name : "TiCS"
+						name : "TiCS",
 					})
 				}).placeAt("content");
 			});

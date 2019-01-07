@@ -4,9 +4,9 @@ sap.ui.define([
 	"use strict";
 	var fragTics;
 	var approveDataObj = {
-		personal_nr: "0000001",
-		date_from: "01/01/1900",
-		date_to: "01/01/1900"
+		personalnr: "0000001",
+		datefrom: "01/01/1900",
+		dateto: "01/01/1900"
 	};
 	var selTics = {
 		tag: "",
@@ -24,10 +24,10 @@ sap.ui.define([
 		fefahrzeit: "",
 		fakturierbarfah: "",
 		ticsId: "",
-		description:"",
-		comment:"",
-		personalnr:"",
-		method:"create"
+		description: "",
+		comment: "",
+		personalnr: "",
+		method: "create"
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
@@ -57,9 +57,15 @@ sap.ui.define([
 			var fieldPersNr = this.getView().byId("__inputPersonalNumber");
 			fieldPersNr.setValue(oUserModel.personalNr);
 			fieldPersNr.setEnabled(oUserModel.admin === "true");
+			if (oUserModel.authentificated !== "true" && oUserModel.authentificated !== true) {
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("Login");
+			}
 		},
 		setSelectedData: function() {
-			//approveDataObj	
+			approveDataObj.datefrom = this.getView().byId("__pickerFrom").getValue();
+			approveDataObj.dateto = this.getView().byId("__pickerTo").getValue();
+			approveDataObj.personalnr = this.getView().byId("__inputPersonalNumber").getValue();
 		},
 
 		successApproval: function() {
@@ -76,9 +82,9 @@ sap.ui.define([
 			//oData selection (from-to), personalnr
 			this.setSelectedData();
 			var oUrlParams = {
-				personal_nr: approveDataObj.personal_nr,
-				date_from: approveDataObj.date_from,
-				date_to: approveDataObj.date_to
+				datefrom: approveDataObj.datefrom,
+				dateto: approveDataObj.dateto,
+				personalnr: approveDataObj.personalnr
 			};
 
 			oDataModel.callFunction("/CHECK_DATA", {
@@ -232,7 +238,7 @@ sap.ui.define([
 			this.onFilterClick();
 		},
 
-		onOKClick:function(){
+		onOKClick: function() {
 			var oEntry = {};
 			var resourceModel = this.oView.getModel("i18n");
 			var oModelTics = this.oView.getModel("tics");
@@ -251,9 +257,9 @@ sap.ui.define([
 					oEntry.password = oUserModel.password;
 					oEntry.personalnr = oUserModel.personalNr;
 					oEntry.tag = selectedTics.tag;
-					oEntry.vonzeit = selectedTics.vonzeit.slice(0,5); 
+					oEntry.vonzeit = selectedTics.vonzeit.slice(0, 5);
 					oEntry.createtime = selectedTics.createtime;
-					oEntry.biszeit = selectedTics.biszeit.slice(0,5);
+					oEntry.biszeit = selectedTics.biszeit.slice(0, 5);
 					oEntry.pause = selectedTics.pause;
 					oEntry.projektnummer = selectedTics.projektnummer;
 					oEntry.abrechnungsschl = selectedTics.abrechnungsschl;
@@ -262,7 +268,7 @@ sap.ui.define([
 					oEntry.bemerkung = selectedTics.comment;
 
 					if (selectedTics.method !== 'create') {
-   						oEntry.id = selectedTics.ticsId;
+						oEntry.id = selectedTics.ticsId;
 						oModelTics.update("/TICS_SET(id='" + oEntry.id + "')", oEntry, {
 							success: function(data) {
 								sap.m.MessageToast.show(editOKTxt);
