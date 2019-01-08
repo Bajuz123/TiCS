@@ -13,7 +13,7 @@
 						<sap.ui.layout.form:formElements>
 							<sap.ui.layout.form:FormElement id="__elementTicsDate" label="{i18n>Date}">
 								<sap.ui.layout.form:fields>
-									<DatePicker width="35%" id="__pickerTicsDate" value="{SelectedTics>/tag}"/>
+									<DatePicker width="35%" id="__pickerTicsDate" value="{SelectedTics>/tag}" displayFormat="medium" change="onDatePickerChange"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement id="__elementTicsTimeFrom" label="{i18n>From}">

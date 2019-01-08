@@ -31,9 +31,21 @@ sap.ui.define([
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
+		onDatePickerChange: function(oEvent) {
+			var oDatePicker = oEvent.getSource();
+			var oBinding = oDatePicker.getBinding("value");
+			var oNewDate = oDatePicker.getDateValue();
+			if (oNewDate) {
+				var sPath = oBinding.getPath();
+				var oFormatDate = sap.ui.core.format.DateFormat.getDateTimeInstance({
+					pattern: "yyyy-MM-dd"
+				});
+				oBinding.getModel().setProperty(sPath, new Date(oFormatDate.format(oNewDate)));
+			}
+		},
+
 		exportToPdf: function() {
-			
-			
+
 		},
 
 		addDays: function(date, days) {
