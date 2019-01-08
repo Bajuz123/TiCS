@@ -21,7 +21,7 @@
 											</sap.ui.layout.form:FormElement>
 											<sap.ui.layout.form:FormElement label="{i18n>PersonalNumber}" id="__labelTicsPersonNumb">
 												<sap.ui.layout.form:fields>
-													<Input ariaLabelledBy="__xmlview0--__labelTag" width="25%" id="__inputPersonalNumber" />
+													<Input ariaLabelledBy="__xmlview0--__labelTag" width="25%" id="__inputPersonalNumber"/>
 												</sap.ui.layout.form:fields>
 											</sap.ui.layout.form:FormElement>
 												
@@ -39,21 +39,11 @@
 							<ColumnListItem type="Active">
 								<Text text="{tics>guid}"/>
 								<Text text="{tics>personalnr}"/>
-								<Text text="{
-									path: 'tics>tag',
-									type: 'sap.ui.model.type.Date',
-									formatOptions: {
-        								pattern: 'dd/MM/yyyy'
-        							}
-        						}"/>
+								<Text text="{          path: 'tics>tag',          type: 'sap.ui.model.type.Date',          formatOptions: {                 pattern: 'dd/MM/yyyy'                }               }"/>
 
-								<Text text="{
-									path: 'tics>vonzeit'
-        						}"/>
+								<Text text="{          path: 'tics>vonzeit'               }"/>
 
-								<Text text="{
-									path: 'tics>biszeit'
-        						}"/>
+								<Text text="{          path: 'tics>biszeit'               }"/>
 
 								<Text text="{tics>projektzeit}"/>
 								<Text text="{tics>pause}"/>
@@ -140,6 +130,7 @@
 						</contentRight>
 						<contentLeft>
 							<Button width="100px" id="__buttonCheck" icon="sap-icon://approvals" press="approveData"/>
+							<Button width="100px" id="__buttonExportPdf" icon="sap-icon://pdf-attachment" press="exportToPdf"/>
 						</contentLeft>
 					</Bar>
 				</footer>

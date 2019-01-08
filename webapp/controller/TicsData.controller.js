@@ -31,6 +31,11 @@ sap.ui.define([
 	};
 
 	return Controller.extend("TiCS.controller.TicsData", {
+		exportToPdf: function() {
+			
+			
+		},
+
 		addDays: function(date, days) {
 			var result = new Date(date);
 			result.setDate(result.getDate() + days);
@@ -65,7 +70,7 @@ sap.ui.define([
 		removeSlashes: function(date) {
 			return date.replace(new RegExp("/", "g"), "");
 		},
-		
+
 		setSelectedData: function() {
 			approveDataObj.datefrom = this.removeSlashes(this.getView().byId("__pickerFrom").getValue());
 			approveDataObj.dateto = this.removeSlashes(this.getView().byId("__pickerTo").getValue());
