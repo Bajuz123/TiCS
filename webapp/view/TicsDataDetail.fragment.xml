@@ -19,23 +19,23 @@
 							<sap.ui.layout.form:FormElement id="__elementTicsTimeFrom" label="{i18n>From}">
 								<sap.ui.layout.form:fields>
 									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeFrom"
-										width="35%" value="{SelectedTics>/vonzeit}"/>
+										width="35%" value="{SelectedTics>/vonzeit}" submit="onOKClick"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>To}" id="__element8">
 								<sap.ui.layout.form:fields>
-									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeTo" width="35%" value="{SelectedTics>/biszeit}"/>
+									<TimePicker placeholder="HH:mm" placeholderSymbol="-" mask="h9:59:59" displayFormat="HH:mm" localeId="de-DE" id="__pickerTimeTo" width="35%" value="{SelectedTics>/biszeit}" submit="onOKClick"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Break}" id="__elementTicsBreak">
 								<sap.ui.layout.form:fields>
-									<Input width="35%" id="__inputTicsBreak" placeholder="0" value="{SelectedTics>/pause}" />
+									<Input width="35%" id="__inputTicsBreak" placeholder="0" value="{SelectedTics>/pause}" submit="onOKClick"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectNumber}" id="__elementTicsProjNumber">
 								<sap.ui.layout.form:fields>
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="{SelectedTics>/projektnummer}" selectedItemId="__itemTicsProjNum"
-										id="__boxProjNumber" maxWidth="35%" items="{tics>/PROJECT_SET}">
+										id="__boxProjNumber" maxWidth="35%" items="{tics>/PROJECT_SET}" submit="onOKClick">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="{tics>projektnummer}" key="{tics>projektnummer}" id="__itemTics12"/>
 										</items>
@@ -45,7 +45,7 @@
 							<sap.ui.layout.form:FormElement label="{i18n>BillingKey}" id="__elementBK">
 								<sap.ui.layout.form:fields>
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="{SelectedTics>/abrechnungsschl}" selectedItemId="__itemTicsBK" id="__boxBK"
-										maxWidth="35%" items="{tics>/BK_SET}">
+										maxWidth="35%" items="{tics>/BK_SET}" submit="onOKClick">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="{tics>abrechnungsschl}" key="{tics>abrechnungsschl}" id="__itemTics9"/>
 										</items>
@@ -55,7 +55,7 @@
 							<sap.ui.layout.form:FormElement label="{i18n>ProjectKey}" id="__elementPK">
 								<sap.ui.layout.form:fields>
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="{SelectedTics>/projektschl}" selectedItemId="__itemTicsPK" id="__boxPK"
-										maxWidth="35%" items="{tics>/PK_SET}">
+										maxWidth="35%" items="{tics>/PK_SET}" submit="onOKClick">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="{tics>projektschl}" key="{tics>projektschl}" id="__itemTics6"/>
 										</items>
@@ -65,7 +65,7 @@
 							<sap.ui.layout.form:FormElement label="{i18n>Task}" id="__elementTask">
 								<sap.ui.layout.form:fields>
 									<ComboBox selectedItem="Element sap.ui.core.ListItem#__item0" value="List Item 1" selectedKey="{SelectedTics>/aufgabe}" selectedItemId="__itemTicsTask"
-										id="__boxTask" maxWidth="35%" items="{tics>/TASK_SET}">
+										id="__boxTask" maxWidth="35%" items="{tics>/TASK_SET}" submit="onOKClick">
 										<items>
 											<core:ListItem xmlns:core="sap.ui.core" text="{tics>aufgabe}" key="{tics>aufgabe}" id="__itemTics3"/>
 										</items>
@@ -74,12 +74,12 @@
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>TaskDescription}" id="__elementTaskDescription">
 								<sap.ui.layout.form:fields>
-									<Input width="50%" id="__inputTaskDescription" editable="false" value="{SelectedTics>/description}"/>
+									<Input width="50%" id="__inputTaskDescription" editable="false" value="{SelectedTics>/description}" submit="onOKClick"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 							<sap.ui.layout.form:FormElement label="{i18n>Comment}" id="__elementComment">
 								<sap.ui.layout.form:fields>
-									<Input width="100%" id="__inputComment" value="{SelectedTics>/comment}"/>
+									<Input width="100%" id="__inputComment" value="{SelectedTics>/comment}" submit="onOKClick"/>
 								</sap.ui.layout.form:fields>
 							</sap.ui.layout.form:FormElement>
 						</sap.ui.layout.form:formElements>
