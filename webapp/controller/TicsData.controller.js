@@ -45,21 +45,43 @@ sap.ui.define([
 		},
 
 		exportToPdf: function() {
-		var data = ["x", "z"];
+		var oModel = this.getView().oModel;
 		
-		var col = [{title: "Name", key: "Name"},
-		           {title: "XML", key: "XML"}];
-		
-        //var data = oModel;
-       // console.log(data);
-          var doc = new jsPDF('p', 'pt', 'a4', true);
-         // doc.text("Hello /n hello",20,120);  
-         // doc.text(20, 40, 'This is client-side Javascript, pumping out a PDF.');
-          doc.fromHTML($('#__tableTics').html(),60,60,{
+		var col = [{title: "Tag", key: "tag"},
+		           {title: "Zeit von", key: "vonzeit"},
+		            {title: "ERF Datum", key: "erf_datum"},
+		             {title: "ERF Uhrzeit", key: "erf_uhrzeit"},
+		              {title: "Creattime", key: "createtime"},
+		               {title: "Zeit bis", key: "biszeit"},
+		                {title: "Pause", key: "pause"},
+		                 {title: "Projektzeit", key: "projektzeit"},
+		                  {title: "Projektnummer", key: "projektnummer"},
+		                   {title: "Abrechnungsschl", key: "abrechnungsschl"},
+		                    {title: "Projektschl", key: "projektschl"},
+		                     {title: "Aufgabe", key: "aufgabe"},
+		                      {title: "Fefahrzeit", key: "fefahrzeit"},
+		                       {title: "Fakturierbarfah", key: "Fakturierbarfah"}];
 
-            'width': 750 });
-          doc.addPage();
-         doc.autoTable(col,data,{});
+
+						var dataArray = [];
+                    	var table = sap.ui.getCore().byId("__tableTics");
+                        
+                        //Will give you list of indices after filter & sort 
+                        var filteredIndices = table.getBinding().aIndices; 
+                        
+                        for(var index=0;index<filteredIndices.length;index++){
+                    		dataArray.push(oModel.oData.TICS_SET[filteredIndices[index]]);
+                    	}
+
+
+
+          var doc = new jsPDF('p', 'pt', 'a4', true);
+        
+         // doc.fromHTML($('#__tableTics').html(),60,60,{
+
+          //  'width': 750 });
+         // doc.addPage();
+         doc.autoTable(col,dataArray,{});
 
           doc.save("DemoData.pdf");  
 		},
