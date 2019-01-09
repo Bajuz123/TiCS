@@ -64,7 +64,7 @@ sap.ui.define([
 
 
 						var dataArray = [];
-                    	var table = sap.ui.getCore().byId("__tableTics");
+                    	var table = this.getView().byId("__tableTics");
                         
                         //Will give you list of indices after filter & sort 
                         var filteredIndices = table.getBinding().aIndices; 
