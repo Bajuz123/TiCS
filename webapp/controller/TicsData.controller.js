@@ -45,7 +45,23 @@ sap.ui.define([
 		},
 
 		exportToPdf: function() {
+		var data = ["x", "z"];
+		
+		var col = [{title: "Name", key: "Name"},
+		           {title: "XML", key: "XML"}];
+		
+        //var data = oModel;
+       // console.log(data);
+          var doc = new jsPDF('p', 'pt', 'a4', true);
+         // doc.text("Hello /n hello",20,120);  
+         // doc.text(20, 40, 'This is client-side Javascript, pumping out a PDF.');
+          doc.fromHTML($('#__tableTics').html(),60,60,{
 
+            'width': 750 });
+          doc.addPage();
+         doc.autoTable(col,data,{});
+
+          doc.save("DemoData.pdf");  
 		},
 
 		addDays: function(date, days) {
