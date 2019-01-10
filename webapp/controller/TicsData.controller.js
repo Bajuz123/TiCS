@@ -48,16 +48,16 @@ sap.ui.define([
 		var oModel = this.getView().getModel("tics");
 		var oModelUser = sap.ui.getCore().getModel("User");
 		
-		var col = [{title: "Tag", key: "tag"},
-		           {title: "Zeit von", key: "vonzeit"},
-		        	 {title: "Creattime", key: "createtime"},
-		               {title: "Zeit bis", key: "biszeit"},
-		                {title: "Pause", key: "pause"},
-		                 {title: "Projektzeit", key: "projektzeit"},
-		                  {title: "Projektnummer", key: "projektnummer"},
-		                   {title: "Abrechnungsschl", key: "abrechnungsschl"},
-		                    {title: "Projektschl", key: "projektschl"},
-		                     {title: "Aufgabe", key: "aufgabe"}];
+		var col = [{title: "Day", key: "tag"},
+		           {title: "From", key: "vonzeit"},
+		            {title: "To", key: "biszeit"},
+		             {title: "Break", key: "pause"},
+		              {title: "Proj. Time", key: "projektzeit"},
+		               {title: "Proj. No.", key: "projektnummer"},
+		                {title: "BK", key: "abrechnungsschl"},
+		                 {title: "PK", key: "projektschl"},
+		                  {title: "Task", key: "aufgabe"},
+		                   {title: "Comment", key: "bemerkung"}];
 
 
 						var dataArray = [];
