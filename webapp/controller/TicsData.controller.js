@@ -46,6 +46,7 @@ sap.ui.define([
 
 		exportToPdf: function() {
 		var oModel = this.getView().getModel("tics");
+		var oModelUser = sap.ui.getCore().getModel("User");
 		
 		var col = [{title: "Tag", key: "tag"},
 		           {title: "Zeit von", key: "vonzeit"},
@@ -75,6 +76,20 @@ sap.ui.define([
 
 
           var doc = new jsPDF('p', 'pt', 'a4', true);
+			doc.setFontSize(15);
+
+         doc.text(40, 30, 'Activity Report');
+         doc.text(375, 30, 'iBS Innov. Banking Sol. AG');
+         doc.setFontSize(10);
+         
+		 doc.text(40, 50, oModelUser.personalNr);
+		 doc.text(70, 50, oModelUser.username);
+
+		 doc.text(40, 60,"Period from xx to xx");
+
+		 doc.text(388, 42,"PPD0FI1000 Competence Center IBS");
+  		 doc.text(403, 51,"CPD0FI1500 Subunternehmer iBS");
+ 		 doc.text(418, 60,"Line Manager Pleß, Ute (4816)");
 
          doc.autoTable(col,dataArray,{});
 
