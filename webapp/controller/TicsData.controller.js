@@ -94,7 +94,18 @@ sap.ui.define([
 		 doc.setLineWidth(0.5);
 		 doc.line(40, 75, 558, 75);
 		 
-         doc.autoTable(col,dataArray,{});
+        doc.autoTable(col,dataArray,{
+         	startY: 80,
+    			styles: {
+    		    overflow: 'linebreak',
+      			fontSize: 10,
+      			rowHeight: 10,
+      			columnWidth: 'wrap'
+    			},
+    		columnStyles: {
+     		 1: {columnWidth: 'auto'}
+    		}
+    		});
 
           doc.save("DemoData.pdf");  
 		},
