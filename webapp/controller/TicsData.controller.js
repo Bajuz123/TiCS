@@ -72,8 +72,8 @@ sap.ui.define([
    								 }
 							}
 
-		for(j = 1; j < dataArray.length; j+=1){ 
-			if( dataArray[j].tag.indexOf(',') == '-1' ){
+		for(j = 0; j < dataArray.length; j+=1){ 
+			if( typeof dataArray[j].tag == "object" ){
 			 dateFormated = dateFormat.format(dataArray[j].tag);
 			 dataArray[j].tag = dateFormated;
 			}
