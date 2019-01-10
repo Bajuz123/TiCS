@@ -59,24 +59,20 @@ sap.ui.define([
 		                  {title: "Task", key: "aufgabe"},
 		                   {title: "Comment", key: "bemerkung"}];
 
-
 						var dataArray = [];
-                         var data, i, name, names;
-                        //Will give you list of indices after filter & sort 
-                        //var filteredIndices = table.getBinding().aIndices; 
+                        var data, i, name, names;
+                        
                          data = oModel.getProperty("/");
                          names = Object.getOwnPropertyNames(data);
                         for (i = 0; i < names.length; i += 1) {
    						 name = names[i];
-  						  // you have to check for the correct entity
    							 if (/TICS_SET/.test(name )) {
        							 dataArray.push(oModel.getProperty("/"+name));
    								 }
 							}
 
-
           var doc = new jsPDF('p', 'pt', 'a4', true);
-			doc.setFontSize(15);
+		 doc.setFontSize(15);
 
          doc.text(40, 30, 'Activity Report');
          doc.text(375, 30, 'iBS Innov. Banking Sol. AG');
@@ -102,7 +98,7 @@ sap.ui.define([
     			}
     		});
 
-          doc.save("DemoData.pdf");  
+          doc.save(oModelUser.personalNr+".XX.pdf");
 		},
 
 		addDays: function(date, days) {
