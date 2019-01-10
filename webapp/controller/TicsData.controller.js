@@ -45,7 +45,7 @@ sap.ui.define([
 		},
 
 		exportToPdf: function() {
-		var oModel = this.getView().oModel;
+		var oModel = this.getView().getModel("tics");
 		
 		var col = [{title: "Tag", key: "tag"},
 		           {title: "Zeit von", key: "vonzeit"},
@@ -65,14 +65,19 @@ sap.ui.define([
 
 						var dataArray = [];
                     	var table = this.getView().byId("__tableTics");
-                        
+                         var data, i, name, names;
                         //Will give you list of indices after filter & sort 
-                        var filteredIndices = table.getBinding().aIndices; 
-                        
-                        for(var index=0;index<filteredIndices.length;index++){
-                    		dataArray.push(oModel.oData.TICS_SET[filteredIndices[index]]);
-                    	}
-
+                        //var filteredIndices = table.getBinding().aIndices; 
+                         data = oModel.getProperty("/");
+                         names = Object.getOwnPropertyNames(data);
+                        for (i = 0; i < names.length; i += 1) {
+   						 name = names[i];
+  						  // you have to check for the correct entity
+   							 if (/TICS_SET/.test(name )) {
+       							 //sum += data[name].value;
+       							 dataArray.push(oModel.getProperty("/"+name));
+   								 }
+							}
 
 
           var doc = new jsPDF('p', 'pt', 'a4', true);
