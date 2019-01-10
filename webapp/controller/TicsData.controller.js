@@ -107,6 +107,7 @@ sap.ui.define([
     		});
 
           doc.save(oModelUser.personalNr+".XX.pdf");
+          window.location.reload();
 		},
 
 		addDays: function(date, days) {
