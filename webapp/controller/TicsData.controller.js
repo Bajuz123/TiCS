@@ -98,13 +98,8 @@ sap.ui.define([
          	startY: 80,
     			styles: {
     		    overflow: 'linebreak',
-      			fontSize: 10,
-      			rowHeight: 10,
-      			columnWidth: 'wrap'
-    			},
-    		columnStyles: {
-     		 1: {columnWidth: 'auto'}
-    		}
+      			fontSize: 8
+    			}
     		});
 
           doc.save("DemoData.pdf");  
