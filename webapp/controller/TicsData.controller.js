@@ -77,6 +77,11 @@ for(j = 1; j < dataArray.length; j+=1){
 			 dataArray[j].tag = dateFormatted ;
 		}
 
+for(j = 1; j < dataArray.length; j+=1){ 
+		if( dataArray[j].tag.indexOf(',') == -1 ){
+			 dataArray[j].tag= dateFormat.format(dataArray[j].tag);
+		}
+		}
 
           var doc = new jsPDF('p', 'pt', 'a4', true);
 		 doc.setFontSize(15);
