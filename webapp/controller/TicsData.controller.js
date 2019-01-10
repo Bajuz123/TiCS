@@ -45,6 +45,10 @@ sap.ui.define([
 		},
 
 		exportToPdf: function() {
+		var dataArray = [];
+        var data, i, j, name, names, dateFormatted ;
+        
+		var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({style : "full" }); 
 		var oModel = this.getView().getModel("tics");
 		var oModelUser = sap.ui.getCore().getModel("User");
 		
@@ -59,9 +63,6 @@ sap.ui.define([
 		                  {title: "Task", key: "aufgabe"},
 		                   {title: "Comment", key: "bemerkung"}];
 
-						var dataArray = [];
-                        var data, i, name, names;
-                        
                          data = oModel.getProperty("/");
                          names = Object.getOwnPropertyNames(data);
                         for (i = 0; i < names.length; i += 1) {
@@ -70,6 +71,12 @@ sap.ui.define([
        							 dataArray.push(oModel.getProperty("/"+name));
    								 }
 							}
+
+for(j = 1; j < dataArray.length; j+=1){ 
+			 dateFormatted = dateFormat.format(dataArray[j].tag);
+			 dataArray[j].tag = dateFormatted ;
+		}
+
 
           var doc = new jsPDF('p', 'pt', 'a4', true);
 		 doc.setFontSize(15);
@@ -91,7 +98,7 @@ sap.ui.define([
 		 doc.line(40, 75, 558, 75);
 		 
         doc.autoTable(col,dataArray,{
-         	startY: 80,
+         	startY: 90,
     			styles: {
     		    overflow: 'linebreak',
       			fontSize: 8
