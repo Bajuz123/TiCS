@@ -46,7 +46,7 @@ sap.ui.define([
 
 		exportToPdf: function() {
 		var dataArray = [];
-        var data, i, j, name, names, dateFormatted ;
+        var data, i, j, name, names, dateFormated;
         
 		var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({style : "full" }); 
 		var oModel = this.getView().getModel("tics");
@@ -72,15 +72,11 @@ sap.ui.define([
    								 }
 							}
 
-for(j = 1; j < dataArray.length; j+=1){ 
-			 dateFormatted = dateFormat.format(dataArray[j].tag);
-			 dataArray[j].tag = dateFormatted ;
-		}
-
-for(j = 1; j < dataArray.length; j+=1){ 
-		if( dataArray[j].tag.indexOf(',') == -1 ){
-			 dataArray[j].tag= dateFormat.format(dataArray[j].tag);
-		}
+		for(j = 1; j < dataArray.length; j+=1){ 
+			if( dataArray[j].tag.indexOf(',') == '-1' ){
+			 dateFormated = dateFormat.format(dataArray[j].tag);
+			 dataArray[j].tag = dateFormated;
+			}
 		}
 
           var doc = new jsPDF('p', 'pt', 'a4', true);
