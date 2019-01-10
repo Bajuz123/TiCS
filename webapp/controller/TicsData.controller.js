@@ -87,10 +87,13 @@ sap.ui.define([
 
 		 doc.text(40, 60,"Period from xx to xx");
 
-		 doc.text(388, 42,"PPD0FI1000 Competence Center IBS");
-  		 doc.text(403, 51,"CPD0FI1500 Subunternehmer iBS");
- 		 doc.text(418, 60,"Line Manager Pleß, Ute (4816)");
+		 doc.text(388, 50,"PPD0FI1000 Competence Center IBS");
+  		 doc.text(403, 60,"CPD0FI1500 Subunternehmer iBS");
+ 		 doc.text(418, 70,"Line Manager Pleß, Ute (4816)");
 
+		 doc.setLineWidth(0.5);
+		 doc.line(40, 75, 558, 75);
+		 
          doc.autoTable(col,dataArray,{});
 
           doc.save("DemoData.pdf");  
