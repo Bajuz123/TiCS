@@ -49,18 +49,14 @@ sap.ui.define([
 		
 		var col = [{title: "Tag", key: "tag"},
 		           {title: "Zeit von", key: "vonzeit"},
-		            {title: "ERF Datum", key: "erf_datum"},
-		             {title: "ERF Uhrzeit", key: "erf_uhrzeit"},
-		              {title: "Creattime", key: "createtime"},
+		        	 {title: "Creattime", key: "createtime"},
 		               {title: "Zeit bis", key: "biszeit"},
 		                {title: "Pause", key: "pause"},
 		                 {title: "Projektzeit", key: "projektzeit"},
 		                  {title: "Projektnummer", key: "projektnummer"},
 		                   {title: "Abrechnungsschl", key: "abrechnungsschl"},
 		                    {title: "Projektschl", key: "projektschl"},
-		                     {title: "Aufgabe", key: "aufgabe"},
-		                      {title: "Fefahrzeit", key: "fefahrzeit"},
-		                       {title: "Fakturierbarfah", key: "Fakturierbarfah"}];
+		                     {title: "Aufgabe", key: "aufgabe"}];
 
 
 						var dataArray = [];
