@@ -64,7 +64,6 @@ sap.ui.define([
 
 
 						var dataArray = [];
-                    	var table = this.getView().byId("__tableTics");
                          var data, i, name, names;
                         //Will give you list of indices after filter & sort 
                         //var filteredIndices = table.getBinding().aIndices; 
@@ -74,18 +73,13 @@ sap.ui.define([
    						 name = names[i];
   						  // you have to check for the correct entity
    							 if (/TICS_SET/.test(name )) {
-       							 //sum += data[name].value;
        							 dataArray.push(oModel.getProperty("/"+name));
    								 }
 							}
 
 
           var doc = new jsPDF('p', 'pt', 'a4', true);
-        
-         // doc.fromHTML($('#__tableTics').html(),60,60,{
 
-          //  'width': 750 });
-         // doc.addPage();
          doc.autoTable(col,dataArray,{});
 
           doc.save("DemoData.pdf");  
