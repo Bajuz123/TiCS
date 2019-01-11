@@ -45,69 +45,92 @@ sap.ui.define([
 		},
 
 		exportToPdf: function() {
-		var dataArray = [];
-        var data, i, j, name, names, dateFormated;
-        
-		var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({style : "full" }); 
-		var oModel = this.getView().getModel("tics");
-		var oModelUser = sap.ui.getCore().getModel("User");
-		
-		var col = [{title: "Day", key: "tag"},
-		           {title: "From", key: "vonzeit"},
-		            {title: "To", key: "biszeit"},
-		             {title: "Break", key: "pause"},
-		              {title: "Proj. Time", key: "projektzeit"},
-		               {title: "Proj. No.", key: "projektnummer"},
-		                {title: "BK", key: "abrechnungsschl"},
-		                 {title: "PK", key: "projektschl"},
-		                  {title: "Task", key: "aufgabe"},
-		                   {title: "Comment", key: "bemerkung"}];
+			var dataArray = [];
+			var data, i, j, name, names, dateFormated;
 
-                         data = oModel.getProperty("/");
-                         names = Object.getOwnPropertyNames(data);
-                        for (i = 0; i < names.length; i += 1) {
-   						 name = names[i];
-   							 if (/TICS_SET/.test(name )) {
-       							 dataArray.push(oModel.getProperty("/"+name));
-   								 }
-							}
+			var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+				style: "full"
+			});
+			var oModel = this.getView().getModel("tics");
+			var oModelUser = sap.ui.getCore().getModel("User");
 
-		for(j = 0; j < dataArray.length; j+=1){ 
-			if( typeof dataArray[j].tag == "object" ){
-			 dateFormated = dateFormat.format(dataArray[j].tag);
-			 dataArray[j].tag = dateFormated;
+			var col = [{
+				title: "Day",
+				key: "tag"
+			}, {
+				title: "From",
+				key: "vonzeit"
+			}, {
+				title: "To",
+				key: "biszeit"
+			}, {
+				title: "Break",
+				key: "pause"
+			}, {
+				title: "Proj. Time",
+				key: "projektzeit"
+			}, {
+				title: "Proj. No.",
+				key: "projektnummer"
+			}, {
+				title: "BK",
+				key: "abrechnungsschl"
+			}, {
+				title: "PK",
+				key: "projektschl"
+			}, {
+				title: "Task",
+				key: "aufgabe"
+			}, {
+				title: "Comment",
+				key: "bemerkung"
+			}];
+
+			data = oModel.getProperty("/");
+			names = Object.getOwnPropertyNames(data);
+			for (i = 0; i < names.length; i += 1) {
+				name = names[i];
+				if (/TICS_SET/.test(name)) {
+					dataArray.push(oModel.getProperty("/" + name));
+				}
 			}
-		}
 
-          var doc = new jsPDF('p', 'pt', 'a4', true);
-		 doc.setFontSize(15);
+			for (j = 0; j < dataArray.length; j += 1) {
+				if (typeof dataArray[j].tag == "object") {
+					dateFormated = dateFormat.format(dataArray[j].tag);
+					dataArray[j].tag = dateFormated;
+				}
+			}
 
-         doc.text(40, 30, 'Activity Report');
-         doc.text(375, 30, 'iBS Innov. Banking Sol. AG');
-         doc.setFontSize(10);
-         
-		 doc.text(40, 50, oModelUser.personalNr);
-		 doc.text(70, 50, oModelUser.username);
+			var doc = new jsPDF('p', 'pt', 'a4', true);
+			doc.setFontSize(15);
 
-		 doc.text(40, 60,"Period from xx to xx");
+			doc.text(40, 30, 'Activity Report');
+			doc.text(375, 30, 'iBS Innov. Banking Sol. AG');
+			doc.setFontSize(10);
 
-		 doc.text(388, 50,"PPD0FI1000 Competence Center IBS");
-  		 doc.text(403, 60,"CPD0FI1500 Subunternehmer iBS");
- 		 doc.text(418, 70,"Line Manager Pleß, Ute (4816)");
+			doc.text(40, 50, oModelUser.personalNr);
+			doc.text(70, 50, oModelUser.username);
 
-		 doc.setLineWidth(0.5);
-		 doc.line(40, 75, 558, 75);
-		 
-        doc.autoTable(col,dataArray,{
-         	startY: 90,
-    			styles: {
-    		    overflow: 'linebreak',
-      			fontSize: 8
-    			}
-    		});
+			doc.text(40, 60, "Period from xx to xx");
 
-          doc.save(oModelUser.personalNr+".XX.pdf");
-          window.location.reload();
+			doc.text(388, 50, "PPD0FI1000 Competence Center IBS");
+			doc.text(403, 60, "CPD0FI1500 Subunternehmer iBS");
+			doc.text(418, 70, "Line Manager Pleß, Ute (4816)");
+
+			doc.setLineWidth(0.5);
+			doc.line(40, 75, 558, 75);
+
+			doc.autoTable(col, dataArray, {
+				startY: 90,
+				styles: {
+					overflow: 'linebreak',
+					fontSize: 8
+				}
+			});
+
+			doc.save(oModelUser.personalNr + ".XX.pdf");
+			window.location.reload();
 		},
 
 		addDays: function(date, days) {
@@ -332,8 +355,7 @@ sap.ui.define([
 			selectedTics.aufgabe;
 			selectedTics.comment;
 			*/
-			
-			
+
 			return true;
 		},
 
