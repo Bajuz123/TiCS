@@ -122,6 +122,16 @@
 						"name": "TicsDataDetail",
 						"view": "TicsDataDetail",
 						"targetAggregation": "detailPages"
+					},{
+						"pattern": "Task",
+						"name": "Task",
+						"view": "Task",
+						"targetAggregation": "detailPages"
+					}, {
+						"pattern": "TaskDetail",
+						"name": "TaskDetail",
+						"view": "TaskDetail",
+						"targetAggregation": "detailPages"
 					}]
 				}]
 			}

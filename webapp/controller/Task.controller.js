@@ -32,9 +32,17 @@ sap.ui.define([
 				oRouter.navTo("Login");
 			}
 		},
+			isUserValid: function(oUser) {
+			return oUser.authentificated;
+		},
 
 		onAddClick: function() {
-
+			var oModel = this.getView().getModel("SelectedProject");
+			this.clearSelected();
+			selTask.method = "create";
+			oModel.setData(selTask);
+			this.getView().setModel(oModel, "SelectedProject");
+			this.openFragUser();
 		},
 
 		onDeleteClick: function() {
@@ -49,7 +57,11 @@ sap.ui.define([
 			selTask.id = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id");
 			selTask.aufgabe = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("aufgabe");
 			selTask.beschreibung = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung");
-			}
+			},
+				clearSelected: function() {
+			selTask.aufgabe = "";
+			selTask.beschreibung = "";
+		}
 			/**
 			 * Called when a controller is instantiated and its View controls (if available) are already created.
 			 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
