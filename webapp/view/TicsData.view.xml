@@ -11,7 +11,7 @@
 										<sap.ui.layout.form:formElements>
 											<sap.ui.layout.form:FormElement label="{i18n>DateFrom}" id="__labelDateFrom">
 												<sap.ui.layout.form:fields>
-													<DatePicker width="25%" id="__pickerFrom" change="onFilterClick" />
+													<DatePicker width="25%" id="__pickerFrom" change="onFilterClick"/>
 												</sap.ui.layout.form:fields>
 											</sap.ui.layout.form:FormElement>
 											<sap.ui.layout.form:FormElement label="{i18n>DateTo}" id="__labelDateTo">
@@ -125,6 +125,7 @@
 						<contentRight>
 							<Button xmlns="sap.m" width="100px" id="__buttonFilter" icon="sap-icon://filter" press="onFilterClick"/>
 							<Button xmlns="sap.m" width="100px" id="__buttonAdd12" icon="sap-icon://add" press="onAddClick"/>
+							<Button xmlns="sap.m" width="100px" id="__buttonCopy" icon="sap-icon://copy" press="onCopyClick"/>
 							<Button xmlns="sap.m" width="100px" id="__buttonDelete1" icon="sap-icon://delete" press="onDeleteClick"/>
 							<Button xmlns="sap.m" width="100px" id="__buttonEdit1" icon="sap-icon://edit" press="onEditClick"/>
 						</contentRight>

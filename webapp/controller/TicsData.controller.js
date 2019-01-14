@@ -435,6 +435,9 @@ sap.ui.define([
 			selTics.aufgabe = "";
 			selTics.abrechnungsschl = "";
 			selTics.comment = "";
+		},
+		onCopyClick: function() {
+			
 		}
 	});
 });
