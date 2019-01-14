@@ -3,7 +3,35 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
+	var selTask= {
+		id: "",
+		aufgabe: "",
+		beschreibung: "",
+		method: "create"
+	};
 	return Controller.extend("TiCS.controller.Task", {
+
+		onInit: function() {
+			var oUserModel = sap.ui.getCore().getModel("User");
+			oUserModel.username = localStorage.getItem("User_Login");
+			oUserModel.password = localStorage.getItem("User_Pwd");
+			oUserModel.authentificated = localStorage.getItem("User_Authentificated");
+			oUserModel.admin = localStorage.getItem("User_Admin");
+			oUserModel.personalNr = localStorage.getItem("User_PersonalNr");
+			this.getView().setModel(oUserModel, "User");
+
+			var btnAdd = this.getView().byId("__buttonAdd");
+			btnAdd.setEnabled(oUserModel.admin === "true");
+			var btnEdit = this.getView().byId("__buttonEdit");
+			btnEdit.setEnabled(oUserModel.admin === "true");
+			var btnDelete = this.getView().byId("__buttonDelete");
+			btnDelete.setEnabled(oUserModel.admin === "true");
+
+			if (oUserModel.authentificated !== "true" && oUserModel.authentificated !== true) {
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("Login");
+			}
+		},
 
 		onAddClick: function() {
 
@@ -16,18 +44,17 @@ sap.ui.define([
 		onEditClick: function() {
 
 		},
-		
-		onItemPress: function() {
 
+		onItemPress: function(oEvent) {
+			selTask.id = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id");
+			selTask.aufgabe = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("aufgabe");
+			selTask.beschreibung = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung");
 			}
 			/**
 			 * Called when a controller is instantiated and its View controls (if available) are already created.
 			 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 			 * @memberOf TiCS.view.view.Task
 			 */
-			//	onInit: function() {
-			//
-			//	},
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
