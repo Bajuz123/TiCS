@@ -54,7 +54,6 @@ sap.ui.define([
 		onDeleteClick: function() {
 			var resourceModel = this.getView().getModel("i18n");
 			var modelTics = this.oView.getModel("tics");
-			//			var oTable = this.getView().byId("__tableProjects");
 			var deleteSelectText = resourceModel.getProperty("DeleteSelectFail");
 			var deleteOKText = resourceModel.getProperty("DeleteOK");
 			var deleteFailText = resourceModel.getProperty("DeleteFail");
