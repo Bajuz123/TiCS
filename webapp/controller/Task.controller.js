@@ -3,20 +3,20 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	var selTask= {
+	var selTask = {
 		id: "",
 		aufgabe: "",
 		beschreibung: "",
 		method: "create"
 	};
-		var fragTask;
+	var fragTask;
 	return Controller.extend("TiCS.controller.Task", {
 
 		onInit: function() {
 			var oModel = new sap.ui.model.json.JSONModel();
 			oModel.setData(selTask);
 			this.getView().setModel(oModel, "SelectedTask");
-			
+
 			var oUserModel = sap.ui.getCore().getModel("User");
 			oUserModel.username = localStorage.getItem("User_Login");
 			oUserModel.password = localStorage.getItem("User_Pwd");
@@ -37,7 +37,8 @@ sap.ui.define([
 				oRouter.navTo("Login");
 			}
 		},
-			isUserValid: function(oUser) {
+
+		isUserValid: function(oUser) {
 			return oUser.authentificated;
 		},
 
@@ -57,6 +58,7 @@ sap.ui.define([
 		onEditClick: function() {
 
 		},
+
 		openFragUser: function() {
 			if (!fragTask) {
 				fragTask = new sap.ui.xmlfragment("TiCS.view.TaskDetail", this.oView.getController());
@@ -69,16 +71,60 @@ sap.ui.define([
 			selTask.id = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("id");
 			selTask.aufgabe = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("aufgabe");
 			selTask.beschreibung = oEvent.getParameter("listItem").getBindingContext("tics").getProperty("beschreibung");
-			},
-				clearSelected: function() {
+		},
+
+		clearSelected: function() {
 			selTask.aufgabe = "";
 			selTask.beschreibung = "";
+		},
+
+		onCancelClick: function() {
+			this.clearSelected();
+			fragTask.close();
+		},
+		
+		onOKClick: function() {
+			var resourceModel = this.getView().getModel("i18n");
+			var editOKTxt = resourceModel.getProperty("EditOK");
+			var editFailTxt = resourceModel.getProperty("EditFail");
+			var addOKTxt = resourceModel.getProperty("TasktAddOK");
+			var oEntry = {};
+			var oModel = this.getView().getModel("SelectedTask");
+			var modelTics = this.oView.getModel("tics");
+			if (typeof oModel !== "undefined") {
+				selTask = oModel.getData("selTask");
+				if (typeof selTask !== "undefined") {
+					oEntry.aufgabe = selTask.aufgabe;
+					oEntry.beschreibung = selTask.beschreibung;
+
+					var oUserModel = this.getView().getModel("User");
+					oEntry.username = oUserModel.username;
+					oEntry.password = oUserModel.password;
+					if (selTask.method !== "create") {
+
+						modelTics.update("/TASK_SET(projektnummer='" + oEntry.aufgabe + "')", oEntry, {
+							success: function() {
+								sap.m.MessageToast.show(editOKTxt);
+							},
+							error: function() {
+								sap.m.MessageToast.show(editFailTxt);
+							}
+						});
+					} else if (selTask.method === "create") {
+						modelTics.create("/TASK_SET", oEntry);
+						sap.m.MessageToast.show(addOKTxt);
+					}
+				}
+			}
+			modelTics.refresh();
+			this.clearSelected();
+			fragTask.close();
 		}
-			/**
-			 * Called when a controller is instantiated and its View controls (if available) are already created.
-			 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-			 * @memberOf TiCS.view.view.Task
-			 */
+		/**
+		 * Called when a controller is instantiated and its View controls (if available) are already created.
+		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
+		 * @memberOf TiCS.view.view.Task
+		 */
 
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
