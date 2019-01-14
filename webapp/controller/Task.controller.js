@@ -9,9 +9,14 @@ sap.ui.define([
 		beschreibung: "",
 		method: "create"
 	};
+		var fragTask;
 	return Controller.extend("TiCS.controller.Task", {
 
 		onInit: function() {
+			var oModel = new sap.ui.model.json.JSONModel();
+			oModel.setData(selTask);
+			this.getView().setModel(oModel, "SelectedTask");
+			
 			var oUserModel = sap.ui.getCore().getModel("User");
 			oUserModel.username = localStorage.getItem("User_Login");
 			oUserModel.password = localStorage.getItem("User_Pwd");
@@ -37,11 +42,11 @@ sap.ui.define([
 		},
 
 		onAddClick: function() {
-			var oModel = this.getView().getModel("SelectedProject");
+			var oModel = this.getView().getModel("SelectedTask");
 			this.clearSelected();
 			selTask.method = "create";
 			oModel.setData(selTask);
-			this.getView().setModel(oModel, "SelectedProject");
+			this.getView().setModel(oModel, "SelectedTask");
 			this.openFragUser();
 		},
 
@@ -51,6 +56,13 @@ sap.ui.define([
 
 		onEditClick: function() {
 
+		},
+		openFragUser: function() {
+			if (!fragTask) {
+				fragTask = new sap.ui.xmlfragment("TiCS.view.TaskDetail", this.oView.getController());
+				this.oView.addDependent(fragTask);
+			}
+			fragTask.open();
 		},
 
 		onItemPress: function(oEvent) {
