@@ -13,9 +13,9 @@
 					labelMinWidth="800">
 					<sap.ui.layout.form:content>
 						<Label text="{i18n>Task}" id="__labelTask"/>
-						<Input width="50%" id="__inputTask" value="{SelTask>/aufgabe}"/>
+						<Input width="50%" id="__inputTask" value="{SelectedTask>/aufgabe}"/>
 						<Label text="{i18n>TasktDescription}" width="100%" id="__labelTaskDesc" textDirection="LTR"/>
-						<Input width="50%" id="__inpuTasktDesc" maxLength="20" value="{SelTask>/beschreibung}"/>
+						<Input width="50%" id="__inpuTaskDesc" maxLength="20" value="{SelectedTask>/beschreibung}"/>
 					</sap.ui.layout.form:content>
 				</sap.ui.layout.form:SimpleForm>
 			</items>
